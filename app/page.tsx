@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 
-type Theme = "warm" | "compact";
 type Tab = "groups" | "teachers" | "loads" | "issues";
 type Lesson = { time: string; subject: string; teachers: string[]; minutes: number; issue?: boolean };
 type DayPlan = Record<string, Lesson[]>;
@@ -128,7 +127,6 @@ function complementaryFor(teacher:string, tutor:boolean, entries:Entry[]) {
 export default function Home() {
   const entries=useMemo(()=>allEntries(),[]);
   const teachers=useMemo(()=>Array.from(new Set(entries.flatMap(e=>e.teachers))).filter(x=>x!=="Docente pendiente").sort((a,b)=>a.localeCompare(b,"es")),[entries]);
-  const [theme,setTheme]=useState<Theme>("warm");
   const [tab,setTab]=useState<Tab>("groups");
   const [group,setGroup]=useState("4");
   const [teacher,setTeacher]=useState("María Molina");
@@ -140,19 +138,15 @@ export default function Home() {
     const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`horario-${group}.csv`;a.click();URL.revokeObjectURL(a.href);
   };
 
-  return <main className={`app theme-${theme}`}>
+  return <main className="app theme-compact">
     <aside className="sidebar" aria-label="Navegación principal">
-      <div className="mark"><span>H</span><div><b>Horarios</b><small>CEIP · 26–27</small></div></div>
+      <div className="mark"><img src="./logo-srl.png" alt="Colegio Público Santa Rosa de Lima"/><div><b>Horarios</b><small>CEIP · 26–27</small></div></div>
       <nav>{navButton("groups","Grupos","▦",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}{navButton("issues","Incidencias","△",tab,setTab)}</nav>
       <div className="sidebar-note"><span className="status-dot"/>Borrador operativo<small>Actualizado 17 jul 2026</small></div>
     </aside>
     <section className="shell">
       <header className="topbar">
-        <div><p className="eyebrow">Organización escolar</p><h1>Horarios CEIP <span>· Curso 2026–27</span></h1></div>
-        <div className="theme-switch" aria-label="Cambiar estilo visual">
-          <button className={theme==="warm"?"active":""} onClick={()=>setTheme("warm")}>Cálido</button>
-          <button className={theme==="compact"?"active":""} onClick={()=>setTheme("compact")}>Operativo</button>
-        </div>
+        <div className="topbar-brand"><img className="mobile-school-logo" src="./logo-srl.png" alt="Colegio Público Santa Rosa de Lima"/><div><p className="eyebrow">Organización escolar</p><h1>Horarios CEIP <span>· Curso 2026–27</span></h1></div></div>
       </header>
 
       <div className="mobile-nav">{navButton("groups","Grupos","▦",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}{navButton("issues","Incidencias","△",tab,setTab)}</div>
