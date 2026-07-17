@@ -140,13 +140,13 @@ export default function Home() {
 
   return <main className="app theme-compact">
     <aside className="sidebar" aria-label="Navegación principal">
-      <div className="mark"><img src="./logo-srl-v3.png" alt="Colegio Público Santa Rosa de Lima"/><div><b>Horarios</b><small>Sta. Rosa de Lima</small><em>Curso 26–27</em></div></div>
+      <div className="mark"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><b>Horarios</b><small>Sta. Rosa de Lima</small><em>Curso 26–27</em></div></div>
       <nav>{navButton("groups","Grupos","▦",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}{navButton("issues","Incidencias","△",tab,setTab)}</nav>
       <div className="sidebar-note"><span className="status-dot"/>Borrador operativo<small>Actualizado 17 jul 2026</small></div>
     </aside>
     <section className="shell">
       <header className="topbar">
-        <div className="topbar-brand"><img className="mobile-school-logo" src="./logo-srl-v3.png" alt="Colegio Público Santa Rosa de Lima"/><div><p className="eyebrow">Organización escolar</p><h1>Horarios CEIP <span>· Curso 2026–27</span></h1></div></div>
+        <div className="topbar-brand"><img className="mobile-school-logo" src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><p className="eyebrow">Organización escolar</p><h1>Horarios CEIP <span>· Curso 2026–27</span></h1></div></div>
       </header>
 
       <div className="mobile-nav">{navButton("groups","Grupos","▦",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}{navButton("issues","Incidencias","△",tab,setTab)}</div>
