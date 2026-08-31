@@ -8,3 +8,5 @@
 .day-cards .break{top:254px}
 .day:nth-child(5) .day-cards .lesson:nth-child(3){margin-top:42px}
 .day:nth-child(5) .day-cards .break{top:168px}
+
+.issue-metric.resolved{border-color:#86d7a4!important}.issue-metric.resolved>span{background:#eaf8ef;color:#247343}.resolved-card{border-color:#86d7a4}.resolved-card .issue-symbol{background:#eaf8ef;color:#247343}.resolved-card .issue-status{color:#247343}
