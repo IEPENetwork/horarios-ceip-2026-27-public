@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-08-31T21:22:36.258Z",
+  "source": "horarios_ceip_2026_2027_V2_CON_SUSTITUCIONES.xlsx",
+  "passed": 20,
+  "total": 20,
+  "results": [
+    {
+      "id": 1,
+      "name": "Los 9 grupos están presentes",
+      "ok": true,
+      "detail": "9/9"
+    },
+    {
+      "id": 2,
+      "name": "Datos generados exclusivamente desde V2",
+      "ok": true,
+      "detail": "horarios_ceip_2026_2027_V2_CON_SUSTITUCIONES.xlsx"
+    },
+    {
+      "id": 3,
+      "name": "Cada grupo conserva 1.350 minutos",
+      "ok": true,
+      "detail": "{\"1.º\":1350,\"2.ºA\":1350,\"2.ºB\":1350,\"3.º\":1350,\"4.º\":1350,\"5.ºA\":1350,\"5.ºB\":1350,\"6.ºA\":1350,\"6.ºB\":1350}"
+    },
+    {
+      "id": 4,
+      "name": "No existen solapamientos docentes",
+      "ok": true,
+      "detail": "0 conflictos"
+    },
+    {
+      "id": 5,
+      "name": "No existen solapamientos de grupo",
+      "ok": true,
+      "detail": "0 duplicados"
+    },
+    {
+      "id": 6,
+      "name": "Todas las sesiones respetan las franjas oficiales",
+      "ok": true,
+      "detail": "Sin cuadrícula de 15 minutos"
+    },
+    {
+      "id": 7,
+      "name": "Recreos correctos",
+      "ok": true,
+      "detail": "L-J 11:30; V 11:15"
+    },
+    {
+      "id": 8,
+      "name": "Asignaciones de María Molina",
+      "ok": true,
+      "detail": "Troncales 4.º y Francés 5.º/6.º"
+    },
+    {
+      "id": 9,
+      "name": "Ciencias Sociales de 4.º = David Almagro",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": 10,
+      "name": "Matemáticas de 3.º = David Miñaro + Gabriel",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": 11,
+      "name": "Atención Educativa de 4.º = David Almagro",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": 12,
+      "name": "Atención Educativa de 3.º = SUPÉRATE",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": 13,
+      "name": "RAE del viernes respeta la distribución aprobada",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "id": 14,
+      "name": "Coordinaciones tutor–docencia compartida conservadas",
+      "ok": true,
+      "detail": "15/15"
+    },
+    {
+      "id": 15,
+      "name": "No aparecen datos o textos antiguos de V1",
+      "ok": true,
+      "detail": "Sin constantes ni metadatos V1"
+    },
+    {
+      "id": 16,
+      "name": "El motor conserva la prioridad P1 → P6",
+      "ok": true,
+      "detail": "1,2,3,4,5,6"
+    },
+    {
+      "id": 17,
+      "name": "Una persona no cubre dos ausencias simultáneas",
+      "ok": true,
+      "detail": "Guardia de asignación por día/franja activa"
+    },
+    {
+      "id": 18,
+      "name": "La aplicación compila sin errores",
+      "ok": true,
+      "detail": "dist/index.html generado"
+    },
+    {
+      "id": 19,
+      "name": "Todas las vistas están disponibles",
+      "ok": true,
+      "detail": "groups, days, subjects, teachers, loads, substitutions"
+    },
+    {
+      "id": 20,
+      "name": "Diseño móvil y escritorio definido",
+      "ok": true,
+      "detail": "Breakpoints, impresión y tablas desplazables"
+    }
+  ]
+}

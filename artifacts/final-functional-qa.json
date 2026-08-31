@@ -1,0 +1,235 @@
+{
+  "generatedAt": "2026-08-31T21:22:37.047Z",
+  "passed": 21,
+  "total": 21,
+  "failures": [],
+  "anomalyDetails": [
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºA",
+      "day": "Lunes",
+      "time": "12:00–13:00",
+      "subject": "Educación Física",
+      "teacher": "Fede",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    },
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºA",
+      "day": "Martes",
+      "time": "09:00–10:00",
+      "subject": "Música",
+      "teacher": "Mamen",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    },
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºA",
+      "day": "Martes",
+      "time": "12:00–13:00",
+      "subject": "Inglés",
+      "teacher": "Iria",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    },
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºA",
+      "day": "Martes",
+      "time": "13:00–14:00",
+      "subject": "Educación Física",
+      "teacher": "Fede",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    },
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºA",
+      "day": "Jueves",
+      "time": "12:00–13:00",
+      "subject": "Inglés",
+      "teacher": "Iria",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    },
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºA",
+      "day": "Jueves",
+      "time": "13:00–14:00",
+      "subject": "Profundización",
+      "teacher": "Iria",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    },
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºB",
+      "day": "Lunes",
+      "time": "12:00–13:00",
+      "subject": "Inglés",
+      "teacher": "Iria",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    },
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºB",
+      "day": "Martes",
+      "time": "09:00–10:00",
+      "subject": "Profundización",
+      "teacher": "Iria",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    },
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºB",
+      "day": "Martes",
+      "time": "12:00–13:00",
+      "subject": "Educación Física",
+      "teacher": "Fede",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    },
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºB",
+      "day": "Martes",
+      "time": "13:00–14:00",
+      "subject": "Inglés",
+      "teacher": "Iria",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    },
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºB",
+      "day": "Jueves",
+      "time": "12:00–13:00",
+      "subject": "Educación Física",
+      "teacher": "Fede",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    },
+    {
+      "type": "redundant-primary-as-shared",
+      "group": "2.ºB",
+      "day": "Jueves",
+      "time": "13:00–14:00",
+      "subject": "Música",
+      "teacher": "Mamen",
+      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "correct": true
+    }
+  ],
+  "results": [
+    {
+      "name": "Navegación con seis vistas",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Sin referencias visibles V1",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Responsive escritorio/tablet/móvil",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Tablas y matrices desplazables",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Impresión sin navegación ni controles",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Tarjetas sin alturas máximas ni overflow oculto",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Caso 1: tutor ausente con DC presente",
+      "ok": true,
+      "detail": "María Molina → P1 Cristina"
+    },
+    {
+      "name": "Caso 2: candidato P2 Apoyo",
+      "ok": true,
+      "detail": "David Miñaro → P2 David Almagro"
+    },
+    {
+      "name": "Casos 3 y 7: escalado a P3",
+      "ok": true,
+      "detail": "Ana G, Mamen, Fede, Cristina, SUPÉRATE"
+    },
+    {
+      "name": "Caso 4: dos ausencias simultáneas",
+      "ok": true,
+      "detail": "Sandra + Dámaris"
+    },
+    {
+      "name": "Caso 5: competencia por sustituto detectada",
+      "ok": true,
+      "detail": "SUPÉRATE"
+    },
+    {
+      "name": "Una persona no cubre dos grupos simultáneamente",
+      "ok": true,
+      "detail": "SUPÉRATE, David Almagro"
+    },
+    {
+      "name": "Caso 6: ausencia exclusiva de DC",
+      "ok": true,
+      "detail": "No obligatoria: el docente principal del grupo permanece"
+    },
+    {
+      "name": "Caso 8: disponibilidad por franja P2–P5",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Recreo sin disponibilidad inventada",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "P6 sin nombres inventados",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Orden inalterado P1 → P6",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "El símbolo — nunca es candidato",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Doce anomalías de 2.º normalizadas",
+      "ok": true,
+      "detail": "12/12"
+    },
+    {
+      "name": "Cargas de docentes clave presentes",
+      "ok": true,
+      "detail": "María Molina: 1500 min · David Almagro: 1500 min · Gabriel: 1440 min · Malu: 1020 min · SUPÉRATE: 1500 min"
+    },
+    {
+      "name": "Malu conserva su excepción",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

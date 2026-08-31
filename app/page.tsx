@@ -1,252 +1,124 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import scheduleSource from "../src/data/schedule-v2.json";
+import substitutionSource from "../src/data/substitutions-v2.json";
 
-type Tab = "groups" | "days" | "subjects" | "teachers" | "loads" | "issues";
-type TeacherType = "all" | "tutors" | "specialists" | "supports";
+type Tab = "groups" | "days" | "subjects" | "teachers" | "loads" | "substitutions";
+type TeacherType = "all" | "tutors" | "specialists" | "shared" | "support";
 type SubjectType = "all" | "tutoring" | "core" | "lang" | "spec";
-type Lesson = { time: string; subject: string; teachers: string[]; minutes: number; issue?: boolean };
-type DayPlan = Record<string, Lesson[]>;
+type SubstitutionView = "resolver" | "availability";
+type Lesson = { group: string; day: string; time: string; minutes: number; subject: string; primary: string; shared: string[]; notes: string };
+type Load = { direct: number; shared: number; recess: number; family: number; coordination: number; tutorial: number; computed: number; support: number; total: number };
+type TeacherState = { status: string; kind: string };
+type SlotState = { day: string; slot: string; teachers: Record<string, TeacherState> };
+type Scenario = Record<string, string>;
 
-export const DAYS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
-export const GROUPS = ["1", "2A", "2B", "3", "4", "5A", "5B", "6A", "6B"];
-const TUTORS: Record<string, string> = {
-  "1": "Belén", "2A": "Sandra", "2B": "Dámaris", "3": "David M",
-  "4": "María Molina", "5A": "Antonio", "5B": "Ana G", "6A": "Ana B", "6B": "María Muñoz",
-};
+const schedule = scheduleSource as typeof scheduleSource & { lessons: Lesson[]; teacherLoads: Record<string, Load>; teacherRoles: Record<string, string[]> };
+const substitutions = substitutionSource as typeof substitutionSource & { slots: SlotState[]; scenarios: Scenario[] };
+const DAYS = schedule.days;
+const GROUPS = schedule.groups;
+const TEACHERS = schedule.teachers;
+const CORE = ["Lengua", "Matemáticas", "C. Naturales", "C. Sociales"];
+const LANGUAGES = ["Inglés", "Francés"];
+const PRIORITIES = [
+  ["P1 Misma docencia compartida", "P1 · Misma docencia compartida"],
+  ["P2 Apoyo", "P2 · Apoyo"],
+  ["P3 DC otro grupo", "P3 · Docencia compartida en otro grupo"],
+  ["P4 Atención familias", "P4 · Atención a familias"],
+  ["P5 Coordinación/tutoría", "P5 · Coordinación / reducción tutorial"],
+] as const;
 
-const LABELS: Record<string, string> = {
-  LEN: "Lengua", MAT: "Matemáticas", CN: "C. Naturales", CS: "C. Sociales",
-  ING: "Inglés", FRA: "Francés", EF: "Educación Física", PLA: "Plástica",
-  MUS: "Música", PROF: "Profundización", RAE: "Religión / Atención educativa", VAL: "Valores",
-};
-
-const CORE_SUBJECTS = ["LEN", "MAT", "CN", "CS"];
-const LANGUAGE_SUBJECTS = ["ING", "FRA"];
-const SPECIALTY_SUBJECTS = ["EF", "PLA", "MUS", "PROF", "RAE", "VAL"];
-function subjectFamily(subject:string){return CORE_SUBJECTS.includes(subject)?"core":LANGUAGE_SUBJECTS.includes(subject)?"lang":"spec";}
-
-export const GROUP_DATA: Record<string, DayPlan> = {
-  "1": {
-    Lunes: [l("09:00–10:00","ING",["Iria"],60),l("10:00–10:45","LEN",["Belén","Malu"],45),l("10:45–11:30","LEN",["Belén","Malu"],45),l("12:00–13:00","EF",["Fede"],60),l("13:00–14:00","MAT",["Belén","Malu"],60)],
-    Martes: [l("09:00–10:00","CN",["Belén"],60),l("10:00–10:45","LEN",["Belén","Malu"],45),l("10:45–11:30","LEN",["Belén","Malu"],45),l("12:00–13:00","EF",["Fede"],60),l("13:00–14:00","MAT",["Belén","Malu"],60)],
-    Miércoles: [l("09:00–10:00","ING",["Iria"],60),l("10:00–10:45","MAT",["Belén","Malu"],45),l("10:45–11:30","MAT",["Belén","Malu"],45),l("12:00–13:00","PLA",["Belén"],60),l("13:00–14:00","LEN",["Belén","Malu"],60)],
-    Jueves: [l("09:00–10:00","CN",["Belén"],60),l("10:00–10:45","MAT",["Belén"],45),l("10:45–11:30","LEN",["Belén"],45),l("12:00–13:00","MUS",["Mamen"],60),l("13:00–14:00","PROF",["Iria"],60)],
-    Viernes: [l("09:00–10:30","CS",["Belén"],90),l("10:30–11:15","LEN",["Belén","Malu"],45),l("11:45–12:30","MAT",["Belén","Malu"],45),l("12:30–14:00","RAE",["Belén"],90)],
-  },
-  "2A": secondA(),
-  "2B": secondB(),
-  "3": {
-    Lunes: [l("09:00–10:00","PLA",["David A"],60),l("10:00–10:45","CS",["David M"],45),l("10:45–11:30","ING",["Iria"],45),l("12:00–13:00","MAT",["David M","Mariló"],60),l("13:00–14:00","MUS",["Mamen"],60)],
-    Martes: [l("09:00–10:00","EF",["Gabriel"],60),l("10:00–10:45","LEN",["David M","Mariló"],45),l("10:45–11:30","LEN",["David M","Mariló"],45),l("12:00–13:00","CN",["David M"],60),l("13:00–14:00","MAT",["David M","Mariló"],60)],
-    Miércoles: [l("09:00–10:00","LEN",["David M","Mariló"],60),l("10:00–10:45","ING",["Iria"],45),l("10:45–11:30","MAT",["David M","Mariló"],45),l("12:00–13:00","CN",["David M"],60),l("13:00–14:00","EF",["Gabriel"],60)],
-    Jueves: [l("09:00–10:00","MAT",["David M","Mariló"],60),l("10:00–10:45","ING",["Iria"],45),l("10:45–11:30","CS",["David M"],45),l("12:00–13:00","PROF",["Iria"],60),l("13:00–14:00","LEN",["David M","Mariló"],60)],
-    Viernes: [l("09:00–10:30","LEN",["David M","Mariló"],90),l("10:30–11:15","ING",["Iria"],45),l("11:45–12:30","MAT",["David M","Mariló"],45),l("12:30–14:00","RAE",["David A"],90)],
-  },
-  "4": {
-    Lunes: [l("09:00–10:00","EF",["Gabriel"],60),l("10:00–10:45","LEN",["María Molina","Cristina"],45),l("10:45–11:30","LEN",["María Molina","Cristina"],45),l("12:00–13:00","PROF",["Iria"],60),l("13:00–14:00","MAT",["María Molina","SUPÉRATE"],60)],
-    Martes: [l("09:00–10:00","LEN",["María Molina","Cristina"],60),l("10:00–10:45","ING",["Iria"],45),l("10:45–11:30","ING",["Iria"],45),l("12:00–13:00","CN",["María Molina"],60),l("13:00–14:00","MAT",["María Molina","SUPÉRATE"],60)],
-    Miércoles: [l("09:00–10:00","LEN",["María Molina","Cristina"],60),l("10:00–10:45","CS",["David A"],45),l("10:45–11:30","MAT",["María Molina","SUPÉRATE"],45),l("12:00–13:00","PLA",["David A"],60),l("13:00–14:00","CN",["María Molina"],60)],
-    Jueves: [l("09:00–10:00","MAT",["María Molina","SUPÉRATE"],60),l("10:00–10:45","LEN",["María Molina","Cristina"],45),l("10:45–11:30","LEN",["María Molina","Cristina","Gabriel"],45),l("12:00–13:00","EF",["Gabriel"],60),l("13:00–14:00","MUS",["Mamen"],60)],
-    Viernes: [l("09:00–10:30","RAE",["David A"],90),l("10:30–11:15","CS",["David A"],45),l("11:45–12:30","MAT",["María Molina","SUPÉRATE"],45),l("12:30–14:00","ING",["Iria"],90)],
-  },
-  "5A": {
-    Lunes: [l("09:00–10:00","ING",["María Muñoz"],60),l("10:00–10:45","CN",["Antonio"],45),l("10:45–11:30","CN",["Antonio"],45),l("12:00–13:00","MUS",["Mamen"],60),l("13:00–14:00","MAT",["Antonio","David A"],60)],
-    Martes: [l("09:00–10:00","LEN",["Antonio","Ana G"],60),l("10:00–10:45","MAT",["Antonio","David A"],45),l("10:45–11:30","MAT",["Antonio","David A"],45),l("12:00–13:00","PLA",["Antonio"],60),l("13:00–14:00","EF",["Gabriel"],60)],
-    Miércoles: [l("09:00–10:00","ING",["María Muñoz"],60),l("10:00–10:45","FRA",["María Molina"],45),l("10:45–11:30","CS",["Antonio"],45),l("12:00–13:00","LEN",["Antonio","Ana G"],60),l("13:00–14:00","PROF",["Iria"],60)],
-    Jueves: [l("09:00–10:00","ING",["María Muñoz"],60),l("10:00–10:45","MAT",["Antonio","David A"],45),l("10:45–11:30","CS",["Antonio"],45),l("12:00–13:00","LEN",["Antonio","Ana G"],60),l("13:00–14:00","EF",["Gabriel"],60)],
-    Viernes: [l("09:00–10:30","RAE",["Antonio"],90),l("10:30–11:15","FRA",["María Molina"],45),l("11:45–12:30","MAT",["Antonio","David A"],45),l("12:30–14:00","LEN",["Antonio","Ana G"],90)],
-  },
-  "5B": {
-    Lunes: [l("09:00–10:00","PLA",["Antonio"],60),l("10:00–10:45","MAT",["Ana G","David A"],45),l("10:45–11:30","MAT",["Ana G","David A"],45),l("12:00–13:00","LEN",["Ana G","Antonio"],60),l("13:00–14:00","EF",["Gabriel"],60)],
-    Martes: [l("09:00–10:00","ING",["María Muñoz"],60),l("10:00–10:45","CS",["Ana G"],45),l("10:45–11:30","CS",["Ana G"],45),l("12:00–13:00","MAT",["Ana G","David A"],60),l("13:00–14:00","LEN",["Ana G","Antonio"],60)],
-    Miércoles: [l("09:00–10:00","LEN",["Ana G","Antonio"],60),l("10:00–10:45","CN",["Ana G"],45),l("10:45–11:30","MAT",["Ana G","David A"],45),l("12:00–13:00","EF",["Gabriel"],60),l("13:00–14:00","ING",["María Muñoz"],60)],
-    Jueves: [l("09:00–10:00","MUS",["Mamen"],60),l("10:00–10:45","CN",["Ana G"],45),l("10:45–11:30","MAT",["Ana G","David A"],45),l("12:00–13:00","ING",["María Muñoz"],60),l("13:00–14:00","LEN",["Ana G","Antonio"],60)],
-    Viernes: [l("09:00–10:30","RAE",["Ana G"],90),l("10:30–11:15","LEN",["Ana G","Antonio"],45),l("11:45–12:30","PROF",["Iria"],45),l("12:30–14:00","FRA",["María Molina"],90)],
-  },
-  "6A": sixthA(),
-  "6B": sixthB(),
-};
-
-function l(time:string, subject:string, teachers:string[], minutes:number, issue=false): Lesson { return {time,subject,teachers,minutes,issue}; }
-
-function secondA(): DayPlan { return {
-  Lunes:[l("09:00–10:00","MAT",["Sandra","Dámaris","SUPÉRATE"],60),l("10:00–10:45","LEN",["Sandra","Dámaris","SUPÉRATE"],45),l("10:45–11:30","LEN",["Sandra","Dámaris","SUPÉRATE"],45),l("12:00–13:00","CN",["Sandra","Dámaris"],60),l("13:00–14:00","EF",["Fede"],60)],
-  Martes:[l("09:00–10:00","ING",["Iria"],60),l("10:00–10:45","LEN",["Sandra","Dámaris","SUPÉRATE"],45),l("10:45–11:30","MAT",["Sandra","Dámaris","SUPÉRATE"],45),l("12:00–13:00","MUS",["Mamen"],60),l("13:00–14:00","PROF",["Iria"],60)],
-  Miércoles:[l("09:00–10:00","PLA",["Sandra","Dámaris"],60),l("10:00–10:45","LEN",["Sandra","Dámaris","SUPÉRATE"],45),l("10:45–11:30","CS",["Sandra","Dámaris"],45),l("12:00–13:00","EF",["Fede"],60),l("13:00–14:00","MAT",["Sandra","Dámaris","SUPÉRATE"],60)],
-  Jueves:[l("09:00–10:00","ING",["Iria"],60),l("10:00–10:45","MAT",["Sandra","Dámaris","SUPÉRATE"],45),l("10:45–11:30","MAT",["Sandra","Dámaris","SUPÉRATE"],45),l("12:00–13:00","LEN",["Sandra","Dámaris","SUPÉRATE"],60),l("13:00–14:00","CN",["Sandra","Dámaris"],60)],
-  Viernes:[l("09:00–10:30","LEN",["Sandra","Dámaris","SUPÉRATE"],90),l("10:30–11:15","MAT",["Sandra","Dámaris","SUPÉRATE"],45),l("11:45–12:30","CS",["Sandra","Dámaris"],45),l("12:30–14:00","RAE",["Sandra","Dámaris"],90)],
-}; }
-function secondB(): DayPlan { const d=secondA(); return {...d,
-  Lunes:[...d.Lunes.slice(0,4),l("13:00–14:00","ING",["Iria"],60)],
-  Martes:[l("09:00–10:00","EF",["Fede"],60),...d.Martes.slice(1,3),l("12:00–13:00","PROF",["Iria"],60),l("13:00–14:00","MUS",["Mamen"],60)],
-  Miércoles:[...d.Miércoles.slice(0,3),l("12:00–13:00","ING",["Iria"],60),d.Miércoles[4]],
-  Jueves:[l("09:00–10:00","EF",["Fede"],60),...d.Jueves.slice(1)],
-}; }
-function sixthA(): DayPlan { return {
-  Lunes:[l("09:00–10:00","MAT",["Ana B","Fede"],60),l("10:00–10:45","CS",["Ana B"],45),l("10:45–11:30","ING",["David M"],45),l("12:00–13:00","EF",["Gabriel"],60),l("13:00–14:00","LEN",["Ana B"],60)],
-  Martes:[l("09:00–10:00","LEN",["Ana B","Mamen"],60),l("10:00–10:45","FRA",["María Molina"],45),l("10:45–11:30","FRA",["María Molina"],45),l("12:00–13:00","EF",["Gabriel"],60),l("13:00–14:00","MAT",["Ana B","Fede"],60)],
-  Miércoles:[l("09:00–10:00","MAT",["Ana B","Fede"],60),l("10:00–10:45","ING",["David M"],45),l("10:45–11:30","CN",["Ana B"],45),l("12:00–13:00","MUS",["Mamen"],60),l("13:00–14:00","LEN",["Ana B","Mamen"],60)],
-  Jueves:[l("09:00–10:00","LEN",["Ana B"],60),l("10:00–10:45","ING",["David M"],45),l("10:45–11:30","CN",["Ana B"],45),l("12:00–13:00","MAT",["Ana B","Fede"],60),l("13:00–14:00","PLA",["Fede"],60)],
-  Viernes:[l("09:00–10:30","RAE",["Ana B"],90),l("10:30–11:15","ING",["David M"],45),l("11:45–12:30","CS",["Ana B"],45),l("12:30–14:00","VAL",["Mamen"],90)],
-}; }
-function sixthB(): DayPlan { return {
-  Lunes:[l("09:00–10:00","MUS",["Mamen"],60),l("10:00–10:45","CS",["María Muñoz"],45),l("10:45–11:30","VAL",["Mamen"],45),l("12:00–13:00","MAT",["María Muñoz","Ana B"],60),l("13:00–14:00","ING",["David M"],60)],
-  Martes:[l("09:00–10:00","ING",["David M"],60),l("10:00–10:45","CN",["María Muñoz"],45),l("10:45–11:30","CN",["María Muñoz"],45),l("12:00–13:00","MAT",["María Muñoz","Ana B"],60),l("13:00–14:00","LEN",["María Muñoz"],60)],
-  Miércoles:[l("09:00–10:00","EF",["Gabriel"],60),l("10:00–10:45","RAE",["Fede"],45),l("10:45–11:30","RAE",["Fede"],45),l("12:00–13:00","MAT",["María Muñoz","Ana B"],60),l("13:00–14:00","PLA",["Fede"],60)],
-  Jueves:[l("09:00–10:00","EF",["Gabriel"],60),l("10:00–10:45","LEN",["María Muñoz","Mamen"],45),l("10:45–11:30","LEN",["María Muñoz","Mamen"],45),l("12:00–13:00","ING",["David M"],60),l("13:00–14:00","MAT",["María Muñoz","Ana B"],60)],
-  Viernes:[l("09:00–10:30","FRA",["María Molina"],90),l("10:30–11:15","VAL",["Mamen"],45),l("11:45–12:30","CS",["María Muñoz"],45),l("12:30–14:00","LEN",["María Muñoz"],90)],
-}; }
-
-type Entry = Lesson & { day:string; group:string };
-function allEntries(): Entry[] {
-  const rows: Entry[]=[];
-  for(const group of GROUPS) for(const day of DAYS) for(const lesson of GROUP_DATA[group][day]) {
-    if(group==="2B") {
-      const twin=GROUP_DATA["2A"][day].find(x=>x.time===lesson.time && x.subject===lesson.subject && x.teachers.join("|")===lesson.teachers.join("|"));
-      if(twin) continue;
-    }
-    rows.push({...lesson,day,group: group==="2A" && GROUP_DATA["2B"][day].some(x=>x.time===lesson.time&&x.subject===lesson.subject&&x.teachers.join("|")===lesson.teachers.join("|")) ? "2A · 2B" : group});
-  }
-  return rows;
-}
-
-function complementaryFor(teacher:string, tutor:boolean, entries:Entry[]) {
-  const occupied=new Set(entries.filter(e=>e.teachers.includes(teacher)).map(e=>`${e.day}|${e.time}`));
-  const usedDays=new Set<string>();
-  const patterns=[
-    {label:"Atención a familias", times:["09:00–10:00","13:00–14:00","12:00–13:00"]},
-    {label:"Coordinación docente", times:["12:00–13:00","13:00–14:00","09:00–10:00"]},
-    ...(tutor?[{label:"Reducción por tutoría",times:["13:00–14:00","09:00–10:00","12:00–13:00"]}]:[]),
-  ];
-  const out:{day:string;time:string;label:string}[]=[];
-  for(const p of patterns){
-    let found:{day:string;time:string}|undefined;
-    for(const time of p.times) for(const day of DAYS.slice(0,4)){
-      if(teacher==="Malu" && (day==="Jueves" || time==="09:00–10:00")) continue;
-      if(!usedDays.has(day)&&!occupied.has(`${day}|${time}`)){found={day,time};break;}
-    }
-    if(found){usedDays.add(found.day);out.push({...found,label:p.label});}
-  }
-  return out;
-}
+function family(subject: string) { return CORE.includes(subject) ? "core" : LANGUAGES.includes(subject) ? "lang" : "spec"; }
+function normalized(value: string) { return value.toLocaleLowerCase("es").normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
+function matches(query: string, ...values: string[]) { return !query || normalized(values.join(" ")).includes(normalized(query)); }
+function formatMinutes(minutes: number) { if (!minutes) return "—"; const hours = Math.floor(minutes / 60); const remainder = minutes % 60; return `${hours ? `${hours} h` : ""}${hours && remainder ? " " : ""}${remainder ? `${remainder} min` : ""}`; }
+function lessonsFor(group: string, day: string) { return schedule.lessons.filter((lesson) => lesson.group === group && lesson.day === day); }
+function isRecess(day: string, time: string) { return schedule.recess[day as keyof typeof schedule.recess] === time; }
 
 export default function Home() {
-  const entries=useMemo(()=>allEntries(),[]);
-  const teachers=useMemo(()=>Array.from(new Set(entries.flatMap(e=>e.teachers))).sort((a,b)=>a.localeCompare(b,"es")),[entries]);
-  const [tab,setTab]=useState<Tab>("groups");
-  const [group,setGroup]=useState("4");
-  const [day,setDay]=useState("Lunes");
-  const [teacher,setTeacher]=useState("María Molina");
-  const [teacherType,setTeacherType]=useState<TeacherType>("all");
-  const [subjectType,setSubjectType]=useState<SubjectType>("all");
-  const [subject,setSubject]=useState("all");
-  const [query,setQuery]=useState("");
-
-  const exportCsv=()=>{
-    const rows=[["Grupo","Día","Hora","Área","Docentes"],...DAYS.flatMap(day=>GROUP_DATA[group][day].map(x=>[group,day,x.time,LABELS[x.subject],x.teachers.join(" + ")]))];
-    const blob=new Blob([rows.map(r=>r.map(v=>`"${v.replaceAll('"','""')}"`).join(",")).join("\n")],{type:"text/csv;charset=utf-8"});
-    const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`horario-${group}.csv`;a.click();URL.revokeObjectURL(a.href);
+  const [tab, setTab] = useState<Tab>("groups");
+  const [group, setGroup] = useState("4.º");
+  const [day, setDay] = useState("Lunes");
+  const [teacher, setTeacher] = useState("María Molina");
+  const [teacherType, setTeacherType] = useState<TeacherType>("all");
+  const [subjectType, setSubjectType] = useState<SubjectType>("all");
+  const [subject, setSubject] = useState("all");
+  const [query, setQuery] = useState("");
+  const exportCsv = () => {
+    const rows = [["Grupo", "Día", "Hora", "Asignatura", "Docente principal", "Docencia compartida"], ...schedule.lessons.filter((lesson) => lesson.group === group).map((lesson) => [lesson.group, lesson.day, lesson.time, lesson.subject, lesson.primary, lesson.shared.join(" + ")])];
+    const csv = rows.map((row) => row.map((value) => `"${value.replaceAll('"', '""')}"`).join(",")).join("\n");
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+    const anchor = document.createElement("a"); anchor.href = URL.createObjectURL(blob); anchor.download = `horario-${group}.csv`; anchor.click(); URL.revokeObjectURL(anchor.href);
   };
-
+  const nav = <>{navButton("groups", "Grupos", "▦", tab, setTab)}{navButton("days", "Por días", "◫", tab, setTab)}{navButton("subjects", "Asignaturas", "▤", tab, setTab)}{navButton("teachers", "Docentes", "♙", tab, setTab)}{navButton("loads", "Cargas", "▥", tab, setTab)}{navButton("substitutions", "Sustituciones", "⇄", tab, setTab)}</>;
   return <main className="app theme-compact">
-    <aside className="sidebar" aria-label="Navegación principal">
-      <div className="mark"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><b>Horarios</b><small>Sta. Rosa de Lima</small><em>Curso 26–27</em></div></div>
-      <nav>{navButton("groups","Grupos","▦",tab,setTab)}{navButton("days","Por días","◫",tab,setTab)}{navButton("subjects","Asignaturas","▤",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}</nav>
-    </aside>
-    <section className="shell">
-      <header className="topbar">
-        <div className="topbar-brand"><img className="mobile-school-logo" src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><h1>Horarios CEIP <span>· Curso 2026–27</span></h1></div></div>
-      </header>
-
-      <div className="mobile-nav">{navButton("groups","Grupos","▦",tab,setTab)}{navButton("days","Por días","◫",tab,setTab)}{navButton("subjects","Asignaturas","▤",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}</div>
-
-      {tab==="groups" && <>
-        <Toolbar query={query} setQuery={setQuery}>
-          <label>Grupo<select value={group} onChange={e=>setGroup(e.target.value)}>{GROUPS.map(g=><option key={g} value={g}>{groupName(g)}</option>)}</select></label>
-          <button className="secondary" onClick={exportCsv}>↓ Exportar CSV</button><button className="primary" onClick={()=>window.print()}>Imprimir horario</button>
-        </Toolbar>
-        <section className="panel schedule-panel">
-          <div className="panel-title"><div><p className="eyebrow">Vista semanal</p><h2>{groupName(group)}</h2></div><div className="legend"><span className="legend-item core"><i/>Troncales</span><span className="legend-item lang"><i/>Idiomas</span><span className="legend-item spec"><i/>Especialidades</span></div></div>
-          <WeekGrid plan={GROUP_DATA[group]} query={query}/>
-        </section>
-      </>}
-
-      {tab==="days" && <DayView day={day} setDay={setDay} query={query} setQuery={setQuery}/>} 
-      {tab==="subjects" && <SubjectsView subjectType={subjectType} setSubjectType={setSubjectType} subject={subject} setSubject={setSubject} query={query} setQuery={setQuery}/>} 
-      {tab==="teachers" && <TeacherView teacher={teacher} setTeacher={setTeacher} teacherType={teacherType} setTeacherType={setTeacherType} teachers={teachers} entries={entries} query={query} setQuery={setQuery}/>} 
-      {tab==="loads" && <LoadsView teachers={teachers} entries={entries}/>} 
-      {tab==="issues" && <IssuesView setTab={setTab} setGroup={setGroup}/>} 
+    <aside className="sidebar" aria-label="Navegación principal"><div className="mark"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><b>Horarios</b><small>Sta. Rosa de Lima</small><em>Curso 26–27</em></div></div><nav>{nav}</nav></aside>
+    <section className="shell"><header className="topbar"><div className="topbar-brand"><img className="mobile-school-logo" src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><h1>Horarios CEIP <span>· Curso 2026–27</span></h1></div></div></header><div className="mobile-nav">{nav}</div>
+      {tab === "groups" && <><Toolbar query={query} setQuery={setQuery}><label>Grupo<select value={group} onChange={(event) => setGroup(event.target.value)}>{GROUPS.map((name) => <option key={name}>{name}</option>)}</select></label><button className="secondary" onClick={exportCsv}>↓ Exportar CSV</button><button className="primary" onClick={() => window.print()}>Imprimir horario</button></Toolbar><section className="panel schedule-panel"><PanelTitle eyebrow="Vista semanal" title={`${group} Primaria`}/><WeekGrid group={group} query={query}/></section></>}
+      {tab === "days" && <DayView day={day} setDay={setDay} query={query} setQuery={setQuery}/>}
+      {tab === "subjects" && <SubjectsView subjectType={subjectType} setSubjectType={setSubjectType} subject={subject} setSubject={setSubject} query={query} setQuery={setQuery}/>}
+      {tab === "teachers" && <TeacherView teacher={teacher} setTeacher={setTeacher} teacherType={teacherType} setTeacherType={setTeacherType} query={query} setQuery={setQuery}/>}
+      {tab === "loads" && <LoadsView/>}{tab === "substitutions" && <SubstitutionsView/>}
     </section>
   </main>;
 }
 
-function navButton(id:Tab,label:string,icon:string,tab:Tab,setTab:(t:Tab)=>void){return <button key={id} className={tab===id?"active":""} onClick={()=>setTab(id)}><span>{icon}</span>{label}</button>}
-function groupName(g:string){return `${g.replace("A",".º A").replace("B",".º B")}${/[AB]/.test(g)?"": ".º"} Primaria`;}
-function Toolbar({children,query,setQuery}:{children:React.ReactNode;query:string;setQuery:(s:string)=>void}){return <div className="toolbar">{children}<label className="search"><span>⌕</span><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Buscar área o docente…"/></label></div>}
+function navButton(id: Tab, label: string, icon: string, tab: Tab, setTab: (tab: Tab) => void) { return <button key={id} className={tab === id ? "active" : ""} onClick={() => setTab(id)}><span>{icon}</span>{label}</button>; }
+function Toolbar({ children, query, setQuery, placeholder = "Buscar asignatura o docente…" }: { children: React.ReactNode; query: string; setQuery: (value: string) => void; placeholder?: string }) { return <div className="toolbar">{children}<label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={placeholder}/></label></div>; }
+function Legend() { return <div className="legend"><span className="legend-item core"><i/>Troncales</span><span className="legend-item lang"><i/>Idiomas</span><span className="legend-item spec"><i/>Especialidades</span></div>; }
+function PanelTitle({ eyebrow, title, aside = <Legend/> }: { eyebrow: string; title: string; aside?: React.ReactNode }) { return <div className="panel-title"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2></div>{aside}</div>; }
 
-function WeekGrid({plan,query}:{plan:DayPlan;query:string}){
-  return <div className="week-grid">{DAYS.map(day=><div className="day" key={day}><h3>{day}</h3><div className="day-cards">{plan[day].map((x,i)=><div key={`${x.time}-${i}`} className={`lesson sub-${x.subject.toLowerCase()} ${x.issue?"pending":""} ${query&&!`${LABELS[x.subject]} ${x.teachers.join(" ")}`.toLowerCase().includes(query.toLowerCase())?"muted":""}`} style={{"--duration":x.minutes} as React.CSSProperties}><span className="lesson-time">{x.time}</span><strong>{x.issue?"⚠ ":""}{LABELS[x.subject]}</strong><small>{x.teachers.join(" · ")}</small></div>)}<div className="break"><span>☕</span> Recreo · 30 min</div></div></div>)}</div>
+function LessonCard({ lesson, query, compact = false }: { lesson: Lesson; query: string; compact?: boolean }) {
+  const visible = matches(query, lesson.subject, lesson.primary, ...lesson.shared);
+  return <article className={`${compact ? "matrix-card" : "lesson"} family-${family(lesson.subject)} ${visible ? "" : "muted"}`}><span className="lesson-time">{lesson.time}</span><strong>{lesson.subject}</strong><small><b>Docente:</b> {lesson.primary}</small>{lesson.shared.length > 0 && <small><b>Docencia compartida:</b> {lesson.shared.join(", ")}</small>}</article>;
 }
 
-function DayView({day,setDay,query,setQuery}:{day:string;setDay:(d:string)=>void;query:string;setQuery:(s:string)=>void}){
-  const timeSlots=Array.from(new Set(GROUPS.flatMap(g=>GROUP_DATA[g][day].map(x=>x.time)))).sort((a,b)=>a.localeCompare(b,"es"));
-  return <>
-    <Toolbar query={query} setQuery={setQuery}><label>Día<select value={day} onChange={e=>setDay(e.target.value)}>{DAYS.map(d=><option key={d}>{d}</option>)}</select></label></Toolbar>
-    <section className="panel day-overview"><div className="panel-title"><div><p className="eyebrow">Organización diaria</p><h2>{day}</h2></div><span className="validation">9 grupos · {timeSlots.length} franjas</span></div>
-      <div className="day-matrix-wrap"><div className="day-matrix" style={{gridTemplateColumns:`120px repeat(${timeSlots.length}, minmax(190px, 1fr))`}}><div className="day-matrix-corner">Grupo</div>{timeSlots.map(time=><div className="day-matrix-time" key={time}>{time}</div>)}{GROUPS.map(g=><div className="day-matrix-row" key={g}><div className="day-matrix-group">{groupName(g).replace(" Primaria","")}</div>{timeSlots.map(time=>{const lesson=GROUP_DATA[g][day].find(x=>x.time===time);const visible=lesson&&(!query||`${LABELS[lesson.subject]} ${lesson.teachers.join(" ")}`.toLowerCase().includes(query.toLowerCase()));if(!lesson||!visible)return <div className="day-matrix-empty" key={time}>—</div>;const tutor=TUTORS[g];const main=lesson.teachers.includes(tutor)?tutor:lesson.teachers[0];const support=lesson.teachers.filter(t=>t!==main).join(" · ")||"—";const family=subjectFamily(lesson.subject);return <article className={`day-card family-${family}`} key={time}><strong>{LABELS[lesson.subject]}</strong><small><b>Docente:</b> {main}</small><small className={support==="—"?"no-support":""}><b>Apoyo:</b> {support}</small></article>})}</div>)}</div></div>
-    </section>
-  </>;
+function WeekGrid({ group, query }: { group: string; query: string }) {
+  return <div className="week-grid">{DAYS.map((day) => <div className="day" key={day}><h3>{day}</h3><div className="day-cards">{schedule.slots[day as keyof typeof schedule.slots].map((time) => { if (isRecess(day, time)) return <div className="break" key={time}><span>☕</span> Recreo · 30 min</div>; const lesson = lessonsFor(group, day).find((item) => item.time === time); return lesson ? <LessonCard key={time} lesson={lesson} query={query}/> : null; })}</div></div>)}</div>;
 }
 
-function teacherMatchesType(name:string,type:TeacherType,entries:Entry[]){
-  if(type==="all") return true;
-  if(type==="tutors") return Object.values(TUTORS).includes(name);
-  if(type==="specialists") return entries.some(e=>e.teachers[0]===name && [...LANGUAGE_SUBJECTS,...SPECIALTY_SUBJECTS].includes(e.subject));
-  return entries.some(e=>e.teachers.slice(1).includes(name));
+function DayView({ day, setDay, query, setQuery }: { day: string; setDay: (day: string) => void; query: string; setQuery: (value: string) => void }) {
+  const slots = schedule.slots[day as keyof typeof schedule.slots];
+  return <><Toolbar query={query} setQuery={setQuery}><label>Día<select value={day} onChange={(event) => setDay(event.target.value)}>{DAYS.map((name) => <option key={name}>{name}</option>)}</select></label></Toolbar><section className="panel day-overview"><PanelTitle eyebrow="Organización diaria" title={day} aside={<><span className="validation">9 grupos · franjas oficiales</span><Legend/></>}/><div className="matrix-wrap"><div className="day-matrix" style={{ gridTemplateColumns: `120px repeat(${slots.length}, minmax(205px, 1fr))` }}><div className="matrix-heading">Grupo</div>{slots.map((time) => <div className="matrix-heading" key={time}>{time}</div>)}{GROUPS.map((group) => <div className="matrix-row" key={group}><div className="matrix-group">{group}</div>{slots.map((time) => { if (isRecess(day, time)) return <div className="matrix-recess" key={time}>☕ Recreo</div>; const lesson = lessonsFor(group, day).find((item) => item.time === time); return <div className="matrix-cell" key={time}>{lesson ? <LessonCard lesson={lesson} query={query} compact/> : <span>—</span>}</div>; })}</div>)}</div></div></section></>;
 }
 
-function TeacherView({teacher,setTeacher,teacherType,setTeacherType,teachers,entries,query,setQuery}:{teacher:string;setTeacher:(s:string)=>void;teacherType:TeacherType;setTeacherType:(s:TeacherType)=>void;teachers:string[];entries:Entry[];query:string;setQuery:(s:string)=>void}){
-  const visibleTeachers=teachers.filter(t=>teacherMatchesType(t,teacherType,entries));
-  useEffect(()=>{if(!visibleTeachers.includes(teacher)&&visibleTeachers.length)setTeacher(visibleTeachers[0]);},[teacherType,teacher,visibleTeachers,setTeacher]);
-  const own=entries.filter(e=>e.teachers.includes(teacher));
-  const tutor=Object.values(TUTORS).includes(teacher);
-  const complementaries=complementaryFor(teacher,tutor,entries);
-  const minutes=own.reduce((s,e)=>s+e.minutes,0);
-  const totalMinutes=minutes+complementaries.length*60;
-  return <><Toolbar query={query} setQuery={setQuery}><label>Docente<select value={teacher} onChange={e=>setTeacher(e.target.value)}>{visibleTeachers.map(t=><option key={t}>{t}</option>)}</select></label><label>Tipo de docente<select value={teacherType} onChange={e=>setTeacherType(e.target.value as TeacherType)}><option value="all">Todos</option><option value="tutors">Tutores</option><option value="specialists">Especialistas</option><option value="supports">Apoyos</option></select></label><button className="primary" onClick={()=>window.print()}>Imprimir horario</button></Toolbar>
-    <section className="teacher-summary panel"><div><p className="eyebrow">Horario individual</p><h2>{teacher}</h2><p>{tutor?`Tutoría: ${Object.entries(TUTORS).find(([,v])=>v===teacher)?.[0]}.º Primaria`:"Especialista / apoyo docente"}</p></div><div className="load-ring"><strong>{formatMinutes(minutes)}</strong><span>lectivas asignadas</span></div><div className="comp-count"><strong>{complementaries.length} h</strong><span>{tutor?"2 complementarias + tutoría":"complementarias"}</span></div><div className="total-count"><strong>{formatMinutes(totalMinutes)}</strong><span>horas totales</span></div></section>
-    <section className="panel teacher-days">{DAYS.map(day=><div className="teacher-day" key={day}><h3>{day}</h3>{own.filter(e=>e.day===day).filter(e=>!query||`${LABELS[e.subject]} ${e.group}`.toLowerCase().includes(query.toLowerCase())).map((e,i)=><div className={`teacher-entry sub-${e.subject.toLowerCase()}`} key={i}><span>{e.time}</span><strong>{LABELS[e.subject]}</strong><small>{e.group==="2A · 2B"?"2.º A + B":groupName(e.group).replace(" Primaria","")}</small></div>)}{complementaries.filter(c=>c.day===day).map(c=><div className="teacher-entry complementary" key={c.label}><span>{c.time}</span><strong>{c.label}</strong><small>{c.label==="Reducción por tutoría"?"Reducción lectiva":"Hora complementaria"}</small></div>)}</div>)}</section>
-  </>;
+function SubjectsView({ subjectType, setSubjectType, subject, setSubject, query, setQuery }: { subjectType: SubjectType; setSubjectType: (type: SubjectType) => void; subject: string; setSubject: (value: string) => void; query: string; setQuery: (value: string) => void }) {
+  const allSubjects = useMemo(() => Array.from(new Set(schedule.lessons.map((lesson) => lesson.subject))).sort((a, b) => a.localeCompare(b, "es")), []);
+  const allowed = (lesson: Lesson) => { if (subject !== "all" && lesson.subject !== subject) return false; if (subjectType === "tutoring" && lesson.primary !== schedule.tutors[lesson.group as keyof typeof schedule.tutors]) return false; if (["core", "lang", "spec"].includes(subjectType) && family(lesson.subject) !== subjectType) return false; return matches(query, lesson.subject, lesson.primary, ...lesson.shared, lesson.group, lesson.day); };
+  return <><Toolbar query={query} setQuery={setQuery}><label>Tipo<select value={subjectType} onChange={(event) => setSubjectType(event.target.value as SubjectType)}><option value="all">Todas</option><option value="tutoring">Tutoría</option><option value="core">Troncales</option><option value="lang">Idiomas</option><option value="spec">Especialidades</option></select></label><label>Asignatura<select value={subject} onChange={(event) => setSubject(event.target.value)}><option value="all">Todas las asignaturas</option>{allSubjects.map((name) => <option key={name}>{name}</option>)}</select></label></Toolbar><section className="panel subject-overview"><PanelTitle eyebrow="Distribución por asignatura" title={subject === "all" ? "Todas las asignaturas" : subject}/><div className="matrix-wrap"><div className="subject-matrix"><div className="matrix-heading">Grupo</div>{DAYS.map((day) => <div className="matrix-heading" key={day}>{day}</div>)}{GROUPS.map((group) => <div className="matrix-row" key={group}><div className="matrix-group">{group}</div>{DAYS.map((day) => { const dayLessons = lessonsFor(group, day).filter(allowed); return <div className="subject-cell" key={day}>{dayLessons.length ? dayLessons.map((lesson) => <LessonCard key={lesson.time} lesson={lesson} query="" compact/>) : <span className="empty">—</span>}</div>; })}</div>)}</div></div></section></>;
 }
 
-function SubjectsView({subjectType,setSubjectType,subject,setSubject,query,setQuery}:{subjectType:SubjectType;setSubjectType:(s:SubjectType)=>void;subject:string;setSubject:(s:string)=>void;query:string;setQuery:(s:string)=>void}){
-  const subjects=Object.keys(LABELS).filter(code=>{
-    if(subjectType==="all"||subjectType==="tutoring")return true;
-    return subjectFamily(code)===subjectType;
-  });
-  useEffect(()=>{if(subject!=="all"&&!subjects.includes(subject))setSubject("all");},[subjectType,subject,subjects,setSubject]);
-  const matches=(lesson:Lesson,group:string)=>{
-    const typeMatch=subjectType==="all"||(subjectType==="tutoring"?lesson.teachers.includes(TUTORS[group]):subjectFamily(lesson.subject)===subjectType);
-    const searchMatch=!query||`${LABELS[lesson.subject]} ${lesson.teachers.join(" ")}`.toLowerCase().includes(query.toLowerCase());
-    return typeMatch&&(subject==="all"||lesson.subject===subject)&&searchMatch;
-  };
-  return <>
-    <Toolbar query={query} setQuery={setQuery}><label>Tipo de asignatura<select value={subjectType} onChange={e=>setSubjectType(e.target.value as SubjectType)}><option value="all">Todas</option><option value="tutoring">Tutoría</option><option value="core">Troncales</option><option value="lang">Idiomas</option><option value="spec">Especialidades</option></select></label><label>Asignatura<select value={subject} onChange={e=>setSubject(e.target.value)}><option value="all">Todas las asignaturas</option>{subjects.map(code=><option key={code} value={code}>{LABELS[code]}</option>)}</select></label><button className="primary" onClick={()=>window.print()}>Imprimir vista</button></Toolbar>
-    <section className="panel subject-overview"><div className="panel-title"><div><p className="eyebrow">Distribución semanal</p><h2>Asignaturas por grupo y día</h2></div><div className="legend"><span className="legend-item core"><i/>Troncales</span><span className="legend-item lang"><i/>Idiomas</span><span className="legend-item spec"><i/>Especialidades</span></div></div>
-      <div className="subject-matrix-wrap"><div className="subject-matrix"><div className="subject-matrix-corner">Grupo</div>{DAYS.map(day=><div className="subject-matrix-day" key={day}>{day}</div>)}{GROUPS.map(group=><div className="subject-matrix-row" key={group}><div className="subject-matrix-group">{groupName(group).replace(" Primaria","")}</div>{DAYS.map(day=>{const lessons=GROUP_DATA[group][day].filter(x=>matches(x,group));return <div className="subject-cell" key={day}>{lessons.length?lessons.map((lesson,i)=>{const tutor=TUTORS[group];const main=lesson.teachers.includes(tutor)?tutor:lesson.teachers[0];const support=lesson.teachers.filter(t=>t!==main).join(" · ")||"—";return <article className={`subject-card family-${subjectFamily(lesson.subject)}`} key={`${lesson.time}-${i}`}><span>{lesson.time}</span><strong>{LABELS[lesson.subject]}</strong><small><b>Docente:</b> {main}</small><small className={support==="—"?"no-support":""}><b>Apoyo:</b> {support}</small></article>}):<span className="subject-empty">—</span>}</div>})}</div>)}</div></div>
-    </section>
-  </>;
+function TeacherView({ teacher, setTeacher, teacherType, setTeacherType, query, setQuery }: { teacher: string; setTeacher: (name: string) => void; teacherType: TeacherType; setTeacherType: (type: TeacherType) => void; query: string; setQuery: (value: string) => void }) {
+  const roleName: Record<TeacherType, string> = { all: "", tutors: "Tutor/a", specialists: "Especialista", shared: "Docencia compartida", support: "Apoyo disponible" };
+  const filteredTeachers = TEACHERS.filter((name) => !roleName[teacherType] || schedule.teacherRoles[name]?.includes(roleName[teacherType]));
+  useEffect(() => { if (!filteredTeachers.includes(teacher)) setTeacher(filteredTeachers[0] ?? TEACHERS[0]); }, [teacherType]);
+  const load = schedule.teacherLoads[teacher];
+  const extra = schedule.complementaryEvents.filter((event) => event.teacher === teacher && event.schedule.includes("14:00–15:00"));
+  return <><Toolbar query={query} setQuery={setQuery}><label>Docente<select value={teacher} onChange={(event) => setTeacher(event.target.value)}>{filteredTeachers.map((name) => <option key={name}>{name}</option>)}</select></label><label>Tipo de docente<select value={teacherType} onChange={(event) => setTeacherType(event.target.value as TeacherType)}><option value="all">Todos</option><option value="tutors">Tutores</option><option value="specialists">Especialistas</option><option value="shared">Docencia compartida</option><option value="support">Apoyo disponible</option></select></label><button className="primary" onClick={() => window.print()}>Imprimir horario</button></Toolbar><section className="panel teacher-summary"><div><p className="eyebrow">Horario individual</p><h2>{teacher}</h2><p>{schedule.teacherRoles[teacher]?.join(" · ") || "Funciones no lectivas"}</p></div>{load && <div className="summary-stats">{summaryStat("Total semanal", load.total, true)}{summaryStat("Docencia", load.direct)}{summaryStat("Docencia compartida", load.shared)}{summaryStat("Recreo", load.recess)}{summaryStat("Complementarias", load.family + load.coordination)}{summaryStat("Reducción tutorial", load.tutorial)}{summaryStat("Apoyo", load.support)}</div>}</section>{extra.map((event) => <div className="notice" key={event.schedule}><b>Excepción autorizada:</b> {event.concept} · {event.schedule}. No constituye incidencia.</div>)}<section className="panel teacher-days">{DAYS.map((day) => <TeacherDay key={day} teacher={teacher} day={day} query={query}/>)}</section></>;
 }
+function summaryStat(label: string, value: number, primary = false) { return <div className={`summary-stat ${primary ? "total" : ""}`}><strong>{formatMinutes(value)}</strong><span>{label}</span></div>; }
+function TeacherDay({ teacher, day, query }: { teacher: string; day: string; query: string }) { const rows = schedule.teacherMatrix.filter((row) => row.day === day); return <div className="teacher-day"><h3>{day}</h3>{rows.map((row) => { const state = row.teachers[teacher as keyof typeof row.teachers] || ""; const muted = !matches(query, state, teacher); return <article className={`teacher-entry ${statusClass(state)} ${muted ? "muted" : ""}`} key={row.time}><span>{row.time}</span><strong>{state || "—"}</strong></article>; })}</div>; }
+function statusClass(status: string) { if (status.startsWith("DC ")) return "state-shared"; if (status.startsWith("Apoyo")) return "state-support"; if (status === "RECREO") return "state-recess"; if (status.includes("Atención a familias") || status.includes("Coordinación") || status.includes("Reducción")) return "state-complementary"; if (status === "NO DISPONIBLE") return "state-unavailable"; return "state-direct"; }
 
-function LoadsView({teachers,entries}:{teachers:string[];entries:Entry[]}){
-  return <section className="panel loads"><div className="panel-title"><div><p className="eyebrow">Control semanal</p><h2>Cargas docentes</h2></div><span className="validation">✓ Totales calculados</span></div><div className="load-table"><div className="load-row head"><span>Docente</span><span>Lectivas</span><span>Complementarias</span><span>Tutoría</span><span>Total</span></div>{teachers.map(t=>{const m=entries.filter(e=>e.teachers.includes(t)).reduce((s,e)=>s+e.minutes,0);const tutor=Object.values(TUTORS).includes(t);const comp=complementaryFor(t,tutor,entries).filter(x=>x.label!=="Reducción por tutoría").length;const total=m+comp*60+(tutor?60:0);return <div className="load-row" key={t}><strong>{t}</strong><span>{formatMinutes(m)}</span><span>{comp} h</span><span>{tutor?"1 h":"—"}</span><strong className="load-total">{formatMinutes(total)}</strong></div>})}</div><p className="table-note">El total suma las horas lectivas, complementarias y, cuando corresponde, la hora de tutoría.</p></section>
+function LoadsView() { return <section className="panel loads"><PanelTitle eyebrow="Cómputo docente V2" title="Cargas semanales" aside={<span className="validation">Fuente: Excel V2</span>}/><div className="load-table"><div className="load-row head"><span>Docente</span><span>Docencia</span><span>Docencia compartida</span><span>Recreo</span><span>At. familias</span><span>Coordinación</span><span>Reducción tutorial</span><span>Horas computadas</span><span>Apoyo</span><span>Total semanal</span></div>{TEACHERS.map((teacher) => { const load = schedule.teacherLoads[teacher]; return <div className="load-row" key={teacher}><strong>{teacher}</strong><span>{formatMinutes(load.direct)}</span><span>{formatMinutes(load.shared)}</span><span>{formatMinutes(load.recess)}</span><span>{formatMinutes(load.family)}</span><span>{formatMinutes(load.coordination)}</span><span>{formatMinutes(load.tutorial)}</span><strong>{formatMinutes(load.computed)}</strong><span>{formatMinutes(load.support)}</span><strong className="load-total">{formatMinutes(load.total)}</strong></div>; })}</div><p className="table-note">“Apoyo” identifica únicamente los huecos residuales disponibles. La segunda persona dentro del aula se computa como docencia compartida.</p></section>; }
+
+function SubstitutionsView() {
+  const [view, setView] = useState<SubstitutionView>("resolver"); const [day, setDay] = useState("Lunes"); const [absent, setAbsent] = useState<string[]>([]); const [slot, setSlot] = useState(schedule.slots.Lunes[0]); const [query, setQuery] = useState(""); const [assignments, setAssignments] = useState<Record<string, string>>({});
+  useEffect(() => { const daySlots = schedule.slots[day as keyof typeof schedule.slots]; if (!daySlots.includes(slot)) setSlot(daySlots[0]); setAssignments({}); }, [day]);
+  const scenarios = substitutions.scenarios.filter((scenario) => scenario["Día"] === day && absent.includes(scenario["Docente ausente"]) && matches(query, scenario["Docente ausente"], scenario["Actividad"], scenario["Grupo"], scenario["Franja"]));
+  const competition = candidateCompetition(scenarios, absent); const toggleAbsent = (teacher: string) => setAbsent((current) => current.includes(teacher) ? current.filter((name) => name !== teacher) : [...current, teacher]);
+  return <><div className="sub-tabs"><button className={view === "resolver" ? "active" : ""} onClick={() => setView("resolver")}>Resolver faltas</button><button className={view === "availability" ? "active" : ""} onClick={() => setView("availability")}>Disponibilidad por franja</button></div>{view === "resolver" ? <><Toolbar query={query} setQuery={setQuery} placeholder="Buscar falta, grupo o asignatura…"><label>Día<select value={day} onChange={(event) => setDay(event.target.value)}>{DAYS.map((name) => <option key={name}>{name}</option>)}</select></label></Toolbar><section className="sub-layout"><aside className="panel absence-picker"><p className="eyebrow">Docentes ausentes</p><h2>Selecciona uno o varios</h2><div>{TEACHERS.map((teacher) => <label key={teacher}><input type="checkbox" checked={absent.includes(teacher)} onChange={() => toggleAbsent(teacher)}/><span>{teacher}</span></label>)}</div></aside><section className="sub-results">{absent.length === 0 && <div className="panel empty-state"><b>Selecciona el día y el personal ausente.</b><span>Se mostrarán todas sus sesiones y candidatos P1 → P6.</span></div>}{absent.length > 0 && scenarios.length === 0 && <div className="panel empty-state"><b>No hay sesiones lectivas coincidentes.</b><span>Comprueba los filtros o selecciona otro día.</span></div>}{Object.keys(competition).length > 0 && <div className="warning"><b>Competencia detectada:</b> {Object.entries(competition).map(([key, names]) => `${key}: ${names.join(", ")}`).join(" · ")}. El sistema impide asignar una persona dos veces en la misma franja.</div>}{scenarios.map((scenario) => <ScenarioCard key={scenarioKey(scenario)} scenario={scenario} absent={absent} assignments={assignments} setAssignments={setAssignments}/>)}</section></section></> : <AvailabilityView day={day} setDay={setDay} slot={slot} setSlot={setSlot} query={query} setQuery={setQuery}/>}</>;
 }
-
-function IssuesView({setTab,setGroup}:{setTab:(t:Tab)=>void;setGroup:(g:string)=>void}){
-  const open=()=>{setGroup("4");setTab("groups")};
-  return <section className="issues-layout"><article className="issue-card resolved-card"><div className="issue-symbol">✓</div><div><span className="issue-status">Incidencia resuelta</span><h2>4.º sin sesiones troncales pendientes</h2><p>María Molina imparte íntegramente Lengua, Matemáticas y Ciencias Naturales. David Almagro imparte Ciencias Sociales el miércoles y el viernes, además de Religión / Atención Educativa.</p><div className="tags"><span>Sociales en días distintos</span><span>Francés: 90 min por grupo</span><span>Sin docente pendiente</span></div><button className="primary" onClick={open}>Ver el horario de 4.º</button></div></article>
-    <aside className="checks panel"><h3>Controles superados</h3><ul><li><span>✓</span>25 horas semanales por grupo, incluidos recreos.</li><li><span>✓</span>Ningún área supera 90 minutos diarios.</li><li><span>✓</span>Francés: 90 minutos en 5.º A, 5.º B, 6.º A y 6.º B.</li><li><span>✓</span>María conserva toda la Lengua, Matemáticas y Naturales de 4.º.</li><li><span>✓</span>Sociales de 4.º se imparte en dos días diferentes.</li><li><span>✓</span>Malu no tiene sesiones los jueves.</li></ul></aside></section>
+function scenarioKey(scenario: Scenario) { return `${scenario["Día"]}|${scenario["Franja"]}|${scenario["Docente ausente"]}`; }
+function scenarioCandidates(scenario: Scenario, absent: string[]) { return PRIORITIES.map(([field, label], index) => ({ priority: index + 1, label, teachers: (scenario[field] || "").split(",").map((name) => name.trim()).filter((name) => name && name !== "—" && !absent.includes(name)) })); }
+function candidateCompetition(scenarios: Scenario[], absent: string[]) { const occurrences = new Map<string, string[]>(); for (const scenario of scenarios) { const optional = scenario["Rol ausente"].toLocaleLowerCase("es").includes("compartida") && scenario["Cobertura obligatoria"] !== "Sí"; const groups = scenarioCandidates(scenario, absent).filter((group) => !optional || group.priority > 1); const first = groups.find((group) => group.teachers.length); if (!first) continue; for (const teacher of first.teachers) { const key = `${scenario["Franja"]}|${teacher}`; occurrences.set(key, [...(occurrences.get(key) || []), scenario["Grupo"]]); } } return Object.fromEntries([...occurrences].filter(([, groups]) => groups.length > 1).map(([key, groups]) => [key.replace("|", " · "), groups])); }
+function ScenarioCard({ scenario, absent, assignments, setAssignments }: { scenario: Scenario; absent: string[]; assignments: Record<string, string>; setAssignments: (value: Record<string, string>) => void }) {
+  const key = scenarioKey(scenario); const allGroups = scenarioCandidates(scenario, absent); const optional = scenario["Rol ausente"].toLocaleLowerCase("es").includes("compartida") && scenario["Cobertura obligatoria"] !== "Sí"; const groups = allGroups.filter((group) => !optional || group.priority > 1); const principalPresent = allGroups[0]?.teachers.join(", "); const reserved = new Set(Object.entries(assignments).filter(([otherKey, teacher]) => otherKey !== key && otherKey.startsWith(`${scenario["Día"]}|${scenario["Franja"]}|`) && teacher).map(([, teacher]) => teacher));
+  return <article className="panel scenario-card"><div className="scenario-head"><div><span>{scenario["Franja"]} · {scenario["Grupo"]}</span><h3>{scenario["Actividad"]}</h3></div><span className={`role-badge ${optional ? "optional" : ""}`}>{scenario["Rol ausente"]}</span></div><p><b>Ausente:</b> {scenario["Docente ausente"]}</p>{optional && <div className="dc-note">Grupo atendido por docente principal — reposición de docencia compartida opcional{principalPresent ? ` · Presente: ${principalPresent}` : ""}</div>}<div className="priority-list">{groups.map((group) => <div className="priority-row" key={group.priority}><b>{group.label}</b><span>{group.teachers.length ? group.teachers.map((teacher) => <i key={teacher}>{teacher}{reserved.has(teacher) ? " · ya asignado" : ""}</i>) : <em>Sin candidatos</em>}</span></div>)}<div className="priority-row"><b>P6 · Equipo directivo</b><span><i>Equipo directivo — consultar disponibilidad</i></span></div></div><label className="assignment">Asignación manual<select value={assignments[key] || ""} onChange={(event) => setAssignments({ ...assignments, [key]: event.target.value })}><option value="">Sin asignar</option>{groups.map((group) => <optgroup key={group.priority} label={group.label}>{group.teachers.map((teacher) => <option key={teacher} value={teacher} disabled={reserved.has(teacher)}>{teacher}{reserved.has(teacher) ? " — ocupado en esta franja" : ""}</option>)}</optgroup>)}</select></label>{scenario["Observaciones"] && <small className="scenario-note">{scenario["Observaciones"]}</small>}</article>;
 }
-
-function formatMinutes(m:number){return `${Math.floor(m/60)} h${m%60?` ${m%60} min`:""}`}
+function AvailabilityView({ day, setDay, slot, setSlot, query, setQuery }: { day: string; setDay: (day: string) => void; slot: string; setSlot: (slot: string) => void; query: string; setQuery: (value: string) => void }) {
+  const daySlots = schedule.slots[day as keyof typeof schedule.slots]; const current = substitutions.slots.find((item) => item.day === day && item.slot === slot); const categories = [["p2", "P2 · Apoyo"], ["p3", "P3 · Docencia compartida disponible para movilización"], ["p4", "P4 · Atención a familias"], ["p5", "P5 · Coordinación / reducción tutorial"]];
+  if (isRecess(day, slot)) return <><Toolbar query={query} setQuery={setQuery}><label>Día<select value={day} onChange={(event) => setDay(event.target.value)}>{DAYS.map((name) => <option key={name}>{name}</option>)}</select></label><label>Franja<select value={slot} onChange={(event) => setSlot(event.target.value)}>{daySlots.map((time) => <option key={time}>{time}</option>)}</select></label></Toolbar><div className="panel recess-warning"><b>Vigilancia de recreo pendiente de cuadrante específico</b><span>No se infiere disponibilidad durante el recreo.</span></div></>;
+  return <><Toolbar query={query} setQuery={setQuery} placeholder="Buscar docente o actividad…"><label>Día<select value={day} onChange={(event) => setDay(event.target.value)}>{DAYS.map((name) => <option key={name}>{name}</option>)}</select></label><label>Franja<select value={slot} onChange={(event) => setSlot(event.target.value)}>{daySlots.map((time) => <option key={time}>{time}</option>)}</select></label></Toolbar><section className="availability-grid">{categories.map(([kind, title]) => { const people = Object.entries(current?.teachers || {}).filter(([teacher, state]) => state.kind === kind && matches(query, teacher, state.status)); return <article className="panel availability-card" key={kind}><h3>{title}</h3>{people.length ? people.map(([teacher, state]) => <div key={teacher}><b>{teacher}</b><span>{state.status}</span></div>) : <p>Sin disponibilidad en esta prioridad.</p>}</article>; })}<article className="panel availability-card unavailable-list"><h3>No disponibles · docencia directa</h3>{Object.entries(current?.teachers || {}).filter(([teacher, state]) => (state.kind === "docencia" || state.kind === "no_disponible") && matches(query, teacher, state.status)).map(([teacher, state]) => <div key={teacher}><b>{teacher}</b><span>{state.status}</span></div>)}</article><article className="panel availability-card directivo-card"><h3>P6 · Equipo directivo</h3><p>Equipo directivo — consultar disponibilidad</p></article></section></>;
+}
