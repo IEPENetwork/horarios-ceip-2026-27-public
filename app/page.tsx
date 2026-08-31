@@ -153,11 +153,10 @@ export default function Home() {
     <aside className="sidebar" aria-label="Navegación principal">
       <div className="mark"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><b>Horarios</b><small>Sta. Rosa de Lima</small><em>Curso 26–27</em></div></div>
       <nav>{navButton("groups","Grupos","▦",tab,setTab)}{navButton("days","Por días","◫",tab,setTab)}{navButton("subjects","Asignaturas","▤",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}</nav>
-      <div className="sidebar-note"><span className="status-dot"/>Borrador operativo<small>Actualizado 31 ago 2026</small></div>
     </aside>
     <section className="shell">
       <header className="topbar">
-        <div className="topbar-brand"><img className="mobile-school-logo" src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><p className="eyebrow">Organización escolar</p><h1>Horarios CEIP <span>· Curso 2026–27</span></h1></div></div>
+        <div className="topbar-brand"><img className="mobile-school-logo" src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><h1>Horarios CEIP <span>· Curso 2026–27</span></h1></div></div>
       </header>
 
       <div className="mobile-nav">{navButton("groups","Grupos","▦",tab,setTab)}{navButton("days","Por días","◫",tab,setTab)}{navButton("subjects","Asignaturas","▤",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}</div>
@@ -173,12 +172,11 @@ export default function Home() {
         </section>
       </>}
 
-      {tab==="days" && <DayView day={day} setDay={setDay}/>} 
-      {tab==="subjects" && <SubjectsView subjectType={subjectType} setSubjectType={setSubjectType} subject={subject} setSubject={setSubject}/>} 
+      {tab==="days" && <DayView day={day} setDay={setDay} query={query} setQuery={setQuery}/>} 
+      {tab==="subjects" && <SubjectsView subjectType={subjectType} setSubjectType={setSubjectType} subject={subject} setSubject={setSubject} query={query} setQuery={setQuery}/>} 
       {tab==="teachers" && <TeacherView teacher={teacher} setTeacher={setTeacher} teacherType={teacherType} setTeacherType={setTeacherType} teachers={teachers} entries={entries} query={query} setQuery={setQuery}/>} 
       {tab==="loads" && <LoadsView teachers={teachers} entries={entries}/>} 
       {tab==="issues" && <IssuesView setTab={setTab} setGroup={setGroup}/>} 
-      <footer>Horario generado mediante restricciones · Máximo 90 min por área y día · Compensaciones máximas de 15 min</footer>
     </section>
   </main>;
 }
@@ -191,12 +189,12 @@ function WeekGrid({plan,query}:{plan:DayPlan;query:string}){
   return <div className="week-grid">{DAYS.map(day=><div className="day" key={day}><h3>{day}</h3><div className="day-cards">{plan[day].map((x,i)=><div key={`${x.time}-${i}`} className={`lesson sub-${x.subject.toLowerCase()} ${x.issue?"pending":""} ${query&&!`${LABELS[x.subject]} ${x.teachers.join(" ")}`.toLowerCase().includes(query.toLowerCase())?"muted":""}`} style={{"--duration":x.minutes} as React.CSSProperties}><span className="lesson-time">{x.time}</span><strong>{x.issue?"⚠ ":""}{LABELS[x.subject]}</strong><small>{x.teachers.join(" · ")}</small></div>)}<div className="break"><span>☕</span> Recreo · 30 min</div></div></div>)}</div>
 }
 
-function DayView({day,setDay}:{day:string;setDay:(d:string)=>void}){
+function DayView({day,setDay,query,setQuery}:{day:string;setDay:(d:string)=>void;query:string;setQuery:(s:string)=>void}){
   const timeSlots=Array.from(new Set(GROUPS.flatMap(g=>GROUP_DATA[g][day].map(x=>x.time)))).sort((a,b)=>a.localeCompare(b,"es"));
   return <>
-    <div className="toolbar day-toolbar"><label>Día<select value={day} onChange={e=>setDay(e.target.value)}>{DAYS.map(d=><option key={d}>{d}</option>)}</select></label></div>
+    <Toolbar query={query} setQuery={setQuery}><label>Día<select value={day} onChange={e=>setDay(e.target.value)}>{DAYS.map(d=><option key={d}>{d}</option>)}</select></label></Toolbar>
     <section className="panel day-overview"><div className="panel-title"><div><p className="eyebrow">Organización diaria</p><h2>{day}</h2></div><span className="validation">9 grupos · {timeSlots.length} franjas</span></div>
-      <div className="day-matrix-wrap"><div className="day-matrix" style={{gridTemplateColumns:`120px repeat(${timeSlots.length}, minmax(190px, 1fr))`}}><div className="day-matrix-corner">Grupo</div>{timeSlots.map(time=><div className="day-matrix-time" key={time}>{time}</div>)}{GROUPS.map(g=><div className="day-matrix-row" key={g}><div className="day-matrix-group">{groupName(g).replace(" Primaria","")}</div>{timeSlots.map(time=>{const lesson=GROUP_DATA[g][day].find(x=>x.time===time);if(!lesson)return <div className="day-matrix-empty" key={time}>—</div>;const tutor=TUTORS[g];const main=lesson.teachers.includes(tutor)?tutor:lesson.teachers[0];const support=lesson.teachers.filter(t=>t!==main).join(" · ")||"—";const family=["LEN","MAT","CN","CS"].includes(lesson.subject)?"core":["ING","FRA"].includes(lesson.subject)?"lang":"spec";return <article className={`day-card family-${family}`} key={time}><strong>{LABELS[lesson.subject]}</strong><small><b>Docente:</b> {main}</small><small className={support==="—"?"no-support":""}><b>Apoyo:</b> {support}</small></article>})}</div>)}</div></div>
+      <div className="day-matrix-wrap"><div className="day-matrix" style={{gridTemplateColumns:`120px repeat(${timeSlots.length}, minmax(190px, 1fr))`}}><div className="day-matrix-corner">Grupo</div>{timeSlots.map(time=><div className="day-matrix-time" key={time}>{time}</div>)}{GROUPS.map(g=><div className="day-matrix-row" key={g}><div className="day-matrix-group">{groupName(g).replace(" Primaria","")}</div>{timeSlots.map(time=>{const lesson=GROUP_DATA[g][day].find(x=>x.time===time);const visible=lesson&&(!query||`${LABELS[lesson.subject]} ${lesson.teachers.join(" ")}`.toLowerCase().includes(query.toLowerCase()));if(!lesson||!visible)return <div className="day-matrix-empty" key={time}>—</div>;const tutor=TUTORS[g];const main=lesson.teachers.includes(tutor)?tutor:lesson.teachers[0];const support=lesson.teachers.filter(t=>t!==main).join(" · ")||"—";const family=subjectFamily(lesson.subject);return <article className={`day-card family-${family}`} key={time}><strong>{LABELS[lesson.subject]}</strong><small><b>Docente:</b> {main}</small><small className={support==="—"?"no-support":""}><b>Apoyo:</b> {support}</small></article>})}</div>)}</div></div>
     </section>
   </>;
 }
@@ -222,7 +220,7 @@ function TeacherView({teacher,setTeacher,teacherType,setTeacherType,teachers,ent
   </>;
 }
 
-function SubjectsView({subjectType,setSubjectType,subject,setSubject}:{subjectType:SubjectType;setSubjectType:(s:SubjectType)=>void;subject:string;setSubject:(s:string)=>void}){
+function SubjectsView({subjectType,setSubjectType,subject,setSubject,query,setQuery}:{subjectType:SubjectType;setSubjectType:(s:SubjectType)=>void;subject:string;setSubject:(s:string)=>void;query:string;setQuery:(s:string)=>void}){
   const subjects=Object.keys(LABELS).filter(code=>{
     if(subjectType==="all"||subjectType==="tutoring")return true;
     return subjectFamily(code)===subjectType;
@@ -230,10 +228,11 @@ function SubjectsView({subjectType,setSubjectType,subject,setSubject}:{subjectTy
   useEffect(()=>{if(subject!=="all"&&!subjects.includes(subject))setSubject("all");},[subjectType,subject,subjects,setSubject]);
   const matches=(lesson:Lesson,group:string)=>{
     const typeMatch=subjectType==="all"||(subjectType==="tutoring"?lesson.teachers.includes(TUTORS[group]):subjectFamily(lesson.subject)===subjectType);
-    return typeMatch&&(subject==="all"||lesson.subject===subject);
+    const searchMatch=!query||`${LABELS[lesson.subject]} ${lesson.teachers.join(" ")}`.toLowerCase().includes(query.toLowerCase());
+    return typeMatch&&(subject==="all"||lesson.subject===subject)&&searchMatch;
   };
   return <>
-    <div className="toolbar subject-toolbar"><label>Tipo de asignatura<select value={subjectType} onChange={e=>setSubjectType(e.target.value as SubjectType)}><option value="all">Todas</option><option value="tutoring">Tutoría</option><option value="core">Troncales</option><option value="lang">Idiomas</option><option value="spec">Especialidades</option></select></label><label>Asignatura<select value={subject} onChange={e=>setSubject(e.target.value)}><option value="all">Todas las asignaturas</option>{subjects.map(code=><option key={code} value={code}>{LABELS[code]}</option>)}</select></label><button className="primary" onClick={()=>window.print()}>Imprimir vista</button></div>
+    <Toolbar query={query} setQuery={setQuery}><label>Tipo de asignatura<select value={subjectType} onChange={e=>setSubjectType(e.target.value as SubjectType)}><option value="all">Todas</option><option value="tutoring">Tutoría</option><option value="core">Troncales</option><option value="lang">Idiomas</option><option value="spec">Especialidades</option></select></label><label>Asignatura<select value={subject} onChange={e=>setSubject(e.target.value)}><option value="all">Todas las asignaturas</option>{subjects.map(code=><option key={code} value={code}>{LABELS[code]}</option>)}</select></label><button className="primary" onClick={()=>window.print()}>Imprimir vista</button></Toolbar>
     <section className="panel subject-overview"><div className="panel-title"><div><p className="eyebrow">Distribución semanal</p><h2>Asignaturas por grupo y día</h2></div><div className="legend"><span className="legend-item core"><i/>Troncales</span><span className="legend-item lang"><i/>Idiomas</span><span className="legend-item spec"><i/>Especialidades</span></div></div>
       <div className="subject-matrix-wrap"><div className="subject-matrix"><div className="subject-matrix-corner">Grupo</div>{DAYS.map(day=><div className="subject-matrix-day" key={day}>{day}</div>)}{GROUPS.map(group=><div className="subject-matrix-row" key={group}><div className="subject-matrix-group">{groupName(group).replace(" Primaria","")}</div>{DAYS.map(day=>{const lessons=GROUP_DATA[group][day].filter(x=>matches(x,group));return <div className="subject-cell" key={day}>{lessons.length?lessons.map((lesson,i)=>{const tutor=TUTORS[group];const main=lesson.teachers.includes(tutor)?tutor:lesson.teachers[0];const support=lesson.teachers.filter(t=>t!==main).join(" · ")||"—";return <article className={`subject-card family-${subjectFamily(lesson.subject)}`} key={`${lesson.time}-${i}`}><span>{lesson.time}</span><strong>{LABELS[lesson.subject]}</strong><small><b>Docente:</b> {main}</small><small className={support==="—"?"no-support":""}><b>Apoyo:</b> {support}</small></article>}):<span className="subject-empty">—</span>}</div>})}</div>)}</div></div>
     </section>
