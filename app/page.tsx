@@ -6,8 +6,8 @@ type Tab = "groups" | "teachers" | "loads" | "issues";
 type Lesson = { time: string; subject: string; teachers: string[]; minutes: number; issue?: boolean };
 type DayPlan = Record<string, Lesson[]>;
 
-const DAYS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
-const GROUPS = ["1", "2A", "2B", "3", "4", "5A", "5B", "6A", "6B"];
+export const DAYS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
+export const GROUPS = ["1", "2A", "2B", "3", "4", "5A", "5B", "6A", "6B"];
 const TUTORS: Record<string, string> = {
   "1": "Belén", "2A": "Sandra", "2B": "Dámaris", "3": "David M",
   "4": "María Molina", "5A": "Antonio", "5B": "Ana G", "6A": "Ana B", "6B": "María Muñoz",
@@ -19,7 +19,7 @@ const LABELS: Record<string, string> = {
   MUS: "Música", PROF: "Profundización", RAE: "Religión / Atención educativa", VAL: "Valores",
 };
 
-const GROUP_DATA: Record<string, DayPlan> = {
+export const GROUP_DATA: Record<string, DayPlan> = {
   "1": {
     Lunes: [l("09:00–10:00","ING",["Iria"],60),l("10:00–10:45","LEN",["Belén","Malu"],45),l("10:45–11:30","LEN",["Belén","Malu"],45),l("12:00–13:00","EF",["Fede"],60),l("13:00–14:00","MAT",["Belén","Malu"],60)],
     Martes: [l("09:00–10:00","CN",["Belén"],60),l("10:00–10:45","LEN",["Belén","Malu"],45),l("10:45–11:30","LEN",["Belén","Malu"],45),l("12:00–13:00","EF",["Fede"],60),l("13:00–14:00","MAT",["Belén","Malu"],60)],
@@ -39,16 +39,16 @@ const GROUP_DATA: Record<string, DayPlan> = {
   "4": {
     Lunes: [l("09:00–10:00","EF",["Gabriel"],60),l("10:00–10:45","LEN",["María Molina","Cristina"],45),l("10:45–11:30","LEN",["María Molina","Cristina"],45),l("12:00–13:00","PROF",["Iria"],60),l("13:00–14:00","MAT",["María Molina","SUPÉRATE"],60)],
     Martes: [l("09:00–10:00","LEN",["María Molina","Cristina"],60),l("10:00–10:45","ING",["Iria"],45),l("10:45–11:30","ING",["Iria"],45),l("12:00–13:00","CN",["María Molina"],60),l("13:00–14:00","MAT",["María Molina","SUPÉRATE"],60)],
-    Miércoles: [l("09:00–10:00","LEN",["María Molina","Cristina"],60),l("10:00–10:45","MAT",["Docente pendiente"],45,true),l("10:45–11:30","MAT",["SUPÉRATE"],45),l("12:00–13:00","PLA",["David A"],60),l("13:00–14:00","CN",["María Molina"],60)],
+    Miércoles: [l("09:00–10:00","LEN",["María Molina","Cristina"],60),l("10:00–10:45","CS",["David A"],45),l("10:45–11:30","MAT",["María Molina","SUPÉRATE"],45),l("12:00–13:00","PLA",["David A"],60),l("13:00–14:00","CN",["María Molina"],60)],
     Jueves: [l("09:00–10:00","MAT",["María Molina","SUPÉRATE"],60),l("10:00–10:45","LEN",["María Molina","Cristina"],45),l("10:45–11:30","LEN",["María Molina","Cristina","Gabriel"],45),l("12:00–13:00","EF",["Gabriel"],60),l("13:00–14:00","MUS",["Mamen"],60)],
-    Viernes: [l("09:00–10:30","RAE",["David A"],90),l("10:30–11:15","CS",["David A"],45),l("11:45–12:30","CS",["David A"],45),l("12:30–14:00","ING",["Iria"],90)],
+    Viernes: [l("09:00–10:30","RAE",["David A"],90),l("10:30–11:15","CS",["David A"],45),l("11:45–12:30","MAT",["María Molina","SUPÉRATE"],45),l("12:30–14:00","ING",["Iria"],90)],
   },
   "5A": {
     Lunes: [l("09:00–10:00","ING",["María Muñoz"],60),l("10:00–10:45","CN",["Antonio"],45),l("10:45–11:30","CN",["Antonio"],45),l("12:00–13:00","MUS",["Mamen"],60),l("13:00–14:00","MAT",["Antonio","David A"],60)],
     Martes: [l("09:00–10:00","LEN",["Antonio","Ana G"],60),l("10:00–10:45","MAT",["Antonio","David A"],45),l("10:45–11:30","MAT",["Antonio","David A"],45),l("12:00–13:00","PLA",["Antonio"],60),l("13:00–14:00","EF",["Gabriel"],60)],
-    Miércoles: [l("09:00–10:00","ING",["María Muñoz"],60),l("10:00–10:45","MAT",["Antonio","David A"],45),l("10:45–11:30","CS",["Antonio"],45),l("12:00–13:00","LEN",["Antonio","Ana G"],60),l("13:00–14:00","PROF",["Iria"],60)],
+    Miércoles: [l("09:00–10:00","ING",["María Muñoz"],60),l("10:00–10:45","FRA",["María Molina"],45),l("10:45–11:30","CS",["Antonio"],45),l("12:00–13:00","LEN",["Antonio","Ana G"],60),l("13:00–14:00","PROF",["Iria"],60)],
     Jueves: [l("09:00–10:00","ING",["María Muñoz"],60),l("10:00–10:45","MAT",["Antonio","David A"],45),l("10:45–11:30","CS",["Antonio"],45),l("12:00–13:00","LEN",["Antonio","Ana G"],60),l("13:00–14:00","EF",["Gabriel"],60)],
-    Viernes: [l("09:00–10:30","RAE",["Antonio"],90),l("10:30–11:15","FRA",["María Molina"],45),l("11:45–12:30","FRA",["María Molina"],45),l("12:30–14:00","LEN",["Antonio","Ana G"],90)],
+    Viernes: [l("09:00–10:30","RAE",["Antonio"],90),l("10:30–11:15","FRA",["María Molina"],45),l("11:45–12:30","MAT",["Antonio","David A"],45),l("12:30–14:00","LEN",["Antonio","Ana G"],90)],
   },
   "5B": {
     Lunes: [l("09:00–10:00","PLA",["Antonio"],60),l("10:00–10:45","MAT",["Ana G","David A"],45),l("10:45–11:30","MAT",["Ana G","David A"],45),l("12:00–13:00","LEN",["Ana G","Antonio"],60),l("13:00–14:00","EF",["Gabriel"],60)],
@@ -86,9 +86,9 @@ function sixthA(): DayPlan { return {
 function sixthB(): DayPlan { return {
   Lunes:[l("09:00–10:00","MUS",["Mamen"],60),l("10:00–10:45","CS",["María Muñoz"],45),l("10:45–11:30","VAL",["Mamen"],45),l("12:00–13:00","MAT",["María Muñoz","Ana B"],60),l("13:00–14:00","ING",["David M"],60)],
   Martes:[l("09:00–10:00","ING",["David M"],60),l("10:00–10:45","CN",["María Muñoz"],45),l("10:45–11:30","CN",["María Muñoz"],45),l("12:00–13:00","MAT",["María Muñoz","Ana B"],60),l("13:00–14:00","LEN",["María Muñoz"],60)],
-  Miércoles:[l("09:00–10:00","EF",["Gabriel"],60),l("10:00–10:45","FRA",["María Molina"],45),l("10:45–11:30","FRA",["María Molina"],45),l("12:00–13:00","MAT",["María Muñoz","Ana B"],60),l("13:00–14:00","PLA",["Fede"],60)],
+  Miércoles:[l("09:00–10:00","EF",["Gabriel"],60),l("10:00–10:45","RAE",["Fede"],45),l("10:45–11:30","RAE",["Fede"],45),l("12:00–13:00","MAT",["María Muñoz","Ana B"],60),l("13:00–14:00","PLA",["Fede"],60)],
   Jueves:[l("09:00–10:00","EF",["Gabriel"],60),l("10:00–10:45","LEN",["María Muñoz","Mamen"],45),l("10:45–11:30","LEN",["María Muñoz","Mamen"],45),l("12:00–13:00","ING",["David M"],60),l("13:00–14:00","MAT",["María Muñoz","Ana B"],60)],
-  Viernes:[l("09:00–10:30","RAE",["Fede"],90),l("10:30–11:15","VAL",["Mamen"],45),l("11:45–12:30","CS",["María Muñoz"],45),l("12:30–14:00","LEN",["María Muñoz"],90)],
+  Viernes:[l("09:00–10:30","FRA",["María Molina"],90),l("10:30–11:15","VAL",["Mamen"],45),l("11:45–12:30","CS",["María Muñoz"],45),l("12:30–14:00","LEN",["María Muñoz"],90)],
 }; }
 
 type Entry = Lesson & { day:string; group:string };
@@ -126,7 +126,7 @@ function complementaryFor(teacher:string, tutor:boolean, entries:Entry[]) {
 
 export default function Home() {
   const entries=useMemo(()=>allEntries(),[]);
-  const teachers=useMemo(()=>Array.from(new Set(entries.flatMap(e=>e.teachers))).filter(x=>x!=="Docente pendiente").sort((a,b)=>a.localeCompare(b,"es")),[entries]);
+  const teachers=useMemo(()=>Array.from(new Set(entries.flatMap(e=>e.teachers))).sort((a,b)=>a.localeCompare(b,"es")),[entries]);
   const [tab,setTab]=useState<Tab>("groups");
   const [group,setGroup]=useState("4");
   const [teacher,setTeacher]=useState("María Molina");
@@ -142,7 +142,7 @@ export default function Home() {
     <aside className="sidebar" aria-label="Navegación principal">
       <div className="mark"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><b>Horarios</b><small>Sta. Rosa de Lima</small><em>Curso 26–27</em></div></div>
       <nav>{navButton("groups","Grupos","▦",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}{navButton("issues","Incidencias","△",tab,setTab)}</nav>
-      <div className="sidebar-note"><span className="status-dot"/>Borrador operativo<small>Actualizado 17 jul 2026</small></div>
+      <div className="sidebar-note"><span className="status-dot"/>Borrador operativo<small>Actualizado 31 ago 2026</small></div>
     </aside>
     <section className="shell">
       <header className="topbar">
@@ -154,7 +154,7 @@ export default function Home() {
       <div className="metrics">
         <div><span className="metric-icon">◷</span><strong>25 h</strong><small>por grupo y semana</small></div>
         <div><span className="metric-icon">✓</span><strong>9 grupos</strong><small>cuadrantes completos</small></div>
-        <button className="issue-metric" onClick={()=>setTab("issues")}><span>!</span><strong>1 incidencia</strong><small>requiere asignación</small></button>
+        <button className="issue-metric resolved" onClick={()=>setTab("issues")}><span>✓</span><strong>0 incidencias</strong><small>cuadrante verificado</small></button>
       </div>
 
       {tab==="groups" && <>
@@ -176,7 +176,7 @@ export default function Home() {
   </main>;
 }
 
-function navButton(id:Tab,label:string,icon:string,tab:Tab,setTab:(t:Tab)=>void){return <button key={id} className={tab===id?"active":""} onClick={()=>setTab(id)}><span>{icon}</span>{label}{id==="issues"&&<i>1</i>}</button>}
+function navButton(id:Tab,label:string,icon:string,tab:Tab,setTab:(t:Tab)=>void){return <button key={id} className={tab===id?"active":""} onClick={()=>setTab(id)}><span>{icon}</span>{label}</button>}
 function groupName(g:string){return `${g.replace("A",".º A").replace("B",".º B")}${/[AB]/.test(g)?"": ".º"} Primaria`;}
 function Toolbar({children,query,setQuery}:{children:React.ReactNode;query:string;setQuery:(s:string)=>void}){return <div className="toolbar">{children}<label className="search"><span>⌕</span><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Buscar área o docente…"/></label></div>}
 
@@ -201,8 +201,8 @@ function LoadsView({teachers,entries}:{teachers:string[];entries:Entry[]}){
 
 function IssuesView({setTab,setGroup}:{setTab:(t:Tab)=>void;setGroup:(g:string)=>void}){
   const open=()=>{setGroup("4");setTab("groups")};
-  return <section className="issues-layout"><article className="issue-card"><div className="issue-symbol">!</div><div><span className="issue-status">Pendiente de asignación</span><h2>Matemáticas de 4.º · 45 minutos</h2><p><b>Miércoles, 10:00–10:45.</b> La franja libera a María Molina para Francés y SUPÉRATE conserva la prioridad de 2.º. Falta asignar el docente que atenderá esta única sesión.</p><div className="tags"><span>1 único error de DC</span><span>Sin solape de Francés</span><span>Prioridad 2.º conservada</span></div><button className="primary" onClick={open}>Ver en el horario de 4.º</button></div></article>
-    <aside className="checks panel"><h3>Controles superados</h3><ul><li><span>✓</span>25 horas semanales por grupo, incluidos recreos.</li><li><span>✓</span>Ningún área supera 90 minutos diarios.</li><li><span>✓</span>Francés: 90 minutos en 5.º A, 5.º B, 6.º A y 6.º B.</li><li><span>✓</span>Francés no coincide con Religión.</li><li><span>✓</span>Naturales y Sociales se distribuyen en días distintos.</li><li><span>✓</span>Malu no tiene sesiones los jueves.</li></ul></aside></section>
+  return <section className="issues-layout"><article className="issue-card resolved-card"><div className="issue-symbol">✓</div><div><span className="issue-status">Incidencia resuelta</span><h2>4.º sin sesiones troncales pendientes</h2><p>María Molina imparte íntegramente Lengua, Matemáticas y Ciencias Naturales. David Almagro imparte Ciencias Sociales el miércoles y el viernes, además de Religión / Atención Educativa.</p><div className="tags"><span>Sociales en días distintos</span><span>Francés: 90 min por grupo</span><span>Sin docente pendiente</span></div><button className="primary" onClick={open}>Ver el horario de 4.º</button></div></article>
+    <aside className="checks panel"><h3>Controles superados</h3><ul><li><span>✓</span>25 horas semanales por grupo, incluidos recreos.</li><li><span>✓</span>Ningún área supera 90 minutos diarios.</li><li><span>✓</span>Francés: 90 minutos en 5.º A, 5.º B, 6.º A y 6.º B.</li><li><span>✓</span>María conserva toda la Lengua, Matemáticas y Naturales de 4.º.</li><li><span>✓</span>Sociales de 4.º se imparte en dos días diferentes.</li><li><span>✓</span>Malu no tiene sesiones los jueves.</li></ul></aside></section>
 }
 
 function formatMinutes(m:number){return `${Math.floor(m/60)} h${m%60?` ${m%60} min`:""}`}
