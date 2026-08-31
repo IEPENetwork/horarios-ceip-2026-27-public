@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-type Tab = "groups" | "teachers" | "loads" | "issues";
+type Tab = "groups" | "days" | "teachers" | "loads" | "issues";
 type Lesson = { time: string; subject: string; teachers: string[]; minutes: number; issue?: boolean };
 type DayPlan = Record<string, Lesson[]>;
 
@@ -129,6 +129,7 @@ export default function Home() {
   const teachers=useMemo(()=>Array.from(new Set(entries.flatMap(e=>e.teachers))).sort((a,b)=>a.localeCompare(b,"es")),[entries]);
   const [tab,setTab]=useState<Tab>("groups");
   const [group,setGroup]=useState("4");
+  const [day,setDay]=useState("Lunes");
   const [teacher,setTeacher]=useState("María Molina");
   const [query,setQuery]=useState("");
 
@@ -141,7 +142,7 @@ export default function Home() {
   return <main className="app theme-compact">
     <aside className="sidebar" aria-label="Navegación principal">
       <div className="mark"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><b>Horarios</b><small>Sta. Rosa de Lima</small><em>Curso 26–27</em></div></div>
-      <nav>{navButton("groups","Grupos","▦",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}</nav>
+      <nav>{navButton("groups","Grupos","▦",tab,setTab)}{navButton("days","Por días","◫",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}</nav>
       <div className="sidebar-note"><span className="status-dot"/>Borrador operativo<small>Actualizado 31 ago 2026</small></div>
     </aside>
     <section className="shell">
@@ -149,7 +150,7 @@ export default function Home() {
         <div className="topbar-brand"><img className="mobile-school-logo" src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><p className="eyebrow">Organización escolar</p><h1>Horarios CEIP <span>· Curso 2026–27</span></h1></div></div>
       </header>
 
-      <div className="mobile-nav">{navButton("groups","Grupos","▦",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}</div>
+      <div className="mobile-nav">{navButton("groups","Grupos","▦",tab,setTab)}{navButton("days","Por días","◫",tab,setTab)}{navButton("teachers","Docentes","♙",tab,setTab)}{navButton("loads","Cargas","▥",tab,setTab)}</div>
 
       {tab==="groups" && <>
         <Toolbar query={query} setQuery={setQuery}>
@@ -162,6 +163,7 @@ export default function Home() {
         </section>
       </>}
 
+      {tab==="days" && <DayView day={day} setDay={setDay} entries={entries}/>} 
       {tab==="teachers" && <TeacherView teacher={teacher} setTeacher={setTeacher} teachers={teachers} entries={entries} query={query} setQuery={setQuery}/>} 
       {tab==="loads" && <LoadsView teachers={teachers} entries={entries}/>} 
       {tab==="issues" && <IssuesView setTab={setTab} setGroup={setGroup}/>} 
@@ -178,19 +180,30 @@ function WeekGrid({plan,query}:{plan:DayPlan;query:string}){
   return <div className="week-grid">{DAYS.map(day=><div className="day" key={day}><h3>{day}</h3><div className="day-cards">{plan[day].map((x,i)=><div key={`${x.time}-${i}`} className={`lesson sub-${x.subject.toLowerCase()} ${x.issue?"pending":""} ${query&&!`${LABELS[x.subject]} ${x.teachers.join(" ")}`.toLowerCase().includes(query.toLowerCase())?"muted":""}`} style={{"--duration":x.minutes} as React.CSSProperties}><span className="lesson-time">{x.time}</span><strong>{x.issue?"⚠ ":""}{LABELS[x.subject]}</strong><small>{x.teachers.join(" · ")}</small></div>)}<div className="break"><span>☕</span> Recreo · 30 min</div></div></div>)}</div>
 }
 
+function DayView({day,setDay,entries}:{day:string;setDay:(d:string)=>void;entries:Entry[]}){
+  const rows=entries.filter(e=>e.day===day).sort((a,b)=>a.time.localeCompare(b.time,"es")||a.group.localeCompare(b.group,"es",{numeric:true}));
+  return <>
+    <div className="toolbar day-toolbar"><label>Día<select value={day} onChange={e=>setDay(e.target.value)}>{DAYS.map(d=><option key={d}>{d}</option>)}</select></label></div>
+    <section className="panel day-overview"><div className="panel-title"><div><p className="eyebrow">Organización diaria</p><h2>{day}</h2></div><span className="validation">{rows.length} asignaciones</span></div>
+      <div className="day-table"><div className="day-row head"><span>Horario</span><span>Grupo</span><span>Materia</span><span>Docente</span><span>Apoyo asignado</span></div>{rows.map((e,i)=>{const mainCount=e.group==="2A · 2B"?2:1;const main=e.teachers.slice(0,mainCount).join(" · ");const support=e.teachers.slice(mainCount).join(" · ")||"—";return <div className="day-row" key={`${e.time}-${e.group}-${i}`}><strong>{e.time}</strong><span>{e.group==="2A · 2B"?"2.º A + B":groupName(e.group).replace(" Primaria","")}</span><span className={`day-subject sub-${e.subject.toLowerCase()}`}>{LABELS[e.subject]}</span><span>{main}</span><span className={support==="—"?"no-support":""}>{support}</span></div>})}</div>
+    </section>
+  </>;
+}
+
 function TeacherView({teacher,setTeacher,teachers,entries,query,setQuery}:{teacher:string;setTeacher:(s:string)=>void;teachers:string[];entries:Entry[];query:string;setQuery:(s:string)=>void}){
   const own=entries.filter(e=>e.teachers.includes(teacher));
   const tutor=Object.values(TUTORS).includes(teacher);
   const complementaries=complementaryFor(teacher,tutor,entries);
   const minutes=own.reduce((s,e)=>s+e.minutes,0);
+  const totalMinutes=minutes+complementaries.length*60;
   return <><Toolbar query={query} setQuery={setQuery}><label>Docente<select value={teacher} onChange={e=>setTeacher(e.target.value)}>{teachers.map(t=><option key={t}>{t}</option>)}</select></label><button className="primary" onClick={()=>window.print()}>Imprimir horario</button></Toolbar>
-    <section className="teacher-summary panel"><div><p className="eyebrow">Horario individual</p><h2>{teacher}</h2><p>{tutor?`Tutoría: ${Object.entries(TUTORS).find(([,v])=>v===teacher)?.[0]}.º Primaria`:"Especialista / apoyo docente"}</p></div><div className="load-ring"><strong>{formatMinutes(minutes)}</strong><span>lectivas asignadas</span></div><div className="comp-count"><strong>{complementaries.length} h</strong><span>{tutor?"2 complementarias + tutoría":"complementarias"}</span></div></section>
+    <section className="teacher-summary panel"><div><p className="eyebrow">Horario individual</p><h2>{teacher}</h2><p>{tutor?`Tutoría: ${Object.entries(TUTORS).find(([,v])=>v===teacher)?.[0]}.º Primaria`:"Especialista / apoyo docente"}</p></div><div className="load-ring"><strong>{formatMinutes(minutes)}</strong><span>lectivas asignadas</span></div><div className="comp-count"><strong>{complementaries.length} h</strong><span>{tutor?"2 complementarias + tutoría":"complementarias"}</span></div><div className="total-count"><strong>{formatMinutes(totalMinutes)}</strong><span>horas totales</span></div></section>
     <section className="panel teacher-days">{DAYS.map(day=><div className="teacher-day" key={day}><h3>{day}</h3>{own.filter(e=>e.day===day).filter(e=>!query||`${LABELS[e.subject]} ${e.group}`.toLowerCase().includes(query.toLowerCase())).map((e,i)=><div className={`teacher-entry sub-${e.subject.toLowerCase()}`} key={i}><span>{e.time}</span><strong>{LABELS[e.subject]}</strong><small>{e.group==="2A · 2B"?"2.º A + B":groupName(e.group).replace(" Primaria","")}</small></div>)}{complementaries.filter(c=>c.day===day).map(c=><div className="teacher-entry complementary" key={c.label}><span>{c.time}</span><strong>{c.label}</strong><small>{c.label==="Reducción por tutoría"?"Reducción lectiva":"Hora complementaria"}</small></div>)}</div>)}</section>
   </>;
 }
 
 function LoadsView({teachers,entries}:{teachers:string[];entries:Entry[]}){
-  return <section className="panel loads"><div className="panel-title"><div><p className="eyebrow">Control semanal</p><h2>Cargas docentes</h2></div><span className="validation">✓ Huecos restantes sin asignar</span></div><div className="load-table"><div className="load-row head"><span>Docente</span><span>Lectivas</span><span>Complementarias</span><span>Tutoría</span><span>Estado</span></div>{teachers.map(t=>{const m=entries.filter(e=>e.teachers.includes(t)).reduce((s,e)=>s+e.minutes,0);const tutor=Object.values(TUTORS).includes(t);const comp=complementaryFor(t,tutor,entries).filter(x=>x.label!=="Reducción por tutoría").length;return <div className="load-row" key={t}><strong>{t}</strong><span>{formatMinutes(m)}</span><span>{comp} h</span><span>{tutor?"1 h":"—"}</span><span className={m>1380?"over":"ok"}>{m>1380?"Revisar":"Dentro de margen"}</span></div>})}</div><p className="table-note">Las cargas reflejan las sesiones actualmente asignadas. Los huecos no utilizados permanecen vacíos por indicación de Jefatura de Estudios.</p></section>
+  return <section className="panel loads"><div className="panel-title"><div><p className="eyebrow">Control semanal</p><h2>Cargas docentes</h2></div><span className="validation">✓ Totales calculados</span></div><div className="load-table"><div className="load-row head"><span>Docente</span><span>Lectivas</span><span>Complementarias</span><span>Tutoría</span><span>Total</span></div>{teachers.map(t=>{const m=entries.filter(e=>e.teachers.includes(t)).reduce((s,e)=>s+e.minutes,0);const tutor=Object.values(TUTORS).includes(t);const comp=complementaryFor(t,tutor,entries).filter(x=>x.label!=="Reducción por tutoría").length;const total=m+comp*60+(tutor?60:0);return <div className="load-row" key={t}><strong>{t}</strong><span>{formatMinutes(m)}</span><span>{comp} h</span><span>{tutor?"1 h":"—"}</span><strong className="load-total">{formatMinutes(total)}</strong></div>})}</div><p className="table-note">El total suma las horas lectivas, complementarias y, cuando corresponde, la hora de tutoría.</p></section>
 }
 
 function IssuesView({setTab,setGroup}:{setTab:(t:Tab)=>void;setGroup:(g:string)=>void}){
