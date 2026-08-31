@@ -10,3 +10,10 @@
 .day:nth-child(5) .day-cards .break{top:168px}
 
 .issue-metric.resolved{border-color:#86d7a4!important}.issue-metric.resolved>span{background:#eaf8ef;color:#247343}.resolved-card{border-color:#86d7a4}.resolved-card .issue-symbol{background:#eaf8ef;color:#247343}.resolved-card .issue-status{color:#247343}
+
+.teacher-summary{grid-template-columns:1fr repeat(3,auto)}
+.total-count{display:flex;flex-direction:column;border-left:1px solid var(--line);padding-left:28px}.total-count strong{font-size:22px;color:var(--accent)}.total-count span{font-size:12px;color:var(--muted)}
+.load-total{font-size:14px;color:var(--accent)}
+.day-toolbar{justify-content:flex-start}.day-overview{padding:20px}.day-table{border:1px solid var(--line);border-radius:12px;overflow:hidden}.day-row{display:grid;grid-template-columns:.8fr .75fr 1.2fr 1.15fr 1.25fr;gap:12px;padding:11px 14px;border-top:1px solid var(--line);align-items:center;font-size:13px}.day-row.head{border-top:0;background:var(--canvas);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:800;color:var(--muted)}.day-subject{border-left:5px solid var(--subject,#94a3b8);padding:7px 9px;border-radius:6px;background:color-mix(in srgb,var(--subject,#94a3b8) 9%,var(--paper));font-weight:750}.no-support{color:var(--muted)}
+@media(max-width:1050px){.teacher-summary{grid-template-columns:1fr repeat(2,auto)}.total-count{grid-column:2/4}.day-table{overflow-x:auto}.day-row{min-width:780px}}
+@media(max-width:720px){.teacher-summary{grid-template-columns:1fr}.total-count{grid-column:auto;border-left:0;border-top:1px solid var(--line);padding:12px 0 0}}
