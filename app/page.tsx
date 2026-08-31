@@ -163,7 +163,7 @@ export default function Home() {
         </section>
       </>}
 
-      {tab==="days" && <DayView day={day} setDay={setDay} entries={entries}/>} 
+      {tab==="days" && <DayView day={day} setDay={setDay}/>} 
       {tab==="teachers" && <TeacherView teacher={teacher} setTeacher={setTeacher} teachers={teachers} entries={entries} query={query} setQuery={setQuery}/>} 
       {tab==="loads" && <LoadsView teachers={teachers} entries={entries}/>} 
       {tab==="issues" && <IssuesView setTab={setTab} setGroup={setGroup}/>} 
@@ -180,16 +180,15 @@ function WeekGrid({plan,query}:{plan:DayPlan;query:string}){
   return <div className="week-grid">{DAYS.map(day=><div className="day" key={day}><h3>{day}</h3><div className="day-cards">{plan[day].map((x,i)=><div key={`${x.time}-${i}`} className={`lesson sub-${x.subject.toLowerCase()} ${x.issue?"pending":""} ${query&&!`${LABELS[x.subject]} ${x.teachers.join(" ")}`.toLowerCase().includes(query.toLowerCase())?"muted":""}`} style={{"--duration":x.minutes} as React.CSSProperties}><span className="lesson-time">{x.time}</span><strong>{x.issue?"⚠ ":""}{LABELS[x.subject]}</strong><small>{x.teachers.join(" · ")}</small></div>)}<div className="break"><span>☕</span> Recreo · 30 min</div></div></div>)}</div>
 }
 
-function DayView({day,setDay,entries}:{day:string;setDay:(d:string)=>void;entries:Entry[]}){
-  const rows=entries.filter(e=>e.day===day).sort((a,b)=>a.time.localeCompare(b.time,"es")||a.group.localeCompare(b.group,"es",{numeric:true}));
+function DayView({day,setDay}:{day:string;setDay:(d:string)=>void}){
+  const timeSlots=Array.from(new Set(GROUPS.flatMap(g=>GROUP_DATA[g][day].map(x=>x.time)))).sort((a,b)=>a.localeCompare(b,"es"));
   return <>
     <div className="toolbar day-toolbar"><label>Día<select value={day} onChange={e=>setDay(e.target.value)}>{DAYS.map(d=><option key={d}>{d}</option>)}</select></label></div>
-    <section className="panel day-overview"><div className="panel-title"><div><p className="eyebrow">Organización diaria</p><h2>{day}</h2></div><span className="validation">{rows.length} asignaciones</span></div>
-      <div className="day-table"><div className="day-row head"><span>Horario</span><span>Grupo</span><span>Materia</span><span>Docente</span><span>Apoyo asignado</span></div>{rows.map((e,i)=>{const mainCount=e.group==="2A · 2B"?2:1;const main=e.teachers.slice(0,mainCount).join(" · ");const support=e.teachers.slice(mainCount).join(" · ")||"—";return <div className="day-row" key={`${e.time}-${e.group}-${i}`}><strong>{e.time}</strong><span>{e.group==="2A · 2B"?"2.º A + B":groupName(e.group).replace(" Primaria","")}</span><span className={`day-subject sub-${e.subject.toLowerCase()}`}>{LABELS[e.subject]}</span><span>{main}</span><span className={support==="—"?"no-support":""}>{support}</span></div>})}</div>
+    <section className="panel day-overview"><div className="panel-title"><div><p className="eyebrow">Organización diaria</p><h2>{day}</h2></div><span className="validation">9 grupos · {timeSlots.length} franjas</span></div>
+      <div className="day-matrix-wrap"><div className="day-matrix" style={{gridTemplateColumns:`120px repeat(${timeSlots.length}, minmax(190px, 1fr))`}}><div className="day-matrix-corner">Grupo</div>{timeSlots.map(time=><div className="day-matrix-time" key={time}>{time}</div>)}{GROUPS.map(g=><div className="day-matrix-row" key={g}><div className="day-matrix-group">{groupName(g).replace(" Primaria","")}</div>{timeSlots.map(time=>{const lesson=GROUP_DATA[g][day].find(x=>x.time===time);if(!lesson)return <div className="day-matrix-empty" key={time}>—</div>;const tutor=TUTORS[g];const main=lesson.teachers.includes(tutor)?tutor:lesson.teachers[0];const support=lesson.teachers.filter(t=>t!==main).join(" · ")||"—";const family=["LEN","MAT","CN","CS"].includes(lesson.subject)?"core":["ING","FRA"].includes(lesson.subject)?"lang":"spec";return <article className={`day-card family-${family}`} key={time}><strong>{LABELS[lesson.subject]}</strong><small><b>Docente:</b> {main}</small><small className={support==="—"?"no-support":""}><b>Apoyo:</b> {support}</small></article>})}</div>)}</div></div>
     </section>
   </>;
 }
-
 function TeacherView({teacher,setTeacher,teachers,entries,query,setQuery}:{teacher:string;setTeacher:(s:string)=>void;teachers:string[];entries:Entry[];query:string;setQuery:(s:string)=>void}){
   const own=entries.filter(e=>e.teachers.includes(teacher));
   const tutor=Object.values(TUTORS).includes(teacher);
