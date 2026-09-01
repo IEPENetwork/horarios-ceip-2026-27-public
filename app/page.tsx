@@ -256,9 +256,9 @@ function PrintCenter() {
 
   const setAllSections = (value: boolean) => setSections({ groups: value, days: value, subjects: value, teachers: value, loads: value, substitutions: value });
   const printReport = () => { if (reportParts > 0) window.print(); };
-  const automaticScale = paper === "A4" ? (orientation === "landscape" ? .72 : .78) : (orientation === "landscape" ? .9 : 1);
+  const automaticScale = paper === "A4" ? (orientation === "landscape" ? .9 : .78) : 1;
   const effectiveScale = fitMode === "fit" ? automaticScale : Number(scale) / 100;
-  const reportStyle = { "--print-scale": effectiveScale, "--print-content-width": `${100 / effectiveScale}%` } as React.CSSProperties;
+  const reportStyle = { "--print-scale": effectiveScale } as React.CSSProperties;
 
   return <div className="print-center" style={reportStyle}>
     <section className="panel print-config">
@@ -287,13 +287,12 @@ function PrintCenter() {
     </section>
 
     <section className="print-report" aria-label="Vista previa del informe">
-      <header className="print-report-cover"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><p>COLEGIO PÚBLICO SANTA ROSA DE LIMA</p><h2>Informe de horarios · Curso 2026–27</h2><span>Fecha de referencia: {referenceDate}</span></div></header>
       {!reportParts && <div className="panel empty-state"><b>Selecciona al menos una página y una opción.</b><span>La vista previa del informe aparecerá aquí.</span></div>}
       {sections.groups && selectedGroups.map((group) => <PrintGroupReport group={group} key={`group-${group}`}/>)}
       {sections.days && selectedDays.map((day) => <PrintDayReport day={day} key={`day-${day}`}/>)}
       {sections.subjects && selectedSubjects.filter((name) => filteredSubjects.includes(name)).map((subject) => <PrintSubjectReport subject={subject} subjectType={subjectType} key={`subject-${subject}`}/>)}
       {sections.teachers && selectedTeachers.filter((name) => filteredTeachers.includes(name)).map((teacher) => <PrintTeacherReport teacher={teacher} key={`teacher-${teacher}`}/>)}
-      {sections.loads && <section className="print-sheet"><LoadsTable/></section>}
+      {sections.loads && <section className="print-sheet"><PrintSheetHeader eyebrow="Cómputo docente V2" title="Cargas semanales"/><LoadsTable/></section>}
       {sections.substitutions && <PrintPlanningReport scope={substitutionScope} dates={dates} sessions={planningSessions}/>}
     </section>
   </div>;
@@ -305,7 +304,7 @@ function PrintOptionList({ title, options, selected, setSelected, embedded = fal
   return embedded ? <div className="print-option-embedded">{content}</div> : <div className="panel print-option-card">{content}</div>;
 }
 
-function PrintSheetHeader({ eyebrow, title }: { eyebrow: string; title: string }) { return <header className="print-sheet-head"><span>{eyebrow}</span><h2>{title}</h2><small>CEIP Santa Rosa de Lima · Curso 2026–27</small></header>; }
+function PrintSheetHeader({ eyebrow, title }: { eyebrow: string; title: string }) { return <header className="print-sheet-head"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><span>{eyebrow}</span><h2>{title}</h2><small>CEIP Santa Rosa de Lima · Curso 2026–27</small></div></header>; }
 
 function PrintGroupReport({ group }: { group: string }) { return <section className="print-sheet"><PrintSheetHeader eyebrow="Horario de grupo" title={`${group} Primaria`}/><WeekGrid group={group} query=""/></section>; }
 
