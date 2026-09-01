@@ -276,7 +276,9 @@
       "Sandra"
     ],
     "Valores": [
-      "Mamen"
+      "Ana B",
+      "Mamen",
+      "María Muñoz"
     ]
   },
   "lessons": [
@@ -1622,10 +1624,10 @@
       "day": "Lunes",
       "time": "10:00–10:45",
       "minutes": 45,
-      "subject": "C. Naturales",
-      "primary": "Noelia",
+      "subject": "Francés",
+      "primary": "María Molina",
       "shared": [],
-      "notes": ""
+      "notes": "Permuta mínima autorizada con Ciencias Naturales."
     },
     {
       "group": "5.ºA",
@@ -1742,10 +1744,10 @@
       "day": "Miércoles",
       "time": "10:45–11:30",
       "minutes": 45,
-      "subject": "Francés",
-      "primary": "María Molina",
+      "subject": "C. Naturales",
+      "primary": "Noelia",
       "shared": [],
-      "notes": ""
+      "notes": "Permuta mínima autorizada con Francés."
     },
     {
       "group": "5.ºA",
@@ -1998,10 +2000,8 @@
       "minutes": 45,
       "subject": "Lengua",
       "primary": "Ana G",
-      "shared": [
-        "Noelia"
-      ],
-      "notes": ""
+      "shared": [],
+      "notes": "Excepción autorizada: Ana G mantiene la docencia principal sin docencia compartida de Noelia en esta única sesión."
     },
     {
       "group": "5.ºB",
@@ -2138,10 +2138,12 @@
       "day": "Lunes",
       "time": "10:00–10:45",
       "minutes": 45,
-      "subject": "C. Naturales",
+      "subject": "Valores",
       "primary": "Ana B",
-      "shared": [],
-      "notes": ""
+      "shared": [
+        "Mamen"
+      ],
+      "notes": "Mamen realiza docencia compartida en Valores de 6.ºA."
     },
     {
       "group": "6.ºA",
@@ -2244,22 +2246,20 @@
       "day": "Miércoles",
       "time": "10:00–10:45",
       "minutes": 45,
-      "subject": "Francés",
-      "primary": "María Molina",
+      "subject": "Valores",
+      "primary": "Ana B",
       "shared": [],
-      "notes": ""
+      "notes": "Valores de 6.ºA impartidos por Ana B."
     },
     {
       "group": "6.ºA",
       "day": "Miércoles",
       "time": "10:45–11:30",
       "minutes": 45,
-      "subject": "Lengua",
-      "primary": "Ana B",
-      "shared": [
-        "Mamen"
-      ],
-      "notes": ""
+      "subject": "Francés",
+      "primary": "María Molina",
+      "shared": [],
+      "notes": "Recolocación final autorizada del Francés de 6.ºA."
     },
     {
       "group": "6.ºA",
@@ -2340,12 +2340,12 @@
     {
       "group": "6.ºA",
       "day": "Viernes",
-      "time": "09:00–10:30",
-      "minutes": 90,
-      "subject": "Valores",
-      "primary": "Mamen",
+      "time": "09:00–09:45",
+      "minutes": 45,
+      "subject": "C. Naturales",
+      "primary": "Ana B",
       "shared": [],
-      "notes": ""
+      "notes": "Primera mitad del bloque oficial 09:00–10:30."
     },
     {
       "group": "6.ºA",
@@ -2397,9 +2397,9 @@
       "time": "10:00–10:45",
       "minutes": 45,
       "subject": "Valores",
-      "primary": "Mamen",
+      "primary": "María Muñoz",
       "shared": [],
-      "notes": ""
+      "notes": "Valores de 6.ºB impartidos por María Muñoz."
     },
     {
       "group": "6.ºB",
@@ -2503,9 +2503,11 @@
       "time": "10:00–10:45",
       "minutes": 45,
       "subject": "Valores",
-      "primary": "Mamen",
-      "shared": [],
-      "notes": ""
+      "primary": "María Muñoz",
+      "shared": [
+        "Mamen"
+      ],
+      "notes": "Mamen realiza docencia compartida en Valores de 6.ºB."
     },
     {
       "group": "6.ºB",
@@ -2642,6 +2644,18 @@
       "primary": "Fede",
       "shared": [],
       "notes": "Carmen María atiende alumnado de Religión; docente AE según columna principal"
+    },
+    {
+      "group": "6.ºA",
+      "day": "Viernes",
+      "time": "09:45–10:30",
+      "minutes": 45,
+      "subject": "Lengua",
+      "primary": "Ana B",
+      "shared": [
+        "Mamen"
+      ],
+      "notes": "Segunda mitad del bloque oficial 09:00–10:30; traslado autorizado desde el miércoles."
     }
   ],
   "teacherMatrix": [
@@ -2678,12 +2692,12 @@
         "Sandra": "Lengua · 2.ºA · 45 min",
         "Dámaris": "Lengua · 2.ºB · 45 min",
         "David Miñaro": "Matemáticas · 3.º · 45 min",
-        "María Molina": "Apoyo · 45 min",
-        "Noelia": "C. Naturales · 5.ºA · 45 min",
+        "María Molina": "Francés · 5.ºA · 45 min",
+        "Noelia": "Apoyo · 45 min",
         "Ana G": "Matemáticas · 5.ºB · 45 min",
-        "Ana B": "C. Naturales · 6.ºA · 45 min",
-        "María Muñoz": "Inglés · Infantil 5 años",
-        "Mamen": "Valores · 6.ºB · 45 min",
+        "Ana B": "Valores · 6.ºA · 45 min",
+        "María Muñoz": "Valores · 6.ºB · 45 min",
+        "Mamen": "DC Valores · 6.ºA · 45 min",
         "Ana": "Inglés · 4.º · 45 min",
         "Fede": "DC Matemáticas · 5.ºB · 45 min",
         "Gabriel": "DC Matemáticas · 3.º · 45 min",
@@ -2978,12 +2992,12 @@
         "Sandra": "Matemáticas · 2.ºA · 45 min",
         "Dámaris": "Matemáticas · 2.ºB · 45 min",
         "David Miñaro": "Matemáticas · 3.º · 45 min",
-        "María Molina": "Francés · 6.ºA · 45 min",
+        "María Molina": "Apoyo · 45 min",
         "Noelia": "Matemáticas · 5.ºA · 45 min",
         "Ana G": "C. Sociales · 5.ºB · 45 min",
-        "Ana B": "Apoyo · 45 min",
-        "María Muñoz": "Inglés · Infantil 5 años",
-        "Mamen": "Valores · 6.ºB · 45 min",
+        "Ana B": "Valores · 6.ºA · 45 min",
+        "María Muñoz": "Valores · 6.ºB · 45 min",
+        "Mamen": "DC Valores · 6.ºB · 45 min",
         "Ana": "Profundización · 4.º · 45 min",
         "Fede": "Apoyo · 45 min",
         "Gabriel": "DC Matemáticas · 3.º · 45 min",
@@ -3003,12 +3017,12 @@
         "Sandra": "Matemáticas · 2.ºA · 45 min",
         "Dámaris": "Matemáticas · 2.ºB · 45 min",
         "David Miñaro": "Matemáticas · 3.º · 45 min",
-        "María Molina": "Francés · 5.ºA · 45 min",
-        "Noelia": "DC Lengua · 5.ºB · 45 min",
+        "María Molina": "Francés · 6.ºA · 45 min",
+        "Noelia": "C. Naturales · 5.ºA · 45 min",
         "Ana G": "Lengua · 5.ºB · 45 min",
-        "Ana B": "Lengua · 6.ºA · 45 min",
+        "Ana B": "Apoyo · 45 min",
         "María Muñoz": "C. Naturales · 6.ºB · 45 min",
-        "Mamen": "DC Lengua · 6.ºA · 45 min",
+        "Mamen": "Apoyo · 45 min",
         "Ana": "Coordinación docente · 45 min",
         "Fede": "Apoyo · 45 min",
         "Gabriel": "DC Matemáticas · 3.º · 45 min",
@@ -3256,9 +3270,9 @@
         "María Molina": "Francés · 5.ºB",
         "Noelia": "Lengua · 5.ºA",
         "Ana G": "DC Lengua · 5.ºA",
-        "Ana B": "Apoyo · 90 min",
+        "Ana B": "C. Naturales · 6.ºA · 45 min\nLengua · 6.ºA · 45 min",
         "María Muñoz": "C. Sociales · 6.ºB",
-        "Mamen": "Valores · 6.ºA",
+        "Mamen": "DC Lengua · 6.ºA · 45 min\nApoyo · 45 min",
         "Ana": "Apoyo · 90 min",
         "Fede": "Apoyo · 90 min",
         "Gabriel": "Apoyo · 90 min",
@@ -3429,13 +3443,13 @@
     },
     "Noelia": {
       "direct": 900,
-      "shared": 210,
+      "shared": 165,
       "recess": 150,
       "family": 60,
       "coordination": 60,
       "tutorial": 60,
-      "computed": 1440,
-      "support": 60,
+      "computed": 1395,
+      "support": 105,
       "total": 1500
     },
     "Ana G": {
@@ -3450,14 +3464,14 @@
       "total": 1500
     },
     "Ana B": {
-      "direct": 750,
+      "direct": 840,
       "shared": 240,
       "recess": 150,
       "family": 60,
       "coordination": 60,
       "tutorial": 60,
-      "computed": 1320,
-      "support": 180,
+      "computed": 1410,
+      "support": 90,
       "total": 1500
     },
     "María Muñoz": {
@@ -3472,14 +3486,14 @@
       "total": 1500
     },
     "Mamen": {
-      "direct": 720,
-      "shared": 420,
+      "direct": 540,
+      "shared": 510,
       "recess": 150,
       "family": 60,
       "coordination": 60,
       "tutorial": 0,
-      "computed": 1410,
-      "support": 90,
+      "computed": 1320,
+      "support": 180,
       "total": 1500
     },
     "Ana": {
@@ -4174,6 +4188,15 @@
       "Descripción": "Ana G mantiene íntegramente la docencia principal; Noelia no participa como docente compartida únicamente en esta sesión.",
       "Minutos": 60,
       "Estado": "Autorizada"
+    },
+    {
+      "ID": "E-12",
+      "Tipo": "Excepción de docencia compartida autorizada",
+      "Afectado": "5.ºB / Lengua / Noelia",
+      "Franja / carga": "Miércoles 10:45–11:30",
+      "Descripción": "Ana G mantiene íntegramente la docencia principal; Noelia no participa como docente compartida únicamente en esta sesión.",
+      "Minutos": 45,
+      "Estado": "Autorizada"
     }
   ],
   "sourceAnomalies": [
@@ -4403,7 +4426,7 @@
     }
   },
   "changeSet": {
-    "id": "final-validated-changeset-2026-09-01",
+    "id": "final-values-6a-6b-corrective-patch-2026-09-01",
     "basis": "V1 validada",
     "correctiveException": "5.ºB · Jueves 12:00–13:00 · Lengua con Ana G sin docencia compartida"
   }
