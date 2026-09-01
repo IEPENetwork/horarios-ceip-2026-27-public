@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T17:06:05.948Z",
+  "generatedAt": "2026-09-01T22:24:02.062Z",
   "source": "V1 validada",
   "passed": 20,
   "total": 20,
@@ -25,7 +25,7 @@
       "id": 3,
       "name": "Cero solapamientos de grupo y franjas oficiales",
       "ok": true,
-      "detail": "0 duplicados"
+      "detail": "0 solapamientos"
     },
     {
       "id": 4,
@@ -97,13 +97,13 @@
       "id": 15,
       "name": "Asignaciones fijas y restricciones aprobadas",
       "ok": true,
-      "detail": "7/7"
+      "detail": "15/15"
     },
     {
       "id": 16,
-      "name": "Excepción correctiva mínima de 5.ºB",
+      "name": "Excepciones correctivas mínimas de 5.ºB",
       "ok": true,
-      "detail": "Ana G sola J 12:00; AF Noelia J 09:00"
+      "detail": "Ana G mantiene ambas sesiones autorizadas sin DC de Noelia"
     },
     {
       "id": 17,
@@ -115,7 +115,7 @@
       "id": 18,
       "name": "Motor de sustituciones P1 → P6 y asignación única",
       "ok": true,
-      "detail": "297 escenarios"
+      "detail": "299 escenarios"
     },
     {
       "id": 19,

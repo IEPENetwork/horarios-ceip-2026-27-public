@@ -39,7 +39,7 @@ Object.assign(schedule, renamed);
 schedule.validationBaseline = { subjectMinutes: baselineSubjectMinutes };
 schedule.version = "V2 · changeset final verificado";
 schedule.changeSet = {
-  id: "final-validated-changeset-2026-09-01",
+  id: "final-values-6a-6b-corrective-patch-2026-09-01",
   basis: "V1 validada",
   correctiveException: "5.ºB · Jueves 12:00–13:00 · Lengua con Ana G sin docencia compartida",
 };
@@ -118,6 +118,49 @@ assign("6.ºB", "Lunes", "09:00–10:00", {
   shared: ["Cristina"],
   notes: "Cristina sustituye la docencia compartida de Mamen; María Muñoz mantiene la docencia principal.",
 });
+
+// Parche final autorizado: Valores simultáneos en 6.ºA y 6.ºB.
+assign("6.ºA", "Lunes", "10:00–10:45", {
+  subject: "Valores", primary: "Ana B", shared: ["Mamen"], notes: "Mamen realiza docencia compartida en Valores de 6.ºA.",
+});
+assign("6.ºA", "Miércoles", "10:00–10:45", {
+  subject: "Valores", primary: "Ana B", shared: [], notes: "Valores de 6.ºA impartidos por Ana B.",
+});
+assign("6.ºB", "Lunes", "10:00–10:45", {
+  subject: "Valores", primary: "María Muñoz", shared: [], notes: "Valores de 6.ºB impartidos por María Muñoz.",
+});
+assign("6.ºB", "Miércoles", "10:00–10:45", {
+  subject: "Valores", primary: "María Muñoz", shared: ["Mamen"], notes: "Mamen realiza docencia compartida en Valores de 6.ºB.",
+});
+
+// Permuta mínima autorizada para recolocar el Francés desplazado de 6.ºA.
+assign("6.ºA", "Miércoles", "10:45–11:30", {
+  subject: "Francés", primary: "María Molina", shared: [], notes: "Recolocación final autorizada del Francés de 6.ºA.",
+});
+assign("5.ºA", "Lunes", "10:00–10:45", {
+  subject: "Francés", primary: "María Molina", shared: [], notes: "Permuta mínima autorizada con Ciencias Naturales.",
+});
+assign("5.ºA", "Miércoles", "10:45–11:30", {
+  subject: "C. Naturales", primary: "Noelia", shared: [], notes: "Permuta mínima autorizada con Francés.",
+});
+
+// El bloque oficial del viernes 09:00–10:30 de 6.ºA contiene dos sesiones consecutivas de 45 minutos.
+const fridaySixAFirst = schedule.lessons.find((item) => item.group === "6.ºA" && item.day === "Viernes" && ["09:00–10:30", "09:00–09:45"].includes(item.time));
+if (!fridaySixAFirst) throw new Error("No existe el primer tramo del viernes de 6.ºA");
+Object.assign(fridaySixAFirst, {
+  time: "09:00–09:45", minutes: 45, subject: "C. Naturales", primary: "Ana B", shared: [], notes: "Primera mitad del bloque oficial 09:00–10:30.",
+});
+const fridaySixALanguage = schedule.lessons.find((item) => item.group === "6.ºA" && item.day === "Viernes" && item.time === "09:45–10:30");
+const languageValues = {
+  group: "6.ºA", day: "Viernes", time: "09:45–10:30", minutes: 45, subject: "Lengua", primary: "Ana B", shared: ["Mamen"], notes: "Segunda mitad del bloque oficial 09:00–10:30; traslado autorizado desde el miércoles.",
+};
+if (fridaySixALanguage) Object.assign(fridaySixALanguage, languageValues);
+else schedule.lessons.push(languageValues);
+
+// Excepción mínima autorizada: Ana G mantiene íntegramente Lengua de 5.ºB sin Noelia.
+const fifthBWednesdayLanguage = lesson("5.ºB", "Miércoles", "10:45–11:30");
+fifthBWednesdayLanguage.shared = fifthBWednesdayLanguage.shared.filter((name) => name !== "Noelia");
+fifthBWednesdayLanguage.notes = "Excepción autorizada: Ana G mantiene la docencia principal sin docencia compartida de Noelia en esta única sesión.";
 
 // Participaciones parciales expresamente autorizadas dentro de bloques lectivos completos.
 assign("6.ºB", "Jueves", "10:00–10:45", {
@@ -202,6 +245,15 @@ if (!schedule.exceptions.some((item) => item.ID === "E-11")) schedule.exceptions
   Minutos: 60,
   Estado: "Autorizada",
 });
+if (!schedule.exceptions.some((item) => item.ID === "E-12")) schedule.exceptions.push({
+  ID: "E-12",
+  Tipo: "Excepción de docencia compartida autorizada",
+  Afectado: "5.ºB / Lengua / Noelia",
+  "Franja / carga": "Miércoles 10:45–11:30",
+  Descripción: "Ana G mantiene íntegramente la docencia principal; Noelia no participa como docente compartida únicamente en esta sesión.",
+  Minutos: 45,
+  Estado: "Autorizada",
+});
 
 // Catálogos derivados.
 schedule.teachers = [...new Set(schedule.teachers.map((name) => RENAMES[name] || name))];
@@ -236,24 +288,31 @@ const preservedMatrix = new Map();
 for (const row of schedule.teacherMatrix) for (const [oldTeacher, oldStatus] of Object.entries(row.teachers)) {
   const teacher = RENAMES[oldTeacher] || oldTeacher;
   const status = renameString(oldStatus);
-  if (/Infantil|grupo mixto|NO DISPONIBLE/.test(status)) preservedMatrix.set(`${teacher}|${row.day}|${row.time}`, status);
+  const removedInfantEnglish = teacher === "María Muñoz" && ["Lunes", "Miércoles"].includes(row.day) && row.time === "10:00–10:45" && /Infantil 5/.test(status);
+  if (!removedInfantEnglish && /Infantil|grupo mixto|NO DISPONIBLE/.test(status)) preservedMatrix.set(`${teacher}|${row.day}|${row.time}`, status);
 }
 
 function lessonSegmentsFor(teacher, day, time) {
   const [slotStart, slotEnd] = bounds(time);
   const segments = [];
-  for (const row of schedule.lessons.filter((item) => item.day === day && item.time === time)) {
+  for (const row of schedule.lessons.filter((item) => {
+    if (item.day !== day) return false;
+    const [lessonStart, lessonEnd] = bounds(item.time);
+    return overlap(lessonStart, lessonEnd, slotStart, slotEnd) > 0;
+  })) {
     if (row.primary === teacher) {
-      const [start, end] = row.primarySegment ? bounds(row.primarySegment) : [slotStart, slotStart + (row.primaryMinutes ?? row.minutes)];
-      segments.push({ start, end, role: "direct", label: row.subject, group: row.group });
+      const [lessonStart] = bounds(row.time);
+      const [start, end] = row.primarySegment ? bounds(row.primarySegment) : [lessonStart, lessonStart + (row.primaryMinutes ?? row.minutes)];
+      segments.push({ start: Math.max(start, slotStart), end: Math.min(end, slotEnd), role: "direct", label: row.subject, group: row.group });
     }
     if (row.shared.includes(teacher)) {
       const explicit = row.sharedSegments?.[teacher];
-      const [start, end] = explicit ? bounds(explicit) : [slotStart, slotStart + (row.sharedMinutes?.[teacher] ?? row.minutes)];
-      segments.push({ start, end, role: "shared", label: row.subject, group: row.group });
+      const [lessonStart] = bounds(row.time);
+      const [start, end] = explicit ? bounds(explicit) : [lessonStart, lessonStart + (row.sharedMinutes?.[teacher] ?? row.minutes)];
+      segments.push({ start: Math.max(start, slotStart), end: Math.min(end, slotEnd), role: "shared", label: row.subject, group: row.group });
     }
   }
-  return segments;
+  return segments.filter((segment) => segment.end > segment.start);
 }
 
 function mergeLessonLabels(segments) {
@@ -368,7 +427,27 @@ const substitutionSlots = schedule.teacherMatrix.map((row) => ({
 }));
 
 function candidatesAt(day, time, absentTeacher, p1) {
-  const slot = substitutionSlots.find((row) => row.day === day && row.slot === time);
+  let slot = substitutionSlots.find((row) => row.day === day && row.slot === time);
+  if (!slot) {
+    const [wantedStart, wantedEnd] = bounds(time);
+    const parent = schedule.slots[day].find((candidate) => {
+      const [start, end] = bounds(candidate);
+      return start <= wantedStart && end >= wantedEnd;
+    });
+    const parentState = substitutionSlots.find((row) => row.day === day && row.slot === parent);
+    slot = {
+      day,
+      slot: time,
+      teachers: Object.fromEntries(schedule.teachers.map((teacher) => {
+        const segments = lessonSegmentsFor(teacher, day, time);
+        const direct = segments.some((segment) => segment.role === "direct");
+        const shared = segments.length > 0 && segments.every((segment) => segment.role === "shared");
+        const fallback = parentState?.teachers[teacher];
+        const kind = direct ? "docencia" : shared ? "p3" : fallback?.kind === "no_disponible" ? "no_disponible" : "p2";
+        return [teacher, { status: segments.length ? mergeLessonLabels(segments).join("\n") : `Apoyo · ${wantedEnd - wantedStart} min`, kind }];
+      })),
+    };
+  }
   const list = (kind) => schedule.teachers.filter((teacher) => teacher !== absentTeacher && !p1.includes(teacher) && slot.teachers[teacher].kind === kind);
   return { p2: list("p2"), p3: list("p3"), p4: list("p4"), p5: list("p5") };
 }

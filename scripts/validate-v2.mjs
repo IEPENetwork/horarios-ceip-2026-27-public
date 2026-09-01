@@ -73,13 +73,17 @@ const currentSubjectMinutes = Object.fromEntries(expectedGroups.map((group) => [
 const expectedSubjectMinutes = Object.fromEntries(expectedGroups.map((group) => [group, normalizedMinuteMap(schedule.validationBaseline.subjectMinutes[group])]));
 check(2, "Minutos curriculares exactos por asignatura y grupo", same(currentSubjectMinutes, expectedSubjectMinutes), "Sin variaciones curriculares");
 
-const groupKeys = schedule.lessons.map((lesson) => `${lesson.group}|${lesson.day}|${lesson.time}`);
-const validSlots = schedule.lessons.every((lesson) => expectedSlots[lesson.day]?.includes(lesson.time) && schedule.recess[lesson.day] !== lesson.time);
-check(3, "Cero solapamientos de grupo y franjas oficiales", new Set(groupKeys).size === groupKeys.length && validSlots && same(schedule.slots, expectedSlots), `${groupKeys.length - new Set(groupKeys).size} duplicados`);
+const groupConflicts = [];
+for (const group of expectedGroups) for (const day of schedule.days) {
+  const own = rows(group).filter((lesson) => lesson.day === day).map((lesson) => ({ ...lesson, start: bounds(lesson.time)[0], end: bounds(lesson.time)[1] })).sort((a, b) => a.start - b.start);
+  for (let index = 1; index < own.length; index += 1) if (own[index].start < own[index - 1].end) groupConflicts.push({ group, day, left: own[index - 1], right: own[index] });
+}
+const validSlots = schedule.lessons.every((lesson) => expectedSlots[lesson.day]?.some((slot) => { const [start, end] = bounds(slot); const [lessonStart, lessonEnd] = bounds(lesson.time); return lessonStart >= start && lessonEnd <= end && schedule.recess[lesson.day] !== slot; }));
+check(3, "Cero solapamientos de grupo y franjas oficiales", groupConflicts.length === 0 && validSlots && same(schedule.slots, expectedSlots), `${groupConflicts.length} solapamientos`);
 
 const teacherConflicts = overlapConflicts();
 check(4, "Cero solapamientos docentes, incluidos tramos parciales", teacherConflicts.length === 0, teacherConflicts.length ? JSON.stringify(teacherConflicts[0]) : "0 conflictos");
-check(5, "Cero solapamientos de aula donde aplica", new Set(groupKeys).size === groupKeys.length, "El proyecto no modela aulas adicionales; grupo = aula operativa");
+check(5, "Cero solapamientos de aula donde aplica", groupConflicts.length === 0, "El proyecto no modela aulas adicionales; grupo = aula operativa");
 check(6, "Cada bloque lectivo dura al menos 45 minutos", schedule.lessons.every((lesson) => lesson.minutes >= 45), `${Math.min(...schedule.lessons.map((lesson) => lesson.minutes))} min mínimo`);
 
 const dailySubjectTotals = new Map();
@@ -132,12 +136,21 @@ const fixed = [
   rows("4.º", "Religión / At. Educativa").some((lesson) => lesson.primary === "David Almagro"),
   lessonAt("5.ºA", "Jueves", "12:00–13:00", "Matemáticas", "Noelia", "David Almagro"),
   ["Lunes|09:00–10:00", "Martes|09:00–10:00", "Miércoles|12:00–13:00", "Jueves|13:00–14:00"].every((key) => { const [day, time] = key.split("|"); return lessonAt("6.ºA", day, time, "Matemáticas", "Ana B", "David Almagro"); }),
+  lessonAt("6.ºA", "Lunes", "10:00–10:45", "Valores", "Ana B", "Mamen"),
+  lessonAt("6.ºA", "Miércoles", "10:00–10:45", "Valores", "Ana B"),
+  lessonAt("6.ºB", "Lunes", "10:00–10:45", "Valores", "María Muñoz"),
+  lessonAt("6.ºB", "Miércoles", "10:00–10:45", "Valores", "María Muñoz", "Mamen"),
+  lessonAt("6.ºA", "Miércoles", "10:45–11:30", "Francés", "María Molina"),
+  lessonAt("6.ºA", "Viernes", "09:45–10:30", "Lengua", "Ana B", "Mamen"),
+  lessonAt("5.ºA", "Lunes", "10:00–10:45", "Francés", "María Molina"),
+  lessonAt("5.ºA", "Miércoles", "10:45–11:30", "C. Naturales", "Noelia"),
 ];
 check(15, "Asignaciones fijas y restricciones aprobadas", fixed.every(Boolean), `${fixed.filter(Boolean).length}/${fixed.length}`);
 
 const corrected5B = schedule.lessons.find((item) => item.group === "5.ºB" && item.day === "Jueves" && item.time === "12:00–13:00");
 const noeliaThu09 = schedule.complementaryEvents.some((item) => item.teacher === "Noelia" && item.concept === "Atención a familias" && item.schedule.includes("Jueves 09:00–10:00"));
-check(16, "Excepción correctiva mínima de 5.ºB", corrected5B?.subject === "Lengua" && corrected5B.primary === "Ana G" && corrected5B.shared.length === 0 && noeliaThu09 && schedule.exceptions.some((item) => item.ID === "E-11"), "Ana G sola J 12:00; AF Noelia J 09:00");
+const corrected5BWednesday = schedule.lessons.find((item) => item.group === "5.ºB" && item.day === "Miércoles" && item.time === "10:45–11:30");
+check(16, "Excepciones correctivas mínimas de 5.ºB", corrected5B?.subject === "Lengua" && corrected5B.primary === "Ana G" && corrected5B.shared.length === 0 && corrected5BWednesday?.subject === "Lengua" && corrected5BWednesday.primary === "Ana G" && !corrected5BWednesday.shared.includes("Noelia") && noeliaThu09 && ["E-11", "E-12"].every((id) => schedule.exceptions.some((item) => item.ID === id)), "Ana G mantiene ambas sesiones autorizadas sin DC de Noelia");
 
 const serialized = JSON.stringify({ schedule, substitutions, page });
 check(17, "Renombres globales completos", !/Iria|Antonio|SUPÉRATE/.test(serialized) && ["Ana", "Noelia", "María"].every((name) => schedule.teachers.includes(name)), "Ana, Noelia y María");
