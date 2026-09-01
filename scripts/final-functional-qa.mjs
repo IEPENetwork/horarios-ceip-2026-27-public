@@ -29,6 +29,13 @@ check("Responsive escritorio/tablet/móvil", css.includes("grid-template-columns
 check("Tablas y matrices desplazables", css.includes(".matrix-wrap{overflow:auto") && css.includes(".load-table") && css.includes("overflow-x:auto"));
 check("Impresión sin navegación ni controles", css.includes("@media print") && css.includes(".sidebar,.mobile-nav,.toolbar,.sub-tabs{display:none!important}"));
 check("Tarjetas sin alturas máximas ni overflow oculto", !/\.(lesson|matrix-card)[^{]*\{[^}]*max-height/.test(css) && !/\.(lesson|matrix-card)[^{]*\{[^}]*overflow:hidden/.test(css));
+check("Por días sin texto auxiliar de franjas", !page.includes("9 grupos · franjas oficiales"));
+check("Docentes usa Apoyo disponible", page.includes('summaryStat("Apoyo disponible", load.support)') && page.includes('replace(/^Apoyo\\b/, "Apoyo disponible")'));
+check("Matriz semanal de apoyos disponible", page.includes(">Apoyos disponibles</button>") && page.includes("support-matrix") && css.includes(".support-matrix"));
+check("Ausencias puntuales y por periodo", page.includes("Falta puntual del día") && page.includes("Baja por periodo") && page.includes('type="date"'));
+check("Historial persistente y exportable", page.includes("ABSENCE_STORAGE_KEY") && page.includes("Historial de ausencias") && page.includes("Exportar historial CSV"));
+check("Dashboard y planificación proyectada", page.includes("Dashboard e historial") && page.includes("Sustituciones proyectadas") && page.includes("projectedSessions"));
+check("Ausencias visibles en las vistas operativas", page.includes("absence-badge") && page.includes("savedSubstitution") && css.includes(".has-absence"));
 
 const tutorCase = scenario("Lunes", "09:00–10:00", "María Molina");
 check("Caso 1: tutor ausente con DC presente", candidates(tutorCase)[0].teachers.includes("Cristina"), "María Molina → P1 Cristina");

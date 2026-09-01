@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-31T21:22:37.047Z",
-  "passed": 21,
-  "total": 21,
+  "generatedAt": "2026-09-01T07:49:26.075Z",
+  "passed": 28,
+  "total": 28,
   "failures": [],
   "anomalyDetails": [
     {
@@ -153,6 +153,41 @@
     },
     {
       "name": "Tarjetas sin alturas máximas ni overflow oculto",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Por días sin texto auxiliar de franjas",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Docentes usa Apoyo disponible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Matriz semanal de apoyos disponible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Ausencias puntuales y por periodo",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Historial persistente y exportable",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Dashboard y planificación proyectada",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Ausencias visibles en las vistas operativas",
       "ok": true,
       "detail": ""
     },

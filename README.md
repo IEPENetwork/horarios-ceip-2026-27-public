@@ -11,6 +11,19 @@ La interfaz conserva la carcasa visual y técnica de V1. Los datos publicados se
 - `scripts/extract-v2-data.py`: generador reproducible desde las fuentes locales V2.
 - `scripts/validate-v2.mjs`: matriz automática de 20 comprobaciones.
 
+## Gestión dinámica de ausencias
+
+El módulo **Sustituciones** permite:
+
+- registrar faltas puntuales y bajas por periodo;
+- asignar sustitutos respetando P1 → P6 y evitando duplicidades por franja;
+- consultar los apoyos disponibles en una matriz semanal;
+- proyectar coberturas por día o semana;
+- revisar el dashboard y exportar el historial en CSV;
+- señalar ausencias y sustituciones en las vistas de grupos, días, asignaturas, docentes y cargas.
+
+GitHub Pages es un alojamiento estático. Por ello, el registro operativo se conserva en `localStorage`, dentro del navegador y dispositivo utilizados. No se sincroniza entre usuarios o equipos. Para un registro centralizado multiusuario será necesario incorporar un backend y control de acceso.
+
 Comandos:
 
 ```bash
