@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-09-01T07:49:26.075Z",
-  "passed": 28,
-  "total": 28,
+  "generatedAt": "2026-09-01T17:06:06.238Z",
+  "passed": 40,
+  "total": 40,
   "failures": [],
   "anomalyDetails": [
     {
       "type": "redundant-primary-as-shared",
       "group": "2.ºA",
-      "day": "Lunes",
-      "time": "12:00–13:00",
+      "day": "Miércoles",
+      "time": "13:00–14:00",
       "subject": "Educación Física",
       "teacher": "Fede",
-      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "resolution": "Se representa una sola vez como docente principal en su franja final; no se altera la sesión.",
       "correct": true
     },
     {
@@ -30,18 +30,18 @@
       "day": "Martes",
       "time": "12:00–13:00",
       "subject": "Inglés",
-      "teacher": "Iria",
+      "teacher": "Ana",
       "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
       "correct": true
     },
     {
       "type": "redundant-primary-as-shared",
       "group": "2.ºA",
-      "day": "Martes",
+      "day": "Miércoles",
       "time": "13:00–14:00",
       "subject": "Educación Física",
       "teacher": "Fede",
-      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "resolution": "Se representa una sola vez como docente principal en su franja final; no se altera la sesión.",
       "correct": true
     },
     {
@@ -50,7 +50,7 @@
       "day": "Jueves",
       "time": "12:00–13:00",
       "subject": "Inglés",
-      "teacher": "Iria",
+      "teacher": "Ana",
       "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
       "correct": true
     },
@@ -60,7 +60,7 @@
       "day": "Jueves",
       "time": "13:00–14:00",
       "subject": "Profundización",
-      "teacher": "Iria",
+      "teacher": "Ana",
       "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
       "correct": true
     },
@@ -70,7 +70,7 @@
       "day": "Lunes",
       "time": "12:00–13:00",
       "subject": "Inglés",
-      "teacher": "Iria",
+      "teacher": "Ana",
       "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
       "correct": true
     },
@@ -80,18 +80,18 @@
       "day": "Martes",
       "time": "09:00–10:00",
       "subject": "Profundización",
-      "teacher": "Iria",
+      "teacher": "Ana",
       "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
       "correct": true
     },
     {
       "type": "redundant-primary-as-shared",
       "group": "2.ºB",
-      "day": "Martes",
-      "time": "12:00–13:00",
+      "day": "Lunes",
+      "time": "09:00–10:00",
       "subject": "Educación Física",
       "teacher": "Fede",
-      "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
+      "resolution": "Se representa una sola vez como docente principal en su franja final; no se altera la sesión.",
       "correct": true
     },
     {
@@ -100,7 +100,7 @@
       "day": "Martes",
       "time": "13:00–14:00",
       "subject": "Inglés",
-      "teacher": "Iria",
+      "teacher": "Ana",
       "resolution": "Se representa una sola vez como docente principal; no se altera la sesión.",
       "correct": true
     },
@@ -127,7 +127,7 @@
   ],
   "results": [
     {
-      "name": "Navegación con seis vistas",
+      "name": "Navegación con siete vistas",
       "ok": true,
       "detail": ""
     },
@@ -153,6 +153,66 @@
     },
     {
       "name": "Tarjetas sin alturas máximas ni overflow oculto",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Grupos sin exportación CSV",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Centro de impresión multipágina",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Formatos A4/A3, orientación y escala",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Ajuste automático sin tarjetas cortadas",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Encabezado integrado en cada informe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Uso optimizado del área imprimible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Centro de impresión aprovecha la hoja en horarios de grupo",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Opciones individuales ocultas hasta imprimir",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Tarjetas de grupos alineadas",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Selección múltiple de informes",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Impresión independiente ampliada",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Planificación imprimible por día o semana",
       "ok": true,
       "detail": ""
     },
@@ -194,37 +254,37 @@
     {
       "name": "Caso 1: tutor ausente con DC presente",
       "ok": true,
-      "detail": "María Molina → P1 Cristina"
+      "detail": "María Muñoz → P1 Cristina"
     },
     {
       "name": "Caso 2: candidato P2 Apoyo",
       "ok": true,
-      "detail": "David Miñaro → P2 David Almagro"
+      "detail": "María → P2 Dámaris"
     },
     {
       "name": "Casos 3 y 7: escalado a P3",
       "ok": true,
-      "detail": "Ana G, Mamen, Fede, Cristina, SUPÉRATE"
+      "detail": "Ana G, David Almagro, Cristina"
     },
     {
       "name": "Caso 4: dos ausencias simultáneas",
       "ok": true,
-      "detail": "Sandra + Dámaris"
+      "detail": "Sandra + Fede"
     },
     {
       "name": "Caso 5: competencia por sustituto detectada",
       "ok": true,
-      "detail": "SUPÉRATE"
+      "detail": "Dámaris, María Molina"
     },
     {
       "name": "Una persona no cubre dos grupos simultáneamente",
       "ok": true,
-      "detail": "SUPÉRATE, David Almagro"
+      "detail": "Dámaris, María Molina"
     },
     {
       "name": "Caso 6: ausencia exclusiva de DC",
       "ok": true,
-      "detail": "No obligatoria: el docente principal del grupo permanece"
+      "detail": "P1: María Muñoz"
     },
     {
       "name": "Caso 8: disponibilidad por franja P2–P5",
@@ -259,7 +319,7 @@
     {
       "name": "Cargas de docentes clave presentes",
       "ok": true,
-      "detail": "María Molina: 1500 min · David Almagro: 1500 min · Gabriel: 1440 min · Malu: 1020 min · SUPÉRATE: 1500 min"
+      "detail": "María Molina: 1500 min · David Almagro: 1500 min · Gabriel: 1500 min · Malu: 1020 min · María: 1500 min"
     },
     {
       "name": "Malu conserva su excepción",

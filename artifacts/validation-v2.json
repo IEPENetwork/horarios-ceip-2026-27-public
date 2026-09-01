@@ -1,128 +1,133 @@
 {
-  "generatedAt": "2026-09-01T07:49:25.527Z",
-  "source": "horarios_ceip_2026_2027_V2_CON_SUSTITUCIONES.xlsx",
+  "generatedAt": "2026-09-01T17:06:05.948Z",
+  "source": "V1 validada",
   "passed": 20,
   "total": 20,
+  "teacherConflicts": [],
+  "preferenceExceptions": [
+    "Martes 09:00–10:00 4.º Cristina",
+    "Lunes 09:00–10:00 6.ºB Cristina"
+  ],
   "results": [
     {
       "id": 1,
-      "name": "Los 9 grupos están presentes",
-      "ok": true,
-      "detail": "9/9"
-    },
-    {
-      "id": 2,
-      "name": "Datos generados exclusivamente desde V2",
-      "ok": true,
-      "detail": "horarios_ceip_2026_2027_V2_CON_SUSTITUCIONES.xlsx"
-    },
-    {
-      "id": 3,
-      "name": "Cada grupo conserva 1.350 minutos",
+      "name": "9 grupos × 1.350 minutos",
       "ok": true,
       "detail": "{\"1.º\":1350,\"2.ºA\":1350,\"2.ºB\":1350,\"3.º\":1350,\"4.º\":1350,\"5.ºA\":1350,\"5.ºB\":1350,\"6.ºA\":1350,\"6.ºB\":1350}"
     },
     {
+      "id": 2,
+      "name": "Minutos curriculares exactos por asignatura y grupo",
+      "ok": true,
+      "detail": "Sin variaciones curriculares"
+    },
+    {
+      "id": 3,
+      "name": "Cero solapamientos de grupo y franjas oficiales",
+      "ok": true,
+      "detail": "0 duplicados"
+    },
+    {
       "id": 4,
-      "name": "No existen solapamientos docentes",
+      "name": "Cero solapamientos docentes, incluidos tramos parciales",
       "ok": true,
       "detail": "0 conflictos"
     },
     {
       "id": 5,
-      "name": "No existen solapamientos de grupo",
+      "name": "Cero solapamientos de aula donde aplica",
       "ok": true,
-      "detail": "0 duplicados"
+      "detail": "El proyecto no modela aulas adicionales; grupo = aula operativa"
     },
     {
       "id": 6,
-      "name": "Todas las sesiones respetan las franjas oficiales",
+      "name": "Cada bloque lectivo dura al menos 45 minutos",
       "ok": true,
-      "detail": "Sin cuadrícula de 15 minutos"
+      "detail": "45 min mínimo"
     },
     {
       "id": 7,
-      "name": "Recreos correctos",
+      "name": "La misma asignatura no supera 90 minutos por grupo y día",
       "ok": true,
-      "detail": "L-J 11:30; V 11:15"
+      "detail": "Máximo 90 min"
     },
     {
       "id": 8,
-      "name": "Asignaciones de María Molina",
+      "name": "Complementarias separadas por concepto y día",
       "ok": true,
-      "detail": "Troncales 4.º y Francés 5.º/6.º"
+      "detail": "Sin combinaciones Coord/AF/Reducción"
     },
     {
       "id": 9,
-      "name": "Ciencias Sociales de 4.º = David Almagro",
+      "name": "Distribuciones complementarias 45 + 15 = 60",
       "ok": true,
-      "detail": ""
+      "detail": "3/3"
     },
     {
       "id": 10,
-      "name": "Matemáticas de 3.º = David Miñaro + Gabriel",
+      "name": "Docencia compartida alineada con docente principal y grupo",
       "ok": true,
-      "detail": ""
+      "detail": "Sin duplicados ni docentes ajenos"
     },
     {
       "id": 11,
-      "name": "Atención Educativa de 4.º = David Almagro",
-      "ok": true,
-      "detail": ""
-    },
-    {
-      "id": 12,
-      "name": "Atención Educativa de 3.º = SUPÉRATE",
-      "ok": true,
-      "detail": ""
-    },
-    {
-      "id": 13,
-      "name": "RAE del viernes respeta la distribución aprobada",
-      "ok": true,
-      "detail": ""
-    },
-    {
-      "id": 14,
-      "name": "Coordinaciones tutor–docencia compartida conservadas",
+      "name": "15/15 coordinaciones tutor–docente compartido",
       "ok": true,
       "detail": "15/15"
     },
     {
-      "id": 15,
-      "name": "No aparecen datos o textos antiguos de V1",
+      "id": 12,
+      "name": "Cristina sin docencia el miércoles 09:00–10:00",
       "ok": true,
-      "detail": "Sin constantes ni metadatos V1"
+      "detail": "0 sesiones"
+    },
+    {
+      "id": 13,
+      "name": "Preferencias horarias de Cristina y Mariló evaluadas",
+      "ok": true,
+      "detail": "Excepciones blandas: Martes 09:00–10:00 4.º Cristina; Lunes 09:00–10:00 6.ºB Cristina"
+    },
+    {
+      "id": 14,
+      "name": "Francés permanece sin cambios y válido",
+      "ok": true,
+      "detail": "90 min por grupo con María Molina"
+    },
+    {
+      "id": 15,
+      "name": "Asignaciones fijas y restricciones aprobadas",
+      "ok": true,
+      "detail": "7/7"
     },
     {
       "id": 16,
-      "name": "El motor conserva la prioridad P1 → P6",
+      "name": "Excepción correctiva mínima de 5.ºB",
       "ok": true,
-      "detail": "1,2,3,4,5,6"
+      "detail": "Ana G sola J 12:00; AF Noelia J 09:00"
     },
     {
       "id": 17,
-      "name": "Una persona no cubre dos ausencias simultáneas",
+      "name": "Renombres globales completos",
       "ok": true,
-      "detail": "Guardia de asignación por día/franja activa"
+      "detail": "Ana, Noelia y María"
     },
     {
       "id": 18,
-      "name": "La aplicación compila sin errores",
+      "name": "Motor de sustituciones P1 → P6 y asignación única",
       "ok": true,
-      "detail": "dist/index.html generado"
+      "detail": "297 escenarios"
     },
     {
       "id": 19,
-      "name": "Todas las vistas están disponibles",
+      "name": "Vistas derivadas, cargas y anomalías sincronizadas",
       "ok": true,
-      "detail": "groups, days, subjects, teachers, loads, substitutions"
+      "detail": "29 franjas · 12/12 anomalías"
     },
     {
       "id": 20,
-      "name": "Diseño móvil y escritorio definido",
+      "name": "Interfaz, responsive, impresión y build disponibles",
       "ok": true,
-      "detail": "Breakpoints, impresión y tablas desplazables"
+      "detail": "7 vistas · móvil · impresión · dist"
     }
   ]
 }

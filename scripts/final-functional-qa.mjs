@@ -49,26 +49,27 @@ check("Historial persistente y exportable", page.includes("ABSENCE_STORAGE_KEY")
 check("Dashboard y planificación proyectada", page.includes("Dashboard e historial") && page.includes("Sustituciones proyectadas") && page.includes("projectedSessions"));
 check("Ausencias visibles en las vistas operativas", page.includes("absence-badge") && page.includes("savedSubstitution") && css.includes(".has-absence"));
 
-const tutorCase = scenario("Lunes", "09:00–10:00", "María Molina");
-check("Caso 1: tutor ausente con DC presente", candidates(tutorCase)[0].teachers.includes("Cristina"), "María Molina → P1 Cristina");
-const p2Case = scenario("Lunes", "09:00–10:00", "David Miñaro");
-check("Caso 2: candidato P2 Apoyo", candidates(p2Case)[0].teachers.length === 0 && candidates(p2Case)[1].teachers.includes("David Almagro"), "David Miñaro → P2 David Almagro");
-const escalated = candidates(p2Case, ["David Miñaro", "David Almagro"]);
+const tutorCase = scenario("Lunes", "09:00–10:00", "María Muñoz");
+check("Caso 1: tutor ausente con DC presente", candidates(tutorCase)[0].teachers.includes("Cristina"), "María Muñoz → P1 Cristina");
+const p2Case = scenario("Lunes", "09:00–10:00", "María");
+check("Caso 2: candidato P2 Apoyo", candidates(p2Case)[0].teachers.length === 0 && candidates(p2Case)[1].teachers.includes("Dámaris"), "María → P2 Dámaris");
+const p2Names = candidates(p2Case)[1].teachers;
+const escalated = candidates(p2Case, ["María", ...p2Names]);
 check("Casos 3 y 7: escalado a P3", escalated[0].teachers.length === 0 && escalated[1].teachers.length === 0 && escalated[2].teachers.length > 0, escalated[2].teachers.join(", "));
 const sandra = scenario("Lunes", "09:00–10:00", "Sandra");
-const damaris = scenario("Lunes", "09:00–10:00", "Dámaris");
-const simultaneous = [sandra, damaris];
-check("Caso 4: dos ausencias simultáneas", simultaneous.every(Boolean) && simultaneous.length === 2, "Sandra + Dámaris");
-const absentPair = ["Sandra", "Dámaris"];
+const fede = scenario("Lunes", "09:00–10:00", "Fede");
+const simultaneous = [sandra, fede];
+check("Caso 4: dos ausencias simultáneas", simultaneous.every(Boolean) && simultaneous.length === 2, "Sandra + Fede");
+const absentPair = ["Sandra", "Fede"];
 const topSandra = candidates(sandra, absentPair).find((group) => group.teachers.length)?.teachers || [];
-const topDamaris = candidates(damaris, absentPair).find((group) => group.teachers.length)?.teachers || [];
-const competition = topSandra.filter((teacher) => topDamaris.includes(teacher));
-check("Caso 5: competencia por sustituto detectada", competition.includes("SUPÉRATE"), competition.join(", "));
+const topFede = candidates(fede, absentPair).find((group) => group.teachers.length)?.teachers || [];
+const competition = topSandra.filter((teacher) => topFede.includes(teacher));
+check("Caso 5: competencia por sustituto detectada", competition.includes("Dámaris"), competition.join(", "));
 const assigned = new Set();
 let unique = true;
 const allSandra = candidates(sandra, absentPair).flatMap((group) => group.teachers);
-const allDamaris = candidates(damaris, absentPair).flatMap((group) => group.teachers);
-for (const group of [allSandra, allDamaris]) {
+const allFede = candidates(fede, absentPair).flatMap((group) => group.teachers);
+for (const group of [allSandra, allFede]) {
   const selected = group.find((teacher) => !assigned.has(teacher));
   if (!selected) unique = false;
   else assigned.add(selected);
@@ -91,7 +92,7 @@ for (const anomaly of schedule.sourceAnomalies) {
 }
 check("Doce anomalías de 2.º normalizadas", anomalyDetails.length === 12 && anomalyDetails.every((row) => row.correct), `${anomalyDetails.filter((row) => row.correct).length}/12`);
 
-const importantTeachers = ["María Molina", "David Almagro", "Gabriel", "Malu", "SUPÉRATE"];
+const importantTeachers = ["María Molina", "David Almagro", "Gabriel", "Malu", "María"];
 check("Cargas de docentes clave presentes", importantTeachers.every((teacher) => schedule.teacherLoads[teacher] && Number.isFinite(schedule.teacherLoads[teacher].total)), importantTeachers.map((teacher) => `${teacher}: ${schedule.teacherLoads[teacher].total} min`).join(" · "));
 check("Malu conserva su excepción", schedule.complementaryEvents.some((event) => event.teacher === "Malu" && event.schedule.includes("14:00–15:00")) && page.includes("No constituye incidencia"));
 
