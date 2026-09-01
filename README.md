@@ -1,15 +1,16 @@
 # Horarios CEIP 2026–27
 
-Visualización dinámica de los horarios escolares definitivos V2 por grupos, días, asignaturas y docentes, con cómputo de cargas y motor de sustituciones.
+Visualización dinámica del horario final por grupos, días, asignaturas y docentes, con cómputo de cargas y motor de sustituciones.
 
-La interfaz conserva la carcasa visual y técnica de V1. Los datos publicados se generan exclusivamente desde las fuentes verificadas V2.
+La V1 validada es la base operativa. El changeset final se aplica de forma incremental y reproducible, sin reconstruir la interfaz ni reoptimizar horarios no afectados.
 
 ## Datos y comprobaciones
 
-- `src/data/schedule-v2.json`: horarios, cargas, funciones, coordinaciones y excepciones normalizadas desde el Excel V2.
-- `src/data/substitutions-v2.json`: estados y 302 escenarios del motor de sustituciones.
-- `scripts/extract-v2-data.py`: generador reproducible desde las fuentes locales V2.
-- `scripts/validate-v2.mjs`: matriz automática de 20 comprobaciones.
+- `src/data/schedule-v2.json`: horarios, cargas, funciones, coordinaciones, excepciones y línea base curricular.
+- `src/data/substitutions-v2.json`: estados y 297 escenarios finales del motor de sustituciones.
+- `scripts/apply-final-validated-changeset.mjs`: transformación reproducible del changeset aprobado.
+- `scripts/validate-v2.mjs`: matriz automática de 20 comprobaciones de integridad.
+- `scripts/final-functional-qa.mjs`: 40 comprobaciones funcionales y de interfaz.
 
 ## Gestión dinámica de ausencias
 
@@ -27,9 +28,10 @@ GitHub Pages es un alojamiento estático. Por ello, el registro operativo se con
 Comandos:
 
 ```bash
-npm run data:v2
+npm run data:final
 npm run build
-npm test
+npm run validate:v2
+npm run qa:final
 ```
 
 ## Publicación
