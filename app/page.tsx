@@ -87,6 +87,7 @@ export default function Home() {
 function navButton(id: Tab, label: string, icon: string, tab: Tab, setTab: (tab: Tab) => void) { return <button key={id} className={tab === id ? "active" : ""} onClick={() => setTab(id)}><span>{icon}</span>{label}</button>; }
 function Toolbar({ children, query, setQuery, placeholder = "Buscar asignatura o docente…" }: { children: React.ReactNode; query: string; setQuery: (value: string) => void; placeholder?: string }) { return <div className="toolbar">{children}<label className="search"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={placeholder}/></label></div>; }
 function PrintOptions({ buttonLabel, fitScale = .98, disabled = false }: { buttonLabel: string; fitScale?: number; disabled?: boolean }) {
+  const [expanded, setExpanded] = useState(false);
   const [paper, setPaper] = useState<"A4" | "A3">("A4");
   const [orientation, setOrientation] = useState<"portrait" | "landscape">("landscape");
   const [fitMode, setFitMode] = useState<"fit" | "manual">("fit");
@@ -94,14 +95,16 @@ function PrintOptions({ buttonLabel, fitScale = .98, disabled = false }: { butto
   const automaticScale = paper === "A4" ? (orientation === "landscape" ? fitScale : Math.min(fitScale, .82)) : 1;
   const effectiveScale = fitMode === "fit" ? automaticScale : Number(scale) / 100;
   useEffect(() => {
+    if (!expanded) return;
     let style = document.querySelector<HTMLStyleElement>("#individual-print-settings");
     if (!style) { style = document.createElement("style"); style.id = "individual-print-settings"; document.head.appendChild(style); }
     style.textContent = `@page { size: ${paper} ${orientation}; margin: 10mm; }`;
     document.documentElement.style.setProperty("--individual-print-scale", String(effectiveScale));
     document.body.classList.add("individual-print-mode");
     return () => { style?.remove(); document.documentElement.style.removeProperty("--individual-print-scale"); document.body.classList.remove("individual-print-mode"); };
-  }, [paper, orientation, effectiveScale]);
-  return <><label>Papel<select value={paper} onChange={(event) => setPaper(event.target.value as "A4" | "A3")}><option>A4</option><option>A3</option></select></label><label>Orientación<select value={orientation} onChange={(event) => setOrientation(event.target.value as "portrait" | "landscape")}><option value="portrait">Vertical</option><option value="landscape">Horizontal</option></select></label><label>Ajuste<select value={fitMode} onChange={(event) => setFitMode(event.target.value as "fit" | "manual")}><option value="fit">Ajustar a página</option><option value="manual">Escala manual</option></select></label><label>Escala<select value={scale} disabled={fitMode === "fit"} onChange={(event) => setScale(event.target.value)}>{[60, 70, 80, 90, 100].map((value) => <option value={value} key={value}>{value}%</option>)}</select></label><button className="primary" disabled={disabled} onClick={() => window.print()}>{buttonLabel}</button></>;
+  }, [expanded, paper, orientation, effectiveScale]);
+  if (!expanded) return <button className="primary" disabled={disabled} onClick={() => setExpanded(true)}>{buttonLabel}</button>;
+  return <><label>Papel<select value={paper} onChange={(event) => setPaper(event.target.value as "A4" | "A3")}><option>A4</option><option>A3</option></select></label><label>Orientación<select value={orientation} onChange={(event) => setOrientation(event.target.value as "portrait" | "landscape")}><option value="portrait">Vertical</option><option value="landscape">Horizontal</option></select></label><label>Ajuste<select value={fitMode} onChange={(event) => setFitMode(event.target.value as "fit" | "manual")}><option value="fit">Ajustar a página</option><option value="manual">Escala manual</option></select></label><label>Escala<select value={scale} disabled={fitMode === "fit"} onChange={(event) => setScale(event.target.value)}>{[60, 70, 80, 90, 100].map((value) => <option value={value} key={value}>{value}%</option>)}</select></label><button className="primary" disabled={disabled} onClick={() => window.print()}>Imprimir ahora</button><button className="secondary" onClick={() => setExpanded(false)}>Cerrar</button></>;
 }
 function Legend() { return <div className="legend"><span className="legend-item core"><i/>Troncales</span><span className="legend-item lang"><i/>Idiomas</span><span className="legend-item spec"><i/>Especialidades</span></div>; }
 function PanelTitle({ eyebrow, title, aside = <Legend/> }: { eyebrow: string; title: string; aside?: React.ReactNode }) { return <div className="panel-title"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2></div>{aside}</div>; }
