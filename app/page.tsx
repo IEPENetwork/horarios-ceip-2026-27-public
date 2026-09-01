@@ -237,6 +237,7 @@ function PrintCenter() {
   const [substitutionScope, setSubstitutionScope] = useState<"day" | "week">("week");
   const [paper, setPaper] = useState<"A4" | "A3">("A4");
   const [orientation, setOrientation] = useState<"portrait" | "landscape">("landscape");
+  const [fitMode, setFitMode] = useState<"fit" | "manual">("fit");
   const [scale, setScale] = useState("90");
   const roleName: Record<TeacherType, string> = { all: "", tutors: "Tutor/a", specialists: "Especialista", shared: "Docencia compartida", support: "Apoyo disponible" };
   const filteredTeachers = TEACHERS.filter((teacher) => !roleName[teacherType] || schedule.teacherRoles[teacher]?.includes(roleName[teacherType]));
@@ -255,7 +256,9 @@ function PrintCenter() {
 
   const setAllSections = (value: boolean) => setSections({ groups: value, days: value, subjects: value, teachers: value, loads: value, substitutions: value });
   const printReport = () => { if (reportParts > 0) window.print(); };
-  const reportStyle = { "--print-scale": Number(scale) / 100 } as React.CSSProperties;
+  const automaticScale = paper === "A4" ? (orientation === "landscape" ? .72 : .78) : (orientation === "landscape" ? .9 : 1);
+  const effectiveScale = fitMode === "fit" ? automaticScale : Number(scale) / 100;
+  const reportStyle = { "--print-scale": effectiveScale, "--print-content-width": `${100 / effectiveScale}%` } as React.CSSProperties;
 
   return <div className="print-center" style={reportStyle}>
     <section className="panel print-config">
@@ -264,7 +267,8 @@ function PrintCenter() {
       <div className="print-settings">
         <label>Formato<select value={paper} onChange={(event) => setPaper(event.target.value as "A4" | "A3")}><option>A4</option><option>A3</option></select></label>
         <label>Orientación<select value={orientation} onChange={(event) => setOrientation(event.target.value as "portrait" | "landscape")}><option value="portrait">Vertical</option><option value="landscape">Horizontal</option></select></label>
-        <label>Escala<select value={scale} onChange={(event) => setScale(event.target.value)}>{[60, 70, 80, 90, 100].map((value) => <option value={value} key={value}>{value}%</option>)}</select></label>
+        <label>Ajuste<select value={fitMode} onChange={(event) => setFitMode(event.target.value as "fit" | "manual")}><option value="fit">Ajustar a página</option><option value="manual">Escala manual</option></select></label>
+        <label>Escala<select value={scale} disabled={fitMode === "fit"} onChange={(event) => setScale(event.target.value)}>{[60, 70, 80, 90, 100].map((value) => <option value={value} key={value}>{value}%</option>)}</select></label>
         <label>Fecha de referencia<input type="date" value={referenceDate} onChange={(event) => setReferenceDate(event.target.value)}/></label>
       </div>
       <div className="print-section-head"><h3>Páginas incluidas</h3><span><button onClick={() => setAllSections(true)}>Seleccionar todas</button><button onClick={() => setAllSections(false)}>Ninguna</button></span></div>
@@ -279,7 +283,7 @@ function PrintCenter() {
         {sections.loads && <div className="panel print-option-card print-fixed-option"><b>Cargas semanales</b><span>Se incluirá la tabla completa.</span></div>}
         {sections.substitutions && <div className="panel print-option-card"><label className="print-filter">Planificación<select value={substitutionScope} onChange={(event) => setSubstitutionScope(event.target.value as "day" | "week")}><option value="day">Día seleccionado</option><option value="week">Semana completa</option></select></label><span className="print-count">{planningSessions.length} sesiones registradas</span></div>}
       </div>
-      <div className="print-actions"><button className="primary" disabled={!enabledSections || !reportParts} onClick={printReport}>Imprimir / Guardar un único PDF</button><span>{paper} · {orientation === "portrait" ? "vertical" : "horizontal"} · escala {scale}%</span></div>
+      <div className="print-actions"><button className="primary" disabled={!enabledSections || !reportParts} onClick={printReport}>Imprimir / Guardar un único PDF</button><span>{paper} · {orientation === "portrait" ? "vertical" : "horizontal"} · {fitMode === "fit" ? `ajuste automático (${Math.round(effectiveScale * 100)}%)` : `escala ${scale}%`}</span></div>
     </section>
 
     <section className="print-report" aria-label="Vista previa del informe">

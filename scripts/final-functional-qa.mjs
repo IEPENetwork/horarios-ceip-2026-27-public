@@ -32,6 +32,7 @@ check("Tarjetas sin alturas máximas ni overflow oculto", !/\.(lesson|matrix-car
 check("Grupos sin exportación CSV", !page.includes("exportCsv") && !page.includes(">↓ Exportar CSV</button>"));
 check("Centro de impresión multipágina", page.includes('navButton("print", "Imprimir"') && page.includes("Generar informe único") && page.includes("PrintGroupReport") && page.includes("PrintTeacherReport") && page.includes("PrintPlanningReport"));
 check("Formatos A4/A3, orientación y escala", page.includes('<option>A4</option><option>A3</option>') && page.includes("Vertical") && page.includes("Horizontal") && page.includes("--print-scale") && page.includes("@page { size:"));
+check("Ajuste automático sin tarjetas cortadas", page.includes("Ajustar a página") && page.includes("automaticScale") && page.includes("--print-content-width") && css.includes("break-inside:avoid-page") && css.includes("page-break-inside:avoid") && css.includes(".print-report-cover{break-after:page"));
 check("Selección múltiple de informes", page.includes("PrintOptionList") && page.includes("Seleccionar todas") && page.includes("Imprimir / Guardar un único PDF"));
 check("Impresión independiente ampliada", ["Imprimir día", "Imprimir asignaturas", "Imprimir cargas", "Imprimir vista de sustituciones"].every((label) => page.includes(label)));
 check("Planificación imprimible por día o semana", page.includes("Imprimir planificación") && page.includes("Día seleccionado") && page.includes("Semana completa") && page.includes("disabled={!sessions.length}"));
