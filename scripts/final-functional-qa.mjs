@@ -34,8 +34,9 @@ check("Centro de impresión multipágina", page.includes('navButton("print", "Im
 check("Formatos A4/A3, orientación y escala", page.includes('<option>A4</option><option>A3</option>') && page.includes("Vertical") && page.includes("Horizontal") && page.includes("--print-scale") && page.includes("@page { size:"));
 check("Ajuste automático sin tarjetas cortadas", page.includes("Ajustar a página") && page.includes("automaticScale") && !page.includes("--print-content-width") && css.includes("width:100%!important") && css.includes("repeat(5,minmax(0,1fr))!important") && css.includes("break-inside:avoid-page") && css.includes("page-break-inside:avoid"));
 check("Encabezado integrado en cada informe", !page.includes('className="print-report-cover"') && page.includes('className="print-sheet-head"><img'));
+check("Uso optimizado del área imprimible", page.includes('orientation === "landscape" ? .98') && css.includes("min-height:76px!important") && css.includes("--individual-print-scale"));
 check("Selección múltiple de informes", page.includes("PrintOptionList") && page.includes("Seleccionar todas") && page.includes("Imprimir / Guardar un único PDF"));
-check("Impresión independiente ampliada", ["Imprimir día", "Imprimir asignaturas", "Imprimir cargas", "Imprimir vista de sustituciones"].every((label) => page.includes(label)));
+check("Impresión independiente ampliada", ["Imprimir día", "Imprimir asignaturas", "Imprimir cargas", "Imprimir vista de sustituciones", "Imprimir planificación"].every((label) => page.includes(label)) && (page.match(/<PrintOptions/g) || []).length >= 7 && page.includes("individual-print-settings") && css.includes("individual-print-mode"));
 check("Planificación imprimible por día o semana", page.includes("Imprimir planificación") && page.includes("Día seleccionado") && page.includes("Semana completa") && page.includes("disabled={!sessions.length}"));
 check("Por días sin texto auxiliar de franjas", !page.includes("9 grupos · franjas oficiales"));
 check("Docentes usa Apoyo disponible", page.includes('summaryStat("Apoyo disponible", load.support)') && page.includes('replace(/^Apoyo\\b/, "Apoyo disponible")'));
