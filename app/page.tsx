@@ -71,17 +71,11 @@ export default function Home() {
   const [subjectType, setSubjectType] = useState<SubjectType>("all");
   const [subject, setSubject] = useState("all");
   const [query, setQuery] = useState("");
-  const exportCsv = () => {
-    const rows = [["Grupo", "Día", "Hora", "Asignatura", "Docente principal", "Docencia compartida"], ...schedule.lessons.filter((lesson) => lesson.group === group).map((lesson) => [lesson.group, lesson.day, lesson.time, lesson.subject, lesson.primary, lesson.shared.join(" + ")])];
-    const csv = rows.map((row) => row.map((value) => `"${value.replaceAll('"', '""')}"`).join(",")).join("\n");
-    const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
-    const anchor = document.createElement("a"); anchor.href = URL.createObjectURL(blob); anchor.download = `horario-${group}.csv`; anchor.click(); URL.revokeObjectURL(anchor.href);
-  };
   const nav = <>{navButton("groups", "Grupos", "▦", tab, setTab)}{navButton("days", "Por días", "◫", tab, setTab)}{navButton("subjects", "Asignaturas", "▤", tab, setTab)}{navButton("teachers", "Docentes", "♙", tab, setTab)}{navButton("loads", "Cargas", "▥", tab, setTab)}{navButton("substitutions", "Sustituciones", "⇄", tab, setTab)}</>;
   return <AbsenceContext.Provider value={absenceStore}><main className="app theme-compact">
     <aside className="sidebar" aria-label="Navegación principal"><div className="mark"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><b>Horarios</b><small>Sta. Rosa de Lima</small><em>Curso 26–27</em></div></div><nav>{nav}</nav></aside>
     <section className="shell"><header className="topbar"><div className="topbar-brand"><img className="mobile-school-logo" src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><h1>Horarios CEIP <span>· Curso 2026–27</span></h1></div></div></header><div className="mobile-nav">{nav}</div>
-      {tab === "groups" && <><Toolbar query={query} setQuery={setQuery}><label>Grupo<select value={group} onChange={(event) => setGroup(event.target.value)}>{GROUPS.map((name) => <option key={name}>{name}</option>)}</select></label><button className="secondary" onClick={exportCsv}>↓ Exportar CSV</button><button className="primary" onClick={() => window.print()}>Imprimir horario</button></Toolbar><section className="panel schedule-panel"><PanelTitle eyebrow="Vista semanal" title={`${group} Primaria`}/><WeekGrid group={group} query={query}/></section></>}
+      {tab === "groups" && <><Toolbar query={query} setQuery={setQuery}><label>Grupo<select value={group} onChange={(event) => setGroup(event.target.value)}>{GROUPS.map((name) => <option key={name}>{name}</option>)}</select></label><button className="primary" onClick={() => window.print()}>Imprimir horario</button></Toolbar><section className="panel schedule-panel"><PanelTitle eyebrow="Vista semanal" title={`${group} Primaria`}/><WeekGrid group={group} query={query}/></section></>}
       {tab === "days" && <DayView day={day} setDay={setDay} query={query} setQuery={setQuery}/>}
       {tab === "subjects" && <SubjectsView subjectType={subjectType} setSubjectType={setSubjectType} subject={subject} setSubject={setSubject} query={query} setQuery={setQuery}/>}
       {tab === "teachers" && <TeacherView teacher={teacher} setTeacher={setTeacher} teacherType={teacherType} setTeacherType={setTeacherType} query={query} setQuery={setQuery}/>}
