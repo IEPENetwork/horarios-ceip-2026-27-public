@@ -326,7 +326,7 @@ function PrintOptionList({ title, options, selected, setSelected, embedded = fal
 
 function PrintSheetHeader({ eyebrow, title }: { eyebrow: string; title: string }) { return <header className="print-sheet-head"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><span>{eyebrow}</span><h2>{title}</h2><small>CEIP Santa Rosa de Lima · Curso 2026–27</small></div></header>; }
 
-function PrintGroupReport({ group }: { group: string }) { return <section className="print-sheet"><PrintSheetHeader eyebrow="Horario de grupo" title={`${group} Primaria`}/><WeekGrid group={group} query=""/></section>; }
+function PrintGroupReport({ group }: { group: string }) { return <section className="print-sheet print-sheet-group"><PrintSheetHeader eyebrow="Horario de grupo" title={`${group} Primaria`}/><WeekGrid group={group} query=""/></section>; }
 
 function PrintDayReport({ day }: { day: string }) {
   const { referenceDate } = useAbsenceContext(); const slots = schedule.slots[day as keyof typeof schedule.slots];
