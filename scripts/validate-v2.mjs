@@ -78,7 +78,7 @@ for (const scenario of simultaneous) {
 }
 check(17, "Una persona no cubre dos ausencias simultáneas", uniqueGuard && page.includes("disabled={reserved.has(teacher)}"), "Guardia de asignación por día/franja activa");
 check(18, "La aplicación compila sin errores", fs.existsSync(path.join(root, "dist/index.html")), "dist/index.html generado");
-const views = ["groups", "days", "subjects", "teachers", "loads", "substitutions"];
+const views = ["groups", "days", "subjects", "teachers", "loads", "substitutions", "print"];
 check(19, "Todas las vistas están disponibles", views.every((view) => page.includes(`tab === \"${view}\"`)), views.join(", "));
 check(20, "Diseño móvil y escritorio definido", css.includes("@media(max-width:720px)") && css.includes("@media print") && css.includes("overflow:auto"), "Breakpoints, impresión y tablas desplazables");
 

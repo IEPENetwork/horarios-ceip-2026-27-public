@@ -23,13 +23,18 @@ const split = (value, absent = []) => String(value || "").split(",").map((name) 
 const candidates = (scenario, absent = []) => priorityFields.map((field, index) => ({ priority: index + 1, teachers: split(scenario[field], absent) }));
 const scenario = (day, slot, teacher) => substitutions.scenarios.find((row) => row["Día"] === day && row["Franja"] === slot && row["Docente ausente"] === teacher);
 
-check("Navegación con seis vistas", ["groups", "days", "subjects", "teachers", "loads", "substitutions"].every((tab) => page.includes(`tab === \"${tab}\"`)));
+check("Navegación con siete vistas", ["groups", "days", "subjects", "teachers", "loads", "substitutions", "print"].every((tab) => page.includes(`tab === \"${tab}\"`)));
 check("Sin referencias visibles V1", ![page, css, html].some((source) => ["Borrador operativo", "Organización escolar", "Horario generado mediante restricciones", "Dentro del margen", "· V1"].some((text) => source.includes(text))));
 check("Responsive escritorio/tablet/móvil", css.includes("grid-template-columns:240px 1fr") && css.includes("@media(max-width:1100px)") && css.includes("@media(max-width:720px)") && css.includes(".sidebar{display:none}") && css.includes(".mobile-nav{display:flex"));
 check("Tablas y matrices desplazables", css.includes(".matrix-wrap{overflow:auto") && css.includes(".load-table") && css.includes("overflow-x:auto"));
-check("Impresión sin navegación ni controles", css.includes("@media print") && css.includes(".sidebar,.mobile-nav,.toolbar,.sub-tabs{display:none!important}"));
+check("Impresión sin navegación ni controles", css.includes("@media print") && css.includes(".sidebar,.mobile-nav,.toolbar,.sub-tabs,.print-config,") && css.includes("display:none!important"));
 check("Tarjetas sin alturas máximas ni overflow oculto", !/\.(lesson|matrix-card)[^{]*\{[^}]*max-height/.test(css) && !/\.(lesson|matrix-card)[^{]*\{[^}]*overflow:hidden/.test(css));
 check("Grupos sin exportación CSV", !page.includes("exportCsv") && !page.includes(">↓ Exportar CSV</button>"));
+check("Centro de impresión multipágina", page.includes('navButton("print", "Imprimir"') && page.includes("Generar informe único") && page.includes("PrintGroupReport") && page.includes("PrintTeacherReport") && page.includes("PrintPlanningReport"));
+check("Formatos A4/A3, orientación y escala", page.includes('<option>A4</option><option>A3</option>') && page.includes("Vertical") && page.includes("Horizontal") && page.includes("--print-scale") && page.includes("@page { size:"));
+check("Selección múltiple de informes", page.includes("PrintOptionList") && page.includes("Seleccionar todas") && page.includes("Imprimir / Guardar un único PDF"));
+check("Impresión independiente ampliada", ["Imprimir día", "Imprimir asignaturas", "Imprimir cargas", "Imprimir vista de sustituciones"].every((label) => page.includes(label)));
+check("Planificación imprimible por día o semana", page.includes("Imprimir planificación") && page.includes("Día seleccionado") && page.includes("Semana completa") && page.includes("disabled={!sessions.length}"));
 check("Por días sin texto auxiliar de franjas", !page.includes("9 grupos · franjas oficiales"));
 check("Docentes usa Apoyo disponible", page.includes('summaryStat("Apoyo disponible", load.support)') && page.includes('replace(/^Apoyo\\b/, "Apoyo disponible")'));
 check("Matriz semanal de apoyos disponible", page.includes(">Apoyos disponibles</button>") && page.includes("support-matrix") && css.includes(".support-matrix"));
