@@ -1,0 +1,32 @@
+name: Validate master-spec build
+
+on:
+  push:
+    branches:
+      - rebuild/master-spec-runtime
+    paths:
+      - .github/workflows/validate-master-spec-build.yml
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: rebuild/master-spec-runtime
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Remove temporary validation workflow
+        run: |
+          git config user.name "OpenAI timetable automation"
+          git config user.email "actions@users.noreply.github.com"
+          git rm .github/workflows/validate-master-spec-build.yml
+          git commit -m "chore: remove temporary master-spec build check"
+          git push origin HEAD:rebuild/master-spec-runtime
