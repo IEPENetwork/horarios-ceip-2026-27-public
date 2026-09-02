@@ -1,3 +1,4 @@
+# Local QA and diagnostic outputs are never published.
 node_modules/
 dist/
 source-v2/
