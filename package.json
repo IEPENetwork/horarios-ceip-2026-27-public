@@ -5,11 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "data:v2": "python scripts/extract-v2-data.py",
-    "data:final": "node scripts/apply-final-validated-changeset.mjs",
-    "validate:v2": "node scripts/validate-v2.mjs",
-    "qa:final": "node scripts/final-functional-qa.mjs",
-    "test": "npm run validate:v2",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview"
   },

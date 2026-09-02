@@ -64,12 +64,12 @@
           "kind": "p4"
         },
         "Sandra": {
-          "status": "Matemáticas · 2.ºA",
+          "status": "C. Naturales · 2.ºA",
           "kind": "docencia"
         },
         "Dámaris": {
-          "status": "Apoyo · 60 min",
-          "kind": "p2"
+          "status": "C. Naturales · 2.ºB",
+          "kind": "docencia"
         },
         "David Miñaro": {
           "status": "Reducción por tutoría · 60 min",
@@ -104,8 +104,8 @@
           "kind": "docencia"
         },
         "Fede": {
-          "status": "Educación Física · 2.ºB",
-          "kind": "docencia"
+          "status": "Coordinación docente · 60 min",
+          "kind": "p5"
         },
         "Gabriel": {
           "status": "Educación Física · 5.ºB",
@@ -474,7 +474,7 @@
           "kind": "p2"
         },
         "Sandra": {
-          "status": "C. Naturales · 2.ºA",
+          "status": "Matemáticas · 2.ºA",
           "kind": "docencia"
         },
         "Dámaris": {
@@ -542,7 +542,7 @@
           "kind": "p2"
         },
         "María": {
-          "status": "DC Matemáticas · 2.ºB",
+          "status": "DC Matemáticas · 2.ºA + 2.ºB",
           "kind": "p3"
         }
       }
@@ -552,8 +552,8 @@
       "slot": "09:00–10:00",
       "teachers": {
         "Belén": {
-          "status": "Apoyo · 60 min",
-          "kind": "p2"
+          "status": "C. Naturales · 1.º",
+          "kind": "docencia"
         },
         "Sandra": {
           "status": "Atención a familias · 60 min",
@@ -564,8 +564,8 @@
           "kind": "p4"
         },
         "David Miñaro": {
-          "status": "Inglés · 6.ºB",
-          "kind": "docencia"
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
         },
         "María Molina": {
           "status": "Lengua · 4.º",
@@ -596,7 +596,7 @@
           "kind": "docencia"
         },
         "Fede": {
-          "status": "Educación Física · 1.º",
+          "status": "Plástica · 6.ºB",
           "kind": "docencia"
         },
         "Gabriel": {
@@ -888,12 +888,12 @@
           "kind": "p2"
         },
         "Dámaris": {
-          "status": "C. Naturales · 2.ºB",
-          "kind": "docencia"
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
         },
         "David Miñaro": {
-          "status": "Lengua · 3.º",
-          "kind": "docencia"
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
         },
         "María Molina": {
           "status": "Matemáticas · 4.º",
@@ -924,7 +924,7 @@
           "kind": "docencia"
         },
         "Fede": {
-          "status": "Plástica · 6.ºA",
+          "status": "Educación Física · 2.ºB",
           "kind": "docencia"
         },
         "Gabriel": {
@@ -936,8 +936,8 @@
           "kind": "p3"
         },
         "Mariló": {
-          "status": "DC Lengua · 3.º",
-          "kind": "p3"
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
         },
         "Cristina": {
           "status": "Atención a familias · 60 min",
@@ -952,8 +952,8 @@
           "kind": "p2"
         },
         "María": {
-          "status": "Apoyo · 60 min",
-          "kind": "p2"
+          "status": "C. Naturales · 3.º",
+          "kind": "docencia"
         }
       }
     },
@@ -966,8 +966,8 @@
           "kind": "docencia"
         },
         "Sandra": {
-          "status": "Plástica · 2.ºA",
-          "kind": "docencia"
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
         },
         "Dámaris": {
           "status": "Apoyo · 60 min",
@@ -1006,7 +1006,7 @@
           "kind": "docencia"
         },
         "Fede": {
-          "status": "Plástica · 6.ºB",
+          "status": "Educación Física · 2.ºA",
           "kind": "docencia"
         },
         "Gabriel": {
@@ -1018,8 +1018,8 @@
           "kind": "p4"
         },
         "Mariló": {
-          "status": "Apoyo · 60 min",
-          "kind": "p2"
+          "status": "DC Lengua · 3.º",
+          "kind": "p3"
         },
         "Cristina": {
           "status": "Apoyo · 60 min",
@@ -1034,8 +1034,8 @@
           "kind": "p2"
         },
         "María": {
-          "status": "C. Naturales · 3.º",
-          "kind": "docencia"
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
         }
       }
     },
@@ -1044,8 +1044,8 @@
       "slot": "09:00–10:00",
       "teachers": {
         "Belén": {
-          "status": "Matemáticas · 1.º",
-          "kind": "docencia"
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
         },
         "Sandra": {
           "status": "C. Naturales · 2.ºA",
@@ -1088,8 +1088,8 @@
           "kind": "docencia"
         },
         "Fede": {
-          "status": "Coordinación docente · 60 min",
-          "kind": "p5"
+          "status": "Educación Física · 1.º",
+          "kind": "docencia"
         },
         "Gabriel": {
           "status": "Educación Física · 6.ºA",
@@ -1454,20 +1454,20 @@
       "slot": "13:00–14:00",
       "teachers": {
         "Belén": {
-          "status": "C. Naturales · 1.º",
+          "status": "Matemáticas · 1.º",
           "kind": "docencia"
         },
         "Sandra": {
-          "status": "Apoyo · 60 min",
-          "kind": "p2"
+          "status": "Plástica · 2.ºA",
+          "kind": "docencia"
         },
         "Dámaris": {
           "status": "Plástica · 2.ºB",
           "kind": "docencia"
         },
         "David Miñaro": {
-          "status": "Inglés · 6.ºA",
-          "kind": "docencia"
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
         },
         "María Molina": {
           "status": "Reducción por tutoría · 60 min",
@@ -1498,7 +1498,7 @@
           "kind": "docencia"
         },
         "Fede": {
-          "status": "Educación Física · 2.ºA",
+          "status": "Plástica · 6.ºA",
           "kind": "docencia"
         },
         "Gabriel": {
@@ -1650,7 +1650,7 @@
           "kind": "docencia"
         },
         "María Muñoz": {
-          "status": "Coordinación docente · 15 min\nLengua · 6.ºB · 30 min",
+          "status": "Lengua · 6.ºB · 45 min",
           "kind": "docencia"
         },
         "Mamen": {
@@ -1884,8 +1884,8 @@
           "kind": "p4"
         },
         "Noelia": {
-          "status": "Matemáticas · 5.ºA",
-          "kind": "docencia"
+          "status": "DC Lengua · 5.ºB",
+          "kind": "p3"
         },
         "Ana G": {
           "status": "Lengua · 5.ºB",
@@ -1916,8 +1916,8 @@
           "kind": "docencia"
         },
         "David Almagro": {
-          "status": "DC Matemáticas · 5.ºA",
-          "kind": "p3"
+          "status": "Matemáticas · 5.ºA",
+          "kind": "docencia"
         },
         "Mariló": {
           "status": "Apoyo · 60 min",
@@ -2388,7 +2388,7 @@
           "kind": "docencia"
         },
         "María Muñoz": {
-          "status": "Reducción por tutoría · 60 min\nApoyo · 30 min",
+          "status": "Coordinación docente · 15 min\nReducción por tutoría · 60 min\nApoyo · 15 min",
           "kind": "p5"
         },
         "Mamen": {
@@ -2444,12 +2444,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, María Molina",
+      "P2 Apoyo": "María Molina",
       "P3 DC otro grupo": "Ana G, David Almagro, Cristina",
       "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, María Molina",
+      "Primera respuesta según criterio": "P2: María Molina",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -2461,10 +2461,10 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "David Almagro",
-      "P2 Apoyo": "Dámaris, María Molina",
+      "P2 Apoyo": "María Molina",
       "P3 DC otro grupo": "Ana G, Cristina",
       "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: David Almagro",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
@@ -2478,10 +2478,10 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "Noelia",
-      "P2 Apoyo": "Dámaris, María Molina",
+      "P2 Apoyo": "María Molina",
       "P3 DC otro grupo": "David Almagro, Cristina",
       "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: Noelia",
       "Observaciones": "Grupo atendido por docente principal — reposición de docencia compartida opcional"
@@ -2495,13 +2495,30 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "María Muñoz",
-      "P2 Apoyo": "Dámaris, María Molina",
+      "P2 Apoyo": "María Molina",
       "P3 DC otro grupo": "Ana G, David Almagro",
       "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: María Muñoz",
       "Observaciones": "Grupo atendido por docente principal — reposición de docencia compartida opcional"
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Dámaris",
+      "Actividad": "C. Naturales",
+      "Grupo": "2.ºB",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "María Molina",
+      "P3 DC otro grupo": "Ana G, David Almagro, Cristina",
+      "P4 Atención familias": "Belén, Mariló",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "P2: María Molina",
+      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
       "Día": "Lunes",
@@ -2512,30 +2529,13 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "Ana B",
-      "P2 Apoyo": "Dámaris, María Molina",
+      "P2 Apoyo": "María Molina",
       "P3 DC otro grupo": "Ana G, Cristina",
       "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: Ana B",
       "Observaciones": "Grupo atendido por docente principal — reposición de docencia compartida opcional"
-    },
-    {
-      "Día": "Lunes",
-      "Franja": "09:00–10:00",
-      "Docente ausente": "Fede",
-      "Actividad": "Educación Física",
-      "Grupo": "2.ºB",
-      "Rol ausente": "Docencia principal/directa",
-      "Cobertura obligatoria": "Sí",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, María Molina",
-      "P3 DC otro grupo": "Ana G, David Almagro, Cristina",
-      "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, María Molina",
-      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
       "Día": "Lunes",
@@ -2546,12 +2546,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, María Molina",
+      "P2 Apoyo": "María Molina",
       "P3 DC otro grupo": "Ana G, David Almagro, Cristina",
       "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, María Molina",
+      "Primera respuesta según criterio": "P2: María Molina",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -2563,12 +2563,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, María Molina",
+      "P2 Apoyo": "María Molina",
       "P3 DC otro grupo": "Ana G, David Almagro, Cristina",
       "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, María Molina",
+      "Primera respuesta según criterio": "P2: María Molina",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -2580,12 +2580,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, María Molina",
+      "P2 Apoyo": "María Molina",
       "P3 DC otro grupo": "Ana G, David Almagro, Cristina",
       "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, María Molina",
+      "Primera respuesta según criterio": "P2: María Molina",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -2597,10 +2597,10 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "Cristina",
-      "P2 Apoyo": "Dámaris, María Molina",
+      "P2 Apoyo": "María Molina",
       "P3 DC otro grupo": "Ana G, David Almagro",
       "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: Cristina",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
@@ -2614,10 +2614,10 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "Ana G",
-      "P2 Apoyo": "Dámaris, María Molina",
+      "P2 Apoyo": "María Molina",
       "P3 DC otro grupo": "David Almagro, Cristina",
       "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: Ana G",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
@@ -2626,17 +2626,17 @@
       "Día": "Lunes",
       "Franja": "09:00–10:00",
       "Docente ausente": "Sandra",
-      "Actividad": "Matemáticas",
+      "Actividad": "C. Naturales",
       "Grupo": "2.ºA",
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, María Molina",
+      "P2 Apoyo": "María Molina",
       "P3 DC otro grupo": "Ana G, David Almagro, Cristina",
       "P4 Atención familias": "Belén, Mariló",
-      "P5 Coordinación/tutoría": "David Miñaro, Carmen María",
+      "P5 Coordinación/tutoría": "David Miñaro, Fede, Carmen María",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, María Molina",
+      "Primera respuesta según criterio": "P2: María Molina",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -3477,16 +3477,16 @@
       "Franja": "13:00–14:00",
       "Docente ausente": "María",
       "Actividad": "Matemáticas",
-      "Grupo": "2.ºB",
+      "Grupo": "2.ºA + 2.ºB",
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "Dámaris",
+      "P1 Misma docencia compartida": "Sandra, Dámaris",
       "P2 Apoyo": "Belén, Mariló, Carmen María",
       "P3 DC otro grupo": "—",
       "P4 Atención familias": "Ana G, Ana B, María Muñoz",
       "P5 Coordinación/tutoría": "María Molina, David Almagro, Cristina",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P1: Dámaris",
+      "Primera respuesta según criterio": "P1: Sandra, Dámaris",
       "Observaciones": "Grupo atendido por docente principal — reposición de docencia compartida opcional"
     },
     {
@@ -3510,17 +3510,17 @@
       "Día": "Lunes",
       "Franja": "13:00–14:00",
       "Docente ausente": "Sandra",
-      "Actividad": "C. Naturales",
+      "Actividad": "Matemáticas",
       "Grupo": "2.ºA",
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
-      "P1 Misma docencia compartida": "—",
+      "P1 Misma docencia compartida": "María",
       "P2 Apoyo": "Belén, Mariló, Carmen María",
-      "P3 DC otro grupo": "María",
+      "P3 DC otro grupo": "—",
       "P4 Atención familias": "Ana G, Ana B, María Muñoz",
       "P5 Coordinación/tutoría": "María Molina, David Almagro, Cristina",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Belén, Mariló, Carmen María",
+      "Primera respuesta según criterio": "P1: María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -3532,12 +3532,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Belén, Mariló",
+      "P2 Apoyo": "David Miñaro, Mariló",
       "P3 DC otro grupo": "Noelia, David Almagro, Cristina",
       "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
       "P5 Coordinación/tutoría": "—",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Belén, Mariló",
+      "Primera respuesta según criterio": "P2: David Miñaro, Mariló",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -3549,7 +3549,7 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "David Almagro",
-      "P2 Apoyo": "Belén, Mariló",
+      "P2 Apoyo": "David Miñaro, Mariló",
       "P3 DC otro grupo": "Noelia, Cristina",
       "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
       "P5 Coordinación/tutoría": "—",
@@ -3566,12 +3566,29 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "Noelia",
-      "P2 Apoyo": "Belén, Mariló",
+      "P2 Apoyo": "David Miñaro, Mariló",
       "P3 DC otro grupo": "David Almagro, Cristina",
       "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
       "P5 Coordinación/tutoría": "—",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: Noelia",
+      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Belén",
+      "Actividad": "C. Naturales",
+      "Grupo": "1.º",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "David Miñaro, Mariló",
+      "P3 DC otro grupo": "Noelia, David Almagro, Cristina",
+      "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "P2: David Miñaro, Mariló",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -3583,7 +3600,7 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "María Molina",
-      "P2 Apoyo": "Belén, Mariló",
+      "P2 Apoyo": "David Miñaro, Mariló",
       "P3 DC otro grupo": "Noelia, David Almagro",
       "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
       "P5 Coordinación/tutoría": "—",
@@ -3600,7 +3617,7 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "Ana B",
-      "P2 Apoyo": "Belén, Mariló",
+      "P2 Apoyo": "David Miñaro, Mariló",
       "P3 DC otro grupo": "Noelia, Cristina",
       "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
       "P5 Coordinación/tutoría": "—",
@@ -3611,35 +3628,18 @@
     {
       "Día": "Martes",
       "Franja": "09:00–10:00",
-      "Docente ausente": "David Miñaro",
-      "Actividad": "Inglés",
+      "Docente ausente": "Fede",
+      "Actividad": "Plástica",
       "Grupo": "6.ºB",
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Belén, Mariló",
+      "P2 Apoyo": "David Miñaro, Mariló",
       "P3 DC otro grupo": "Noelia, David Almagro, Cristina",
       "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
       "P5 Coordinación/tutoría": "—",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Belén, Mariló",
-      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
-    },
-    {
-      "Día": "Martes",
-      "Franja": "09:00–10:00",
-      "Docente ausente": "Fede",
-      "Actividad": "Educación Física",
-      "Grupo": "1.º",
-      "Rol ausente": "Docencia principal/directa",
-      "Cobertura obligatoria": "Sí",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Belén, Mariló",
-      "P3 DC otro grupo": "Noelia, David Almagro, Cristina",
-      "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Belén, Mariló",
+      "Primera respuesta según criterio": "P2: David Miñaro, Mariló",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -3651,12 +3651,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Belén, Mariló",
+      "P2 Apoyo": "David Miñaro, Mariló",
       "P3 DC otro grupo": "Noelia, David Almagro, Cristina",
       "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
       "P5 Coordinación/tutoría": "—",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Belén, Mariló",
+      "Primera respuesta según criterio": "P2: David Miñaro, Mariló",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -3668,12 +3668,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Belén, Mariló",
+      "P2 Apoyo": "David Miñaro, Mariló",
       "P3 DC otro grupo": "Noelia, David Almagro, Cristina",
       "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
       "P5 Coordinación/tutoría": "—",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Belén, Mariló",
+      "Primera respuesta según criterio": "P2: David Miñaro, Mariló",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -3685,7 +3685,7 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "Cristina",
-      "P2 Apoyo": "Belén, Mariló",
+      "P2 Apoyo": "David Miñaro, Mariló",
       "P3 DC otro grupo": "Noelia, David Almagro",
       "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
       "P5 Coordinación/tutoría": "—",
@@ -3702,12 +3702,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Belén, Mariló",
+      "P2 Apoyo": "David Miñaro, Mariló",
       "P3 DC otro grupo": "Noelia, David Almagro, Cristina",
       "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
       "P5 Coordinación/tutoría": "—",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Belén, Mariló",
+      "Primera respuesta según criterio": "P2: David Miñaro, Mariló",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -3719,7 +3719,7 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "Ana G",
-      "P2 Apoyo": "Belén, Mariló",
+      "P2 Apoyo": "David Miñaro, Mariló",
       "P3 DC otro grupo": "David Almagro, Cristina",
       "P4 Atención familias": "Sandra, Dámaris, Carmen María, María",
       "P5 Coordinación/tutoría": "—",
@@ -4212,12 +4212,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana G, Ana B, David Almagro, Mariló",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "P3 DC otro grupo": "Ana G, Ana B, David Almagro",
       "P4 Atención familias": "Cristina",
       "P5 Coordinación/tutoría": "Belén",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, Malu, Carmen María, María",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4229,8 +4229,8 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "María Muñoz",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana G, David Almagro, Mariló",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "P3 DC otro grupo": "Ana G, David Almagro",
       "P4 Atención familias": "Cristina",
       "P5 Coordinación/tutoría": "Belén",
       "P6 Equipo directivo": "Selección manual",
@@ -4246,30 +4246,13 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "Noelia",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana B, David Almagro, Mariló",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "P3 DC otro grupo": "Ana B, David Almagro",
       "P4 Atención familias": "Cristina",
       "P5 Coordinación/tutoría": "Belén",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: Noelia",
       "Observaciones": "Grupo atendido por docente principal — reposición de docencia compartida opcional"
-    },
-    {
-      "Día": "Martes",
-      "Franja": "12:00–13:00",
-      "Docente ausente": "Dámaris",
-      "Actividad": "C. Naturales",
-      "Grupo": "2.ºB",
-      "Rol ausente": "Docencia principal/directa",
-      "Cobertura obligatoria": "Sí",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana G, Ana B, David Almagro, Mariló",
-      "P4 Atención familias": "Cristina",
-      "P5 Coordinación/tutoría": "Belén",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, Malu, Carmen María, María",
-      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
       "Día": "Martes",
@@ -4280,8 +4263,8 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "María Molina",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana G, Ana B, Mariló",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "P3 DC otro grupo": "Ana G, Ana B",
       "P4 Atención familias": "Cristina",
       "P5 Coordinación/tutoría": "Belén",
       "P6 Equipo directivo": "Selección manual",
@@ -4291,35 +4274,35 @@
     {
       "Día": "Martes",
       "Franja": "12:00–13:00",
-      "Docente ausente": "David Miñaro",
-      "Actividad": "Lengua",
-      "Grupo": "3.º",
+      "Docente ausente": "David Miñarro",
+      "Actividad": "Inglés",
+      "Grupo": "6.ºA",
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
-      "P1 Misma docencia compartida": "Mariló",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
       "P3 DC otro grupo": "Ana G, Ana B, David Almagro",
       "P4 Atención familias": "Cristina",
       "P5 Coordinación/tutoría": "Belén",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P1: Mariló",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
       "Día": "Martes",
       "Franja": "12:00–13:00",
       "Docente ausente": "Fede",
-      "Actividad": "Plástica",
-      "Grupo": "6.ºA",
+      "Actividad": "Educación Física",
+      "Grupo": "2.ºB",
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana G, Ana B, David Almagro, Mariló",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "P3 DC otro grupo": "Ana G, Ana B, David Almagro",
       "P4 Atención familias": "Cristina",
       "P5 Coordinación/tutoría": "Belén",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, Malu, Carmen María, María",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4331,12 +4314,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana G, Ana B, David Almagro, Mariló",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "P3 DC otro grupo": "Ana G, Ana B, David Almagro",
       "P4 Atención familias": "Cristina",
       "P5 Coordinación/tutoría": "Belén",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, Malu, Carmen María, María",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4348,12 +4331,29 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana G, Ana B, David Almagro, Mariló",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "P3 DC otro grupo": "Ana G, Ana B, David Almagro",
       "P4 Atención familias": "Cristina",
       "P5 Coordinación/tutoría": "Belén",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, Malu, Carmen María, María",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "María",
+      "Actividad": "C. Naturales",
+      "Grupo": "3.º",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "P3 DC otro grupo": "Ana G, Ana B, David Almagro",
+      "P4 Atención familias": "Cristina",
+      "P5 Coordinación/tutoría": "Belén",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4365,8 +4365,8 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "David Almagro",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana G, Ana B, Mariló",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "P3 DC otro grupo": "Ana G, Ana B",
       "P4 Atención familias": "Cristina",
       "P5 Coordinación/tutoría": "Belén",
       "P6 Equipo directivo": "Selección manual",
@@ -4382,30 +4382,13 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "Ana B",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana G, David Almagro, Mariló",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "P3 DC otro grupo": "Ana G, David Almagro",
       "P4 Atención familias": "Cristina",
       "P5 Coordinación/tutoría": "Belén",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: Ana B",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
-    },
-    {
-      "Día": "Martes",
-      "Franja": "12:00–13:00",
-      "Docente ausente": "Mariló",
-      "Actividad": "Lengua",
-      "Grupo": "3.º",
-      "Rol ausente": "Docencia compartida",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "David Miñaro",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana G, Ana B, David Almagro",
-      "P4 Atención familias": "Cristina",
-      "P5 Coordinación/tutoría": "Belén",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P1: David Miñaro",
-      "Observaciones": "Grupo atendido por docente principal — reposición de docencia compartida opcional"
     },
     {
       "Día": "Martes",
@@ -4416,8 +4399,8 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "Ana G",
-      "P2 Apoyo": "Sandra, Malu, Carmen María, María",
-      "P3 DC otro grupo": "Ana B, David Almagro, Mariló",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Mariló, Malu, Carmen María",
+      "P3 DC otro grupo": "Ana B, David Almagro",
       "P4 Atención familias": "Cristina",
       "P5 Coordinación/tutoría": "Belén",
       "P6 Equipo directivo": "Selección manual",
@@ -4433,12 +4416,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
-      "P3 DC otro grupo": "—",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
+      "P3 DC otro grupo": "Mariló",
       "P4 Atención familias": "David Almagro",
       "P5 Coordinación/tutoría": "Noelia, Ana G, Ana B",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4450,29 +4433,63 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
+      "P3 DC otro grupo": "Mariló",
+      "P4 Atención familias": "David Almagro",
+      "P5 Coordinación/tutoría": "Noelia, Ana G, Ana B",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
+      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "David Miñarro",
+      "Actividad": "Lengua",
+      "Grupo": "3.º",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Mariló",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
       "P3 DC otro grupo": "—",
       "P4 Atención familias": "David Almagro",
       "P5 Coordinación/tutoría": "Noelia, Ana G, Ana B",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
+      "Primera respuesta según criterio": "P1: Mariló",
+      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "David Miñarro",
+      "Actividad": "Inglés",
+      "Grupo": "6.ºB",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
+      "P3 DC otro grupo": "Mariló",
+      "P4 Atención familias": "David Almagro",
+      "P5 Coordinación/tutoría": "Noelia, Ana G, Ana B",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
       "Día": "Martes",
       "Franja": "13:00–14:00",
       "Docente ausente": "Fede",
-      "Actividad": "Plástica",
-      "Grupo": "6.ºB",
+      "Actividad": "Educación Física",
+      "Grupo": "2.ºA",
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
-      "P3 DC otro grupo": "—",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
+      "P3 DC otro grupo": "Mariló",
       "P4 Atención familias": "David Almagro",
       "P5 Coordinación/tutoría": "Noelia, Ana G, Ana B",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4484,12 +4501,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
-      "P3 DC otro grupo": "—",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
+      "P3 DC otro grupo": "Mariló",
       "P4 Atención familias": "David Almagro",
       "P5 Coordinación/tutoría": "Noelia, Ana G, Ana B",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4501,29 +4518,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
-      "P3 DC otro grupo": "—",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
+      "P3 DC otro grupo": "Mariló",
       "P4 Atención familias": "David Almagro",
       "P5 Coordinación/tutoría": "Noelia, Ana G, Ana B",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
-      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
-    },
-    {
-      "Día": "Martes",
-      "Franja": "13:00–14:00",
-      "Docente ausente": "María",
-      "Actividad": "C. Naturales",
-      "Grupo": "3.º",
-      "Rol ausente": "Docencia principal/directa",
-      "Cobertura obligatoria": "Sí",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "David Almagro",
-      "P5 Coordinación/tutoría": "Noelia, Ana G, Ana B",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4535,12 +4535,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
-      "P3 DC otro grupo": "—",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
+      "P3 DC otro grupo": "Mariló",
       "P4 Atención familias": "David Almagro",
       "P5 Coordinación/tutoría": "Noelia, Ana G, Ana B",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4552,30 +4552,30 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
-      "P3 DC otro grupo": "—",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
+      "P3 DC otro grupo": "Mariló",
       "P4 Atención familias": "David Almagro",
       "P5 Coordinación/tutoría": "Noelia, Ana G, Ana B",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
+      "Primera respuesta según criterio": "P2: Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
       "Día": "Martes",
       "Franja": "13:00–14:00",
-      "Docente ausente": "Sandra",
-      "Actividad": "Plástica",
-      "Grupo": "2.ºA",
-      "Rol ausente": "Docencia principal/directa",
-      "Cobertura obligatoria": "Sí",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
+      "Docente ausente": "Mariló",
+      "Actividad": "Lengua",
+      "Grupo": "3.º",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "David Miñarro",
+      "P2 Apoyo": "Sandra, Dámaris, David Miñaro, Cristina, Malu, Carmen María, María",
       "P3 DC otro grupo": "—",
       "P4 Atención familias": "David Almagro",
       "P5 Coordinación/tutoría": "Noelia, Ana G, Ana B",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Dámaris, David Miñaro, Mariló, Cristina, Malu, Carmen María",
-      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
+      "Primera respuesta según criterio": "P1: David Miñarro",
+      "Observaciones": "Grupo atendido por docente principal — reposición de docencia compartida opcional"
     },
     {
       "Día": "Miércoles",
@@ -4586,12 +4586,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "Belén, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana G, David Almagro",
       "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "Ana B, Mamen, Fede",
+      "P5 Coordinación/tutoría": "Ana B, Mamen",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: Belén, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4603,30 +4603,13 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "Noelia",
-      "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "Belén, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "David Almagro",
       "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "Ana B, Mamen, Fede",
+      "P5 Coordinación/tutoría": "Ana B, Mamen",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: Noelia",
       "Observaciones": "Grupo atendido por docente principal — reposición de docencia compartida opcional"
-    },
-    {
-      "Día": "Miércoles",
-      "Franja": "09:00–10:00",
-      "Docente ausente": "Belén",
-      "Actividad": "Matemáticas",
-      "Grupo": "1.º",
-      "Rol ausente": "Docencia principal/directa",
-      "Cobertura obligatoria": "Sí",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "Ana G, David Almagro",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "Ana B, Mamen, Fede",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Mariló, Cristina, Carmen María, María",
-      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
       "Día": "Miércoles",
@@ -4637,12 +4620,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "Belén, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana G, David Almagro",
       "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "Ana B, Mamen, Fede",
+      "P5 Coordinación/tutoría": "Ana B, Mamen",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: Belén, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4654,10 +4637,10 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "María Molina",
-      "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "Belén, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana G",
       "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "Ana B, Mamen, Fede",
+      "P5 Coordinación/tutoría": "Ana B, Mamen",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: María Molina",
       "Observaciones": "Grupo atendido por docente principal — reposición de docencia compartida opcional"
@@ -4671,12 +4654,29 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "Belén, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana G, David Almagro",
       "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "Ana B, Mamen, Fede",
+      "P5 Coordinación/tutoría": "Ana B, Mamen",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: Belén, Mariló, Cristina, Carmen María, María",
+      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Fede",
+      "Actividad": "Educación Física",
+      "Grupo": "1.º",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Belén, Mariló, Cristina, Carmen María, María",
+      "P3 DC otro grupo": "Ana G, David Almagro",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Ana B, Mamen",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "P2: Belén, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4688,12 +4688,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "Belén, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana G, David Almagro",
       "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "Ana B, Mamen, Fede",
+      "P5 Coordinación/tutoría": "Ana B, Mamen",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: Belén, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4705,10 +4705,10 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "David Almagro",
-      "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "Belén, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana G",
       "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "Ana B, Mamen, Fede",
+      "P5 Coordinación/tutoría": "Ana B, Mamen",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: David Almagro",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
@@ -4722,12 +4722,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "Belén, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana G, David Almagro",
       "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "Ana B, Mamen, Fede",
+      "P5 Coordinación/tutoría": "Ana B, Mamen",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: Belén, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -4739,10 +4739,10 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "Ana G",
-      "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "Belén, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "David Almagro",
       "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "Ana B, Mamen, Fede",
+      "P5 Coordinación/tutoría": "Ana B, Mamen",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: Ana G",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
@@ -4756,12 +4756,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "Belén, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana G, David Almagro",
       "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "Ana B, Mamen, Fede",
+      "P5 Coordinación/tutoría": "Ana B, Mamen",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: Belén, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -5453,12 +5453,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana B",
       "P4 Atención familias": "—",
       "P5 Coordinación/tutoría": "María Molina, Noelia, Ana G",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -5470,7 +5470,7 @@
       "Rol ausente": "Docencia compartida",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "María Muñoz",
-      "P2 Apoyo": "Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "—",
       "P4 Atención familias": "—",
       "P5 Coordinación/tutoría": "María Molina, Noelia, Ana G",
@@ -5482,17 +5482,17 @@
       "Día": "Miércoles",
       "Franja": "13:00–14:00",
       "Docente ausente": "Belén",
-      "Actividad": "C. Naturales",
+      "Actividad": "Matemáticas",
       "Grupo": "1.º",
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana B",
       "P4 Atención familias": "—",
       "P5 Coordinación/tutoría": "María Molina, Noelia, Ana G",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -5504,46 +5504,29 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana B",
       "P4 Atención familias": "—",
       "P5 Coordinación/tutoría": "María Molina, Noelia, Ana G",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
-      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
-    },
-    {
-      "Día": "Miércoles",
-      "Franja": "13:00–14:00",
-      "Docente ausente": "David Miñaro",
-      "Actividad": "Inglés",
-      "Grupo": "6.ºA",
-      "Rol ausente": "Docencia principal/directa",
-      "Cobertura obligatoria": "Sí",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "Ana B",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "María Molina, Noelia, Ana G",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
       "Día": "Miércoles",
       "Franja": "13:00–14:00",
       "Docente ausente": "Fede",
-      "Actividad": "Educación Física",
-      "Grupo": "2.ºA",
+      "Actividad": "Plástica",
+      "Grupo": "6.ºA",
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana B",
       "P4 Atención familias": "—",
       "P5 Coordinación/tutoría": "María Molina, Noelia, Ana G",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -5555,12 +5538,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana B",
       "P4 Atención familias": "—",
       "P5 Coordinación/tutoría": "María Molina, Noelia, Ana G",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -5572,12 +5555,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana B",
       "P4 Atención familias": "—",
       "P5 Coordinación/tutoría": "María Molina, Noelia, Ana G",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -5589,12 +5572,12 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana B",
       "P4 Atención familias": "—",
       "P5 Coordinación/tutoría": "María Molina, Noelia, Ana G",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P2: David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -5606,12 +5589,29 @@
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "Ana B",
-      "P2 Apoyo": "Sandra, David Almagro, Mariló, Cristina, Carmen María, María",
+      "P2 Apoyo": "David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "—",
       "P4 Atención familias": "—",
       "P5 Coordinación/tutoría": "María Molina, Noelia, Ana G",
       "P6 Equipo directivo": "Selección manual",
       "Primera respuesta según criterio": "P1: Ana B",
+      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Sandra",
+      "Actividad": "Plástica",
+      "Grupo": "2.ºA",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
+      "P3 DC otro grupo": "Ana B",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "María Molina, Noelia, Ana G",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "P2: David Miñaro, David Almagro, Mariló, Cristina, Carmen María, María",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -6321,7 +6321,7 @@
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
       "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "Ana B, David Almagro",
+      "P3 DC otro grupo": "Noelia, Ana B",
       "P4 Atención familias": "María Molina",
       "P5 Coordinación/tutoría": "Sandra, Dámaris",
       "P6 Equipo directivo": "Selección manual",
@@ -6338,7 +6338,7 @@
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "María Muñoz",
       "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "David Almagro",
+      "P3 DC otro grupo": "Noelia",
       "P4 Atención familias": "María Molina",
       "P5 Coordinación/tutoría": "Sandra, Dámaris",
       "P6 Equipo directivo": "Selección manual",
@@ -6353,13 +6353,13 @@
       "Grupo": "5.ºB",
       "Rol ausente": "Docencia principal/directa",
       "Cobertura obligatoria": "Sí",
-      "P1 Misma docencia compartida": "—",
+      "P1 Misma docencia compartida": "Noelia",
       "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "Ana B, David Almagro",
+      "P3 DC otro grupo": "Ana B",
       "P4 Atención familias": "María Molina",
       "P5 Coordinación/tutoría": "Sandra, Dámaris",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P2: Mariló, Cristina, Carmen María, María",
+      "Primera respuesta según criterio": "P1: Noelia",
       "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
@@ -6372,7 +6372,7 @@
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
       "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "Ana B, David Almagro",
+      "P3 DC otro grupo": "Noelia, Ana B",
       "P4 Atención familias": "María Molina",
       "P5 Coordinación/tutoría": "Sandra, Dámaris",
       "P6 Equipo directivo": "Selección manual",
@@ -6385,16 +6385,16 @@
       "Docente ausente": "David Almagro",
       "Actividad": "Matemáticas",
       "Grupo": "5.ºA",
-      "Rol ausente": "Docencia compartida",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "Noelia",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
       "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "Ana B",
+      "P3 DC otro grupo": "Noelia, Ana B",
       "P4 Atención familias": "María Molina",
       "P5 Coordinación/tutoría": "Sandra, Dámaris",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P1: Noelia",
-      "Observaciones": "Grupo atendido por docente principal — reposición de docencia compartida opcional"
+      "Primera respuesta según criterio": "P2: Mariló, Cristina, Carmen María, María",
+      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
     },
     {
       "Día": "Jueves",
@@ -6406,7 +6406,7 @@
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
       "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "Ana B, David Almagro",
+      "P3 DC otro grupo": "Noelia, Ana B",
       "P4 Atención familias": "María Molina",
       "P5 Coordinación/tutoría": "Sandra, Dámaris",
       "P6 Equipo directivo": "Selección manual",
@@ -6423,7 +6423,7 @@
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
       "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "Ana B, David Almagro",
+      "P3 DC otro grupo": "Noelia, Ana B",
       "P4 Atención familias": "María Molina",
       "P5 Coordinación/tutoría": "Sandra, Dámaris",
       "P6 Equipo directivo": "Selección manual",
@@ -6440,7 +6440,7 @@
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
       "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "Ana B, David Almagro",
+      "P3 DC otro grupo": "Noelia, Ana B",
       "P4 Atención familias": "María Molina",
       "P5 Coordinación/tutoría": "Sandra, Dámaris",
       "P6 Equipo directivo": "Selección manual",
@@ -6457,7 +6457,7 @@
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "—",
       "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "Ana B, David Almagro",
+      "P3 DC otro grupo": "Noelia, Ana B",
       "P4 Atención familias": "María Molina",
       "P5 Coordinación/tutoría": "Sandra, Dámaris",
       "P6 Equipo directivo": "Selección manual",
@@ -6474,7 +6474,7 @@
       "Cobertura obligatoria": "Sí",
       "P1 Misma docencia compartida": "Ana B",
       "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
-      "P3 DC otro grupo": "David Almagro",
+      "P3 DC otro grupo": "Noelia",
       "P4 Atención familias": "María Molina",
       "P5 Coordinación/tutoría": "Sandra, Dámaris",
       "P6 Equipo directivo": "Selección manual",
@@ -6485,18 +6485,18 @@
       "Día": "Jueves",
       "Franja": "12:00–13:00",
       "Docente ausente": "Noelia",
-      "Actividad": "Matemáticas",
-      "Grupo": "5.ºA",
-      "Rol ausente": "Docencia principal/directa",
-      "Cobertura obligatoria": "Sí",
-      "P1 Misma docencia compartida": "David Almagro",
+      "Actividad": "Lengua",
+      "Grupo": "5.ºB",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Ana G",
       "P2 Apoyo": "Mariló, Cristina, Carmen María, María",
       "P3 DC otro grupo": "Ana B",
       "P4 Atención familias": "María Molina",
       "P5 Coordinación/tutoría": "Sandra, Dámaris",
       "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "P1: David Almagro",
-      "Observaciones": "Si hay empate dentro del mismo nivel, no se fuerza orden: seleccionar manualmente o aplicar un criterio de rotación previamente aprobado."
+      "Primera respuesta según criterio": "P1: Ana G",
+      "Observaciones": "Grupo atendido por docente principal — reposición de docencia compartida opcional"
     },
     {
       "Día": "Jueves",

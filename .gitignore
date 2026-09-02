@@ -1,7 +1,6 @@
 node_modules/
 dist/
 source-v2/
-artifacts/file-preview/
-artifacts/visual-qa/
-artifacts/visual-qa-vite.log
+artifacts/
+scripts/
 .DS_Store
