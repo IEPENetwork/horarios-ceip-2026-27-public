@@ -1,0 +1,2490 @@
+{
+  "version": "Infantil · motor de sustituciones",
+  "source": "schedule-infantil.json",
+  "source_workbook": "Consolidación aprobada en conversación · 2026-09-04",
+  "teachers": [
+    "Mercedes",
+    "Julia",
+    "María",
+    "Dori",
+    "Mónica",
+    "Carmen María"
+  ],
+  "priority_policy": [
+    {
+      "priority": 1,
+      "label": "Misma docencia compartida",
+      "rule": "Docente ya presente en la misma sesión/grupo."
+    },
+    {
+      "priority": 2,
+      "label": "Apoyo",
+      "rule": "Docente con Apoyo disponible durante toda la franja."
+    },
+    {
+      "priority": 3,
+      "label": "DC en otro grupo",
+      "rule": "Docente en docencia compartida de otro grupo."
+    },
+    {
+      "priority": 4,
+      "label": "Atención a familias",
+      "rule": "Docente en atención a familias durante toda la franja."
+    },
+    {
+      "priority": 5,
+      "label": "Coordinación o tutoría",
+      "rule": "Coordinación docente, biblioteca o reducción tutorial."
+    },
+    {
+      "priority": 6,
+      "label": "Equipo directivo",
+      "rule": "Último recurso sujeto a disponibilidad."
+    }
+  ],
+  "rules": {
+    "multiple_absences": "Excluir ausentes y asignar cada sustituto como máximo una vez por franja.",
+    "tie_break": "Mostrar todos los candidatos de la misma prioridad.",
+    "dc_absence": "Si falta solo la persona de docencia compartida, la cobertura es opcional.",
+    "recess": "Vigilancia pendiente de cuadrante específico.",
+    "directivo": "Consultar disponibilidad."
+  },
+  "slots": [
+    {
+      "day": "Lunes",
+      "slot": "09:00–10:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Crecimiento en armonía · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Coordinación docente · 60 min",
+          "kind": "p5"
+        },
+        "María": {
+          "status": "Crecimiento en armonía · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "Cobertura Descubrimiento y exploración del entorno · 4 años",
+          "kind": "docencia"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Coordinación docente · 60 min",
+          "kind": "p5"
+        }
+      }
+    },
+    {
+      "day": "Lunes",
+      "slot": "10:00–10:45",
+      "teachers": {
+        "Mercedes": {
+          "status": "Descubrimiento y exploración del entorno · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        },
+        "María": {
+          "status": "Descubrimiento y exploración del entorno · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "DC Descubrimiento y exploración del entorno · 3 años",
+          "kind": "p3"
+        },
+        "Mónica": {
+          "status": "Inglés · 4 años",
+          "kind": "docencia"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Lunes",
+      "slot": "10:45–11:30",
+      "teachers": {
+        "Mercedes": {
+          "status": "Crecimiento en armonía · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Crecimiento en armonía · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Comunicación y representación de la realidad · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "DC Crecimiento en armonía · 4 años",
+          "kind": "p3"
+        },
+        "Mónica": {
+          "status": "DC Crecimiento en armonía · 3 años",
+          "kind": "p3"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Lunes",
+      "slot": "11:30–12:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Julia": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "María": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Dori": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Mónica": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Carmen María": {
+          "status": "RECREO",
+          "kind": "recreo"
+        }
+      }
+    },
+    {
+      "day": "Lunes",
+      "slot": "12:00–13:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Psicomotricidad · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Comunicación y representación de la realidad · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Descubrimiento y exploración del entorno · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "Gestión de biblioteca · 60 min",
+          "kind": "p5"
+        },
+        "Mónica": {
+          "status": "DC Psicomotricidad · 3 años",
+          "kind": "p3"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Lunes",
+      "slot": "13:00–14:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Comunicación y representación de la realidad · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Psicomotricidad · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Atención a familias · 60 min",
+          "kind": "p4"
+        },
+        "Dori": {
+          "status": "Cobertura Comunicación y representación de la realidad · 5 años",
+          "kind": "docencia"
+        },
+        "Mónica": {
+          "status": "DC Psicomotricidad · 4 años",
+          "kind": "p3"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Martes",
+      "slot": "09:00–10:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Coordinación docente · 60 min",
+          "kind": "p5"
+        },
+        "Julia": {
+          "status": "Inglés · 3 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Comunicación y representación de la realidad · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "Cobertura Crecimiento en armonía · 4 años",
+          "kind": "docencia"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Atención a familias · 60 min",
+          "kind": "p4"
+        }
+      }
+    },
+    {
+      "day": "Martes",
+      "slot": "10:00–10:45",
+      "teachers": {
+        "Mercedes": {
+          "status": "Descubrimiento y exploración del entorno · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Inglés · 5 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        },
+        "Dori": {
+          "status": "Cobertura Comunicación y representación de la realidad · 4 años",
+          "kind": "docencia"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Martes",
+      "slot": "10:45–11:30",
+      "teachers": {
+        "Mercedes": {
+          "status": "Crecimiento en armonía · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Descubrimiento y exploración del entorno · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Crecimiento en armonía · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "DC Descubrimiento y exploración del entorno · 4 años",
+          "kind": "p3"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Martes",
+      "slot": "11:30–12:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Julia": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "María": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Dori": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "RECREO",
+          "kind": "recreo"
+        }
+      }
+    },
+    {
+      "day": "Martes",
+      "slot": "12:00–13:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Comunicación y representación de la realidad · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Comunicación y representación de la realidad · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Descubrimiento y exploración del entorno · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "DC Descubrimiento y exploración del entorno · 5 años",
+          "kind": "p3"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Martes",
+      "slot": "13:00–14:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Crecimiento en armonía · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Atención a familias · 60 min",
+          "kind": "p4"
+        },
+        "María": {
+          "status": "Crecimiento en armonía · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "Cobertura Descubrimiento y exploración del entorno · 4 años",
+          "kind": "docencia"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Miércoles",
+      "slot": "09:00–10:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Crecimiento en armonía · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Comunicación y representación de la realidad · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Crecimiento en armonía · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "Coordinación docente · 60 min",
+          "kind": "p5"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Miércoles",
+      "slot": "10:00–10:45",
+      "teachers": {
+        "Mercedes": {
+          "status": "Descubrimiento y exploración del entorno · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        },
+        "María": {
+          "status": "Descubrimiento y exploración del entorno · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "DC Descubrimiento y exploración del entorno · 5 años",
+          "kind": "p3"
+        },
+        "Mónica": {
+          "status": "Inglés · 4 años",
+          "kind": "docencia"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Miércoles",
+      "slot": "10:45–11:30",
+      "teachers": {
+        "Mercedes": {
+          "status": "Crecimiento en armonía · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Descubrimiento y exploración del entorno · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Crecimiento en armonía · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "DC Descubrimiento y exploración del entorno · 4 años",
+          "kind": "p3"
+        },
+        "Mónica": {
+          "status": "DC Crecimiento en armonía · 5 años",
+          "kind": "p3"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Miércoles",
+      "slot": "11:30–12:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Julia": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "María": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Dori": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Mónica": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Carmen María": {
+          "status": "RECREO",
+          "kind": "recreo"
+        }
+      }
+    },
+    {
+      "day": "Miércoles",
+      "slot": "12:00–13:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Descubrimiento y exploración del entorno · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Reducción por tutoría · 60 min",
+          "kind": "p5"
+        },
+        "María": {
+          "status": "Psicomotricidad · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "Cobertura Crecimiento en armonía · 4 años",
+          "kind": "docencia"
+        },
+        "Mónica": {
+          "status": "DC Psicomotricidad · 5 años",
+          "kind": "p3"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Miércoles",
+      "slot": "13:00–14:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Atención a familias · 60 min",
+          "kind": "p4"
+        },
+        "Julia": {
+          "status": "Descubrimiento y exploración del entorno · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Comunicación y representación de la realidad · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "DC Comunicación y representación de la realidad · 5 años",
+          "kind": "p3"
+        },
+        "Mónica": {
+          "status": "Cobertura Comunicación y representación de la realidad · 3 años",
+          "kind": "docencia"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Jueves",
+      "slot": "09:00–10:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Descubrimiento y exploración del entorno · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Descubrimiento y exploración del entorno · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Coordinación docente · 60 min",
+          "kind": "p5"
+        },
+        "Dori": {
+          "status": "Cobertura Comunicación y representación de la realidad · 5 años",
+          "kind": "docencia"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Jueves",
+      "slot": "10:00–10:45",
+      "teachers": {
+        "Mercedes": {
+          "status": "Comunicación y representación de la realidad · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Inglés · 5 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        },
+        "Dori": {
+          "status": "Cobertura Crecimiento en armonía · 4 años",
+          "kind": "docencia"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Jueves",
+      "slot": "10:45–11:30",
+      "teachers": {
+        "Mercedes": {
+          "status": "Descubrimiento y exploración del entorno · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Descubrimiento y exploración del entorno · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Crecimiento en armonía · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "DC Descubrimiento y exploración del entorno · 4 años",
+          "kind": "p3"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Jueves",
+      "slot": "11:30–12:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Julia": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "María": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Dori": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "RECREO",
+          "kind": "recreo"
+        }
+      }
+    },
+    {
+      "day": "Jueves",
+      "slot": "12:00–13:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Reducción por tutoría · 60 min",
+          "kind": "p5"
+        },
+        "Julia": {
+          "status": "Crecimiento en armonía · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Descubrimiento y exploración del entorno · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "Cobertura Comunicación y representación de la realidad · 3 años",
+          "kind": "docencia"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Jueves",
+      "slot": "13:00–14:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Crecimiento en armonía · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Comunicación y representación de la realidad · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Crecimiento en armonía · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "Gestión de biblioteca · 60 min",
+          "kind": "p5"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Apoyo · 60 min",
+          "kind": "p2"
+        }
+      }
+    },
+    {
+      "day": "Viernes",
+      "slot": "09:00–10:30",
+      "teachers": {
+        "Mercedes": {
+          "status": "Comunicación y representación de la realidad · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Crecimiento en armonía · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Descubrimiento y exploración del entorno · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "DC Comunicación y representación de la realidad · 3 años",
+          "kind": "p3"
+        },
+        "Mónica": {
+          "status": "NO DISPONIBLE 09:00–10:00; DC 4 años · 10:00–10:30",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Religión · grupo mixto 1.º–4.º",
+          "kind": "docencia"
+        }
+      }
+    },
+    {
+      "day": "Viernes",
+      "slot": "10:30–11:15",
+      "teachers": {
+        "Mercedes": {
+          "status": "Religión / Atención Educativa · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Religión / Atención Educativa · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Religión / Atención Educativa · 5 años",
+          "kind": "docencia"
+        },
+        "Dori": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        },
+        "Mónica": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        },
+        "Carmen María": {
+          "status": "Religión · grupo mixto Infantil",
+          "kind": "docencia"
+        }
+      }
+    },
+    {
+      "day": "Viernes",
+      "slot": "11:15–11:45",
+      "teachers": {
+        "Mercedes": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Julia": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "María": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Dori": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Mónica": {
+          "status": "RECREO",
+          "kind": "recreo"
+        },
+        "Carmen María": {
+          "status": "RECREO",
+          "kind": "recreo"
+        }
+      }
+    },
+    {
+      "day": "Viernes",
+      "slot": "11:45–12:30",
+      "teachers": {
+        "Mercedes": {
+          "status": "Religión / Atención Educativa · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Religión / Atención Educativa · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Atención Educativa 5 años · 11:45–12:00; Reducción por tutoría · 12:00–12:30",
+          "kind": "no_disponible"
+        },
+        "Dori": {
+          "status": "Apoyo · 45 min",
+          "kind": "p2"
+        },
+        "Mónica": {
+          "status": "Apoyo · 11:45–12:00; Cobertura 5 años · 12:00–12:30",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Religión · grupo mixto Infantil",
+          "kind": "docencia"
+        }
+      }
+    },
+    {
+      "day": "Viernes",
+      "slot": "12:30–14:00",
+      "teachers": {
+        "Mercedes": {
+          "status": "Descubrimiento y exploración del entorno · 3 años",
+          "kind": "docencia"
+        },
+        "Julia": {
+          "status": "Comunicación y representación de la realidad · 4 años",
+          "kind": "docencia"
+        },
+        "María": {
+          "status": "Reducción por tutoría · 12:30–13:00; Comunicación y representación de la realidad · 5 años · 13:00–14:00",
+          "kind": "no_disponible"
+        },
+        "Dori": {
+          "status": "DC 3 años · 12:30–13:00; Atención a familias · 13:00–14:00",
+          "kind": "no_disponible"
+        },
+        "Mónica": {
+          "status": "Cobertura 5 años · 12:30–13:00; Atención a familias · 13:00–14:00",
+          "kind": "no_disponible"
+        },
+        "Carmen María": {
+          "status": "Religión · grupo mixto 5.º–6.º",
+          "kind": "docencia"
+        }
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "Día": "Lunes",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Julia, Carmen María",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Dori",
+      "P2 Apoyo": "Julia, Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Dori",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Mercedes",
+      "P2 Apoyo": "Julia, Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Mónica",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Mónica",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Mercedes",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Psicomotricidad",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Mónica",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Dori",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Mónica",
+      "Actividad": "Psicomotricidad",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Mercedes",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Dori",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Mónica",
+      "P4 Atención familias": "María",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Julia",
+      "Actividad": "Inglés",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "Carmen María",
+      "P5 Coordinación/tutoría": "Mercedes",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "María, Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "Julia",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Dori",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Julia, Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori, Mónica",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Mónica",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Julia",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Mónica",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "Mercedes",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "María",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "María, Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Dori",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Mercedes",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Dori",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "09:00–10:30",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Dori",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "09:00–10:30",
+      "Docente ausente": "Dori",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Mercedes",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "10:30–11:15",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Religión / Atención Educativa",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Dori, Mónica",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "11:45–12:30",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Religión / Atención Educativa",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Dori",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "12:30–14:00",
+      "Docente ausente": "Mercedes",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "12:30–14:00",
+      "Docente ausente": "Dori",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "3 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Mercedes",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Dori",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Julia, Carmen María",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Mónica",
+      "Actividad": "Inglés",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Julia, Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Julia",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Dori",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Mónica",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Dori",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Julia",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Mónica",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Julia",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Mónica",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Dori",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Julia",
+      "Actividad": "Psicomotricidad",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Mónica",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "María",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Mónica",
+      "Actividad": "Psicomotricidad",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Julia",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "María",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Dori",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "Carmen María",
+      "P5 Coordinación/tutoría": "Mercedes",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Dori",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "María, Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Julia",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Dori",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Dori",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Julia",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Julia",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Dori",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "Julia",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Julia",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Dori",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Mónica",
+      "Actividad": "Inglés",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Julia, Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Julia",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Dori",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Mónica",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Dori",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Julia",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Mónica",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Dori",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Mónica",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Julia",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Julia",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "Mercedes",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Julia",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "María",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Dori",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "María, Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Julia",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Dori",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Dori",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Julia",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Julia",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Mercedes",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Julia",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Dori",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "09:00–10:30",
+      "Docente ausente": "Julia",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "09:00–10:30",
+      "Docente ausente": "Mónica",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "Julia",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "10:30–11:15",
+      "Docente ausente": "Julia",
+      "Actividad": "Religión / Atención Educativa",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Dori, Mónica",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "11:45–12:30",
+      "Docente ausente": "Julia",
+      "Actividad": "Religión / Atención Educativa",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Dori",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "12:30–14:00",
+      "Docente ausente": "Julia",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "4 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "María",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Julia, Carmen María",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "María",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Julia, Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "María",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori, Mónica",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "María",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Mónica",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Dori",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Dori",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Mónica",
+      "P4 Atención familias": "María",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "María",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "Carmen María",
+      "P5 Coordinación/tutoría": "Mercedes",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Julia",
+      "Actividad": "Inglés",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "María, Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "María",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "María",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Dori",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Dori",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "María",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "María",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "Julia",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "María",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Dori",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "María",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Dori",
+      "P2 Apoyo": "Julia, Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Dori",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "María",
+      "P2 Apoyo": "Julia, Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "María",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Mónica",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Mónica",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "María",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "María",
+      "Actividad": "Psicomotricidad",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Mónica",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Julia",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Mónica",
+      "Actividad": "Psicomotricidad",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "María",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Julia",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "María",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "Dori",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "Mercedes",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "Dori",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "María",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "Mercedes",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Dori",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "María",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Julia",
+      "Actividad": "Inglés",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "María, Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "María",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "María",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Mercedes",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "13:00–14:00",
+      "Docente ausente": "María",
+      "Actividad": "Crecimiento en armonía",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Carmen María",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "Dori",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "09:00–10:30",
+      "Docente ausente": "María",
+      "Actividad": "Descubrimiento y exploración del entorno",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "Dori",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "10:30–11:15",
+      "Docente ausente": "María",
+      "Actividad": "Religión / Atención Educativa",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Dori, Mónica",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "11:45–12:30",
+      "Docente ausente": "María",
+      "Actividad": "Religión / Atención Educativa",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Dori",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "11:45–12:30",
+      "Docente ausente": "Mónica",
+      "Actividad": "Religión / Atención Educativa",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "María",
+      "P2 Apoyo": "Dori",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "12:30–14:00",
+      "Docente ausente": "María",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia principal/directa",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "12:30–14:00",
+      "Docente ausente": "Mónica",
+      "Actividad": "Comunicación y representación de la realidad",
+      "Grupo": "5 años",
+      "Rol ausente": "Docencia compartida",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "María",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "El grupo conserva docente principal; reposición de docencia compartida opcional."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "10:30–11:15",
+      "Docente ausente": "Carmen María",
+      "Actividad": "Religión",
+      "Grupo": "Grupo mixto Infantil",
+      "Rol ausente": "Especialista",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Dori, Mónica",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "11:45–12:30",
+      "Docente ausente": "Carmen María",
+      "Actividad": "Religión",
+      "Grupo": "Grupo mixto Infantil",
+      "Rol ausente": "Especialista",
+      "Cobertura obligatoria": "Sí",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "Dori",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
+      "Observaciones": "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+    }
+  ]
+}

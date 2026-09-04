@@ -1,0 +1,1519 @@
+{
+  "version": "Infantil · horario consolidado aprobado",
+  "stage": "infantil",
+  "sourceWorkbook": "Consolidación aprobada en conversación · 2026-09-04",
+  "changeSet": "Integración incremental en la carcasa V1 de Primaria; datos independientes.",
+  "days": [
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes"
+  ],
+  "groups": [
+    "3 años",
+    "4 años",
+    "5 años"
+  ],
+  "slots": {
+    "Lunes": [
+      "09:00–10:00",
+      "10:00–10:45",
+      "10:45–11:30",
+      "11:30–12:00",
+      "12:00–13:00",
+      "13:00–14:00"
+    ],
+    "Martes": [
+      "09:00–10:00",
+      "10:00–10:45",
+      "10:45–11:30",
+      "11:30–12:00",
+      "12:00–13:00",
+      "13:00–14:00"
+    ],
+    "Miércoles": [
+      "09:00–10:00",
+      "10:00–10:45",
+      "10:45–11:30",
+      "11:30–12:00",
+      "12:00–13:00",
+      "13:00–14:00"
+    ],
+    "Jueves": [
+      "09:00–10:00",
+      "10:00–10:45",
+      "10:45–11:30",
+      "11:30–12:00",
+      "12:00–13:00",
+      "13:00–14:00"
+    ],
+    "Viernes": [
+      "09:00–10:30",
+      "10:30–11:15",
+      "11:15–11:45",
+      "11:45–12:30",
+      "12:30–14:00"
+    ]
+  },
+  "recess": {
+    "Lunes": "11:30–12:00",
+    "Martes": "11:30–12:00",
+    "Miércoles": "11:30–12:00",
+    "Jueves": "11:30–12:00",
+    "Viernes": "11:15–11:45"
+  },
+  "tutors": {
+    "3 años": "Mercedes",
+    "4 años": "Julia",
+    "5 años": "María"
+  },
+  "teachers": [
+    "Mercedes",
+    "Julia",
+    "María",
+    "Dori",
+    "Mónica",
+    "Carmen María"
+  ],
+  "teacherRoles": {
+    "Mercedes": [
+      "Tutor/a"
+    ],
+    "Julia": [
+      "Tutor/a",
+      "Especialista",
+      "Apoyo disponible"
+    ],
+    "María": [
+      "Tutor/a",
+      "Apoyo disponible"
+    ],
+    "Dori": [
+      "Docencia compartida",
+      "Apoyo disponible"
+    ],
+    "Mónica": [
+      "Especialista",
+      "Docencia compartida",
+      "Apoyo disponible"
+    ],
+    "Carmen María": [
+      "Especialista",
+      "Apoyo disponible"
+    ]
+  },
+  "subjectFamilies": {
+    "Crecimiento en armonía": "core",
+    "Descubrimiento y exploración del entorno": "core",
+    "Comunicación y representación de la realidad": "core",
+    "Inglés": "lang",
+    "Psicomotricidad": "spec",
+    "Religión / Atención Educativa": "spec"
+  },
+  "subjects": {
+    "Crecimiento en armonía": [
+      "Dori",
+      "Julia",
+      "María",
+      "Mercedes",
+      "Mónica"
+    ],
+    "Descubrimiento y exploración del entorno": [
+      "Dori",
+      "Julia",
+      "María",
+      "Mercedes"
+    ],
+    "Psicomotricidad": [
+      "Julia",
+      "María",
+      "Mercedes",
+      "Mónica"
+    ],
+    "Comunicación y representación de la realidad": [
+      "Dori",
+      "Julia",
+      "María",
+      "Mercedes",
+      "Mónica"
+    ],
+    "Inglés": [
+      "Julia",
+      "Mónica"
+    ],
+    "Religión / Atención Educativa": [
+      "Carmen María",
+      "Julia",
+      "María",
+      "Mercedes",
+      "Mónica"
+    ]
+  },
+  "lessons": [
+    {
+      "group": "3 años",
+      "day": "Lunes",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Crecimiento en armonía",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Lunes",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Mercedes",
+      "shared": [
+        "Dori"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Lunes",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Crecimiento en armonía",
+      "primary": "Mercedes",
+      "shared": [
+        "Mónica"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Lunes",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Psicomotricidad",
+      "primary": "Mercedes",
+      "shared": [
+        "Mónica"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Lunes",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Martes",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Inglés",
+      "primary": "Julia",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Martes",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Martes",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Crecimiento en armonía",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Martes",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Martes",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Crecimiento en armonía",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Miércoles",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Crecimiento en armonía",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Miércoles",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Miércoles",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Crecimiento en armonía",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Miércoles",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Miércoles",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Mónica",
+      "shared": [],
+      "notes": "Mónica cubre la tutoría durante una función no lectiva de Mercedes.",
+      "primaryDisplay": "Mónica (cobertura de tutoría)"
+    },
+    {
+      "group": "3 años",
+      "day": "Jueves",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Jueves",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Jueves",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Jueves",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Dori",
+      "shared": [],
+      "notes": "Dori cubre la tutoría durante una función no lectiva de Mercedes.",
+      "primaryDisplay": "Dori (cobertura de tutoría)"
+    },
+    {
+      "group": "3 años",
+      "day": "Jueves",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Crecimiento en armonía",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Viernes",
+      "time": "09:00–10:30",
+      "minutes": 90,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Mercedes",
+      "shared": [
+        "Dori"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "3 años",
+      "day": "Viernes",
+      "time": "10:30–11:15",
+      "minutes": 45,
+      "subject": "Religión / Atención Educativa",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": "Religión en grupo mixto de Infantil; el resto del alumnado permanece con su tutora en Atención Educativa.",
+      "primaryDisplay": "Mercedes (Atención Educativa) · Carmen María (Religión mixta)"
+    },
+    {
+      "group": "3 años",
+      "day": "Viernes",
+      "time": "11:45–12:30",
+      "minutes": 45,
+      "subject": "Religión / Atención Educativa",
+      "primary": "Mercedes",
+      "shared": [],
+      "notes": "Religión en grupo mixto de Infantil; el resto del alumnado permanece con su tutora en Atención Educativa.",
+      "primaryDisplay": "Mercedes (Atención Educativa) · Carmen María (Religión mixta)"
+    },
+    {
+      "group": "3 años",
+      "day": "Viernes",
+      "time": "12:30–14:00",
+      "minutes": 90,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Mercedes",
+      "shared": [
+        "Dori"
+      ],
+      "notes": "",
+      "sharedDisplay": {
+        "Dori": "Dori (refuerzo 12:30–13:00)"
+      },
+      "sharedSegments": {
+        "Dori": "12:30–13:00"
+      },
+      "sharedMinutes": {
+        "Dori": 30
+      }
+    },
+    {
+      "group": "4 años",
+      "day": "Lunes",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Dori",
+      "shared": [],
+      "notes": "Dori cubre la tutoría durante una función no lectiva de Julia.",
+      "primaryDisplay": "Dori (cobertura de tutoría)"
+    },
+    {
+      "group": "4 años",
+      "day": "Lunes",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Inglés",
+      "primary": "Mónica",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Lunes",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Crecimiento en armonía",
+      "primary": "Julia",
+      "shared": [
+        "Dori"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Lunes",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Julia",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Lunes",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Psicomotricidad",
+      "primary": "Julia",
+      "shared": [
+        "Mónica"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Martes",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Crecimiento en armonía",
+      "primary": "Dori",
+      "shared": [],
+      "notes": "Dori cubre la tutoría durante una función no lectiva de Julia.",
+      "primaryDisplay": "Dori (cobertura de tutoría)"
+    },
+    {
+      "group": "4 años",
+      "day": "Martes",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Dori",
+      "shared": [],
+      "notes": "Dori cubre la tutoría durante una función no lectiva de Julia.",
+      "primaryDisplay": "Dori (cobertura de tutoría)"
+    },
+    {
+      "group": "4 años",
+      "day": "Martes",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Julia",
+      "shared": [
+        "Dori"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Martes",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Julia",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Martes",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Dori",
+      "shared": [],
+      "notes": "Dori cubre la tutoría durante una función no lectiva de Julia.",
+      "primaryDisplay": "Dori (cobertura de tutoría)"
+    },
+    {
+      "group": "4 años",
+      "day": "Miércoles",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Julia",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Miércoles",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Inglés",
+      "primary": "Mónica",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Miércoles",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Julia",
+      "shared": [
+        "Dori"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Miércoles",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Crecimiento en armonía",
+      "primary": "Dori",
+      "shared": [],
+      "notes": "Dori cubre la tutoría durante una función no lectiva de Julia.",
+      "primaryDisplay": "Dori (cobertura de tutoría)"
+    },
+    {
+      "group": "4 años",
+      "day": "Miércoles",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Julia",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Jueves",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Julia",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Jueves",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Crecimiento en armonía",
+      "primary": "Dori",
+      "shared": [],
+      "notes": "Dori cubre la tutoría durante una función no lectiva de Julia.",
+      "primaryDisplay": "Dori (cobertura de tutoría)"
+    },
+    {
+      "group": "4 años",
+      "day": "Jueves",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "Julia",
+      "shared": [
+        "Dori"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Jueves",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Crecimiento en armonía",
+      "primary": "Julia",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Jueves",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Julia",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "4 años",
+      "day": "Viernes",
+      "time": "09:00–10:30",
+      "minutes": 90,
+      "subject": "Crecimiento en armonía",
+      "primary": "Julia",
+      "shared": [
+        "Mónica"
+      ],
+      "notes": "",
+      "sharedDisplay": {
+        "Mónica": "Mónica (refuerzo 10:00–10:30)"
+      },
+      "sharedSegments": {
+        "Mónica": "10:00–10:30"
+      },
+      "sharedMinutes": {
+        "Mónica": 30
+      }
+    },
+    {
+      "group": "4 años",
+      "day": "Viernes",
+      "time": "10:30–11:15",
+      "minutes": 45,
+      "subject": "Religión / Atención Educativa",
+      "primary": "Julia",
+      "shared": [],
+      "notes": "Religión en grupo mixto de Infantil; el resto del alumnado permanece con su tutora en Atención Educativa.",
+      "primaryDisplay": "Julia (Atención Educativa) · Carmen María (Religión mixta)"
+    },
+    {
+      "group": "4 años",
+      "day": "Viernes",
+      "time": "11:45–12:30",
+      "minutes": 45,
+      "subject": "Religión / Atención Educativa",
+      "primary": "Julia",
+      "shared": [],
+      "notes": "Religión en grupo mixto de Infantil; el resto del alumnado permanece con su tutora en Atención Educativa.",
+      "primaryDisplay": "Julia (Atención Educativa) · Carmen María (Religión mixta)"
+    },
+    {
+      "group": "4 años",
+      "day": "Viernes",
+      "time": "12:30–14:00",
+      "minutes": 90,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Julia",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Lunes",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Crecimiento en armonía",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Lunes",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Lunes",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Lunes",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Lunes",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Dori",
+      "shared": [],
+      "notes": "Dori cubre la tutoría durante una función no lectiva de María.",
+      "primaryDisplay": "Dori (cobertura de tutoría)"
+    },
+    {
+      "group": "5 años",
+      "day": "Martes",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Martes",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Inglés",
+      "primary": "Julia",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Martes",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Crecimiento en armonía",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Martes",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "María",
+      "shared": [
+        "Dori"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Martes",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Crecimiento en armonía",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Miércoles",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Crecimiento en armonía",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Miércoles",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "María",
+      "shared": [
+        "Dori"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Miércoles",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Crecimiento en armonía",
+      "primary": "María",
+      "shared": [
+        "Mónica"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Miércoles",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Psicomotricidad",
+      "primary": "María",
+      "shared": [
+        "Mónica"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Miércoles",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "María",
+      "shared": [
+        "Dori"
+      ],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Jueves",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "Dori",
+      "shared": [],
+      "notes": "Dori cubre la tutoría durante una función no lectiva de María.",
+      "primaryDisplay": "Dori (cobertura de tutoría)"
+    },
+    {
+      "group": "5 años",
+      "day": "Jueves",
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "Inglés",
+      "primary": "Julia",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Jueves",
+      "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "Crecimiento en armonía",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Jueves",
+      "time": "12:00–13:00",
+      "minutes": 60,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Jueves",
+      "time": "13:00–14:00",
+      "minutes": 60,
+      "subject": "Crecimiento en armonía",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Viernes",
+      "time": "09:00–10:30",
+      "minutes": 90,
+      "subject": "Descubrimiento y exploración del entorno",
+      "primary": "María",
+      "shared": [],
+      "notes": ""
+    },
+    {
+      "group": "5 años",
+      "day": "Viernes",
+      "time": "10:30–11:15",
+      "minutes": 45,
+      "subject": "Religión / Atención Educativa",
+      "primary": "María",
+      "shared": [],
+      "notes": "Religión en grupo mixto de Infantil; el resto del alumnado permanece con su tutora en Atención Educativa.",
+      "primaryDisplay": "María (Atención Educativa) · Carmen María (Religión mixta)"
+    },
+    {
+      "group": "5 años",
+      "day": "Viernes",
+      "time": "11:45–12:30",
+      "minutes": 45,
+      "subject": "Religión / Atención Educativa",
+      "primary": "María",
+      "shared": [
+        "Mónica"
+      ],
+      "notes": "Religión en grupo mixto de Infantil; el resto del alumnado permanece con su tutora en Atención Educativa.",
+      "primaryDisplay": "María (Atención Educativa hasta 12:00) · Carmen María (Religión mixta)",
+      "primaryMinutes": 15,
+      "primarySegment": "11:45–12:00",
+      "sharedDisplay": {
+        "Mónica": "Mónica (cobertura 12:00–12:30)"
+      },
+      "sharedSegments": {
+        "Mónica": "12:00–12:30"
+      },
+      "sharedMinutes": {
+        "Mónica": 30
+      },
+      "supportLabel": "Cobertura"
+    },
+    {
+      "group": "5 años",
+      "day": "Viernes",
+      "time": "12:30–14:00",
+      "minutes": 90,
+      "subject": "Comunicación y representación de la realidad",
+      "primary": "María",
+      "shared": [
+        "Mónica"
+      ],
+      "notes": "",
+      "primaryDisplay": "María (13:00–14:00)",
+      "primaryMinutes": 60,
+      "primarySegment": "13:00–14:00",
+      "sharedDisplay": {
+        "Mónica": "Mónica (cobertura 12:30–13:00)"
+      },
+      "sharedSegments": {
+        "Mónica": "12:30–13:00"
+      },
+      "sharedMinutes": {
+        "Mónica": 30
+      },
+      "supportLabel": "Cobertura"
+    }
+  ],
+  "teacherMatrix": [
+    {
+      "day": "Lunes",
+      "time": "09:00–10:00",
+      "teachers": {
+        "Mercedes": "Crecimiento en armonía · 3 años",
+        "Julia": "Coordinación docente · 60 min",
+        "María": "Crecimiento en armonía · 5 años",
+        "Dori": "Cobertura Descubrimiento y exploración del entorno · 4 años",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Coordinación docente · 60 min"
+      }
+    },
+    {
+      "day": "Lunes",
+      "time": "10:00–10:45",
+      "teachers": {
+        "Mercedes": "Descubrimiento y exploración del entorno · 3 años",
+        "Julia": "Apoyo · 45 min",
+        "María": "Descubrimiento y exploración del entorno · 5 años",
+        "Dori": "DC Descubrimiento y exploración del entorno · 3 años",
+        "Mónica": "Inglés · 4 años",
+        "Carmen María": "Apoyo · 45 min"
+      }
+    },
+    {
+      "day": "Lunes",
+      "time": "10:45–11:30",
+      "teachers": {
+        "Mercedes": "Crecimiento en armonía · 3 años",
+        "Julia": "Crecimiento en armonía · 4 años",
+        "María": "Comunicación y representación de la realidad · 5 años",
+        "Dori": "DC Crecimiento en armonía · 4 años",
+        "Mónica": "DC Crecimiento en armonía · 3 años",
+        "Carmen María": "Apoyo · 45 min"
+      }
+    },
+    {
+      "day": "Lunes",
+      "time": "11:30–12:00",
+      "teachers": {
+        "Mercedes": "RECREO",
+        "Julia": "RECREO",
+        "María": "RECREO",
+        "Dori": "RECREO",
+        "Mónica": "RECREO",
+        "Carmen María": "RECREO"
+      }
+    },
+    {
+      "day": "Lunes",
+      "time": "12:00–13:00",
+      "teachers": {
+        "Mercedes": "Psicomotricidad · 3 años",
+        "Julia": "Comunicación y representación de la realidad · 4 años",
+        "María": "Descubrimiento y exploración del entorno · 5 años",
+        "Dori": "Gestión de biblioteca · 60 min",
+        "Mónica": "DC Psicomotricidad · 3 años",
+        "Carmen María": "Apoyo · 60 min"
+      }
+    },
+    {
+      "day": "Lunes",
+      "time": "13:00–14:00",
+      "teachers": {
+        "Mercedes": "Comunicación y representación de la realidad · 3 años",
+        "Julia": "Psicomotricidad · 4 años",
+        "María": "Atención a familias · 60 min",
+        "Dori": "Cobertura Comunicación y representación de la realidad · 5 años",
+        "Mónica": "DC Psicomotricidad · 4 años",
+        "Carmen María": "Apoyo · 60 min"
+      }
+    },
+    {
+      "day": "Martes",
+      "time": "09:00–10:00",
+      "teachers": {
+        "Mercedes": "Coordinación docente · 60 min",
+        "Julia": "Inglés · 3 años",
+        "María": "Comunicación y representación de la realidad · 5 años",
+        "Dori": "Cobertura Crecimiento en armonía · 4 años",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Atención a familias · 60 min"
+      }
+    },
+    {
+      "day": "Martes",
+      "time": "10:00–10:45",
+      "teachers": {
+        "Mercedes": "Descubrimiento y exploración del entorno · 3 años",
+        "Julia": "Inglés · 5 años",
+        "María": "Apoyo · 45 min",
+        "Dori": "Cobertura Comunicación y representación de la realidad · 4 años",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Apoyo · 45 min"
+      }
+    },
+    {
+      "day": "Martes",
+      "time": "10:45–11:30",
+      "teachers": {
+        "Mercedes": "Crecimiento en armonía · 3 años",
+        "Julia": "Descubrimiento y exploración del entorno · 4 años",
+        "María": "Crecimiento en armonía · 5 años",
+        "Dori": "DC Descubrimiento y exploración del entorno · 4 años",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Apoyo · 45 min"
+      }
+    },
+    {
+      "day": "Martes",
+      "time": "11:30–12:00",
+      "teachers": {
+        "Mercedes": "RECREO",
+        "Julia": "RECREO",
+        "María": "RECREO",
+        "Dori": "RECREO",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "RECREO"
+      }
+    },
+    {
+      "day": "Martes",
+      "time": "12:00–13:00",
+      "teachers": {
+        "Mercedes": "Comunicación y representación de la realidad · 3 años",
+        "Julia": "Comunicación y representación de la realidad · 4 años",
+        "María": "Descubrimiento y exploración del entorno · 5 años",
+        "Dori": "DC Descubrimiento y exploración del entorno · 5 años",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Apoyo · 60 min"
+      }
+    },
+    {
+      "day": "Martes",
+      "time": "13:00–14:00",
+      "teachers": {
+        "Mercedes": "Crecimiento en armonía · 3 años",
+        "Julia": "Atención a familias · 60 min",
+        "María": "Crecimiento en armonía · 5 años",
+        "Dori": "Cobertura Descubrimiento y exploración del entorno · 4 años",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Apoyo · 60 min"
+      }
+    },
+    {
+      "day": "Miércoles",
+      "time": "09:00–10:00",
+      "teachers": {
+        "Mercedes": "Crecimiento en armonía · 3 años",
+        "Julia": "Comunicación y representación de la realidad · 4 años",
+        "María": "Crecimiento en armonía · 5 años",
+        "Dori": "Coordinación docente · 60 min",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Apoyo · 60 min"
+      }
+    },
+    {
+      "day": "Miércoles",
+      "time": "10:00–10:45",
+      "teachers": {
+        "Mercedes": "Descubrimiento y exploración del entorno · 3 años",
+        "Julia": "Apoyo · 45 min",
+        "María": "Descubrimiento y exploración del entorno · 5 años",
+        "Dori": "DC Descubrimiento y exploración del entorno · 5 años",
+        "Mónica": "Inglés · 4 años",
+        "Carmen María": "Apoyo · 45 min"
+      }
+    },
+    {
+      "day": "Miércoles",
+      "time": "10:45–11:30",
+      "teachers": {
+        "Mercedes": "Crecimiento en armonía · 3 años",
+        "Julia": "Descubrimiento y exploración del entorno · 4 años",
+        "María": "Crecimiento en armonía · 5 años",
+        "Dori": "DC Descubrimiento y exploración del entorno · 4 años",
+        "Mónica": "DC Crecimiento en armonía · 5 años",
+        "Carmen María": "Apoyo · 45 min"
+      }
+    },
+    {
+      "day": "Miércoles",
+      "time": "11:30–12:00",
+      "teachers": {
+        "Mercedes": "RECREO",
+        "Julia": "RECREO",
+        "María": "RECREO",
+        "Dori": "RECREO",
+        "Mónica": "RECREO",
+        "Carmen María": "RECREO"
+      }
+    },
+    {
+      "day": "Miércoles",
+      "time": "12:00–13:00",
+      "teachers": {
+        "Mercedes": "Descubrimiento y exploración del entorno · 3 años",
+        "Julia": "Reducción por tutoría · 60 min",
+        "María": "Psicomotricidad · 5 años",
+        "Dori": "Cobertura Crecimiento en armonía · 4 años",
+        "Mónica": "DC Psicomotricidad · 5 años",
+        "Carmen María": "Apoyo · 60 min"
+      }
+    },
+    {
+      "day": "Miércoles",
+      "time": "13:00–14:00",
+      "teachers": {
+        "Mercedes": "Atención a familias · 60 min",
+        "Julia": "Descubrimiento y exploración del entorno · 4 años",
+        "María": "Comunicación y representación de la realidad · 5 años",
+        "Dori": "DC Comunicación y representación de la realidad · 5 años",
+        "Mónica": "Cobertura Comunicación y representación de la realidad · 3 años",
+        "Carmen María": "Apoyo · 60 min"
+      }
+    },
+    {
+      "day": "Jueves",
+      "time": "09:00–10:00",
+      "teachers": {
+        "Mercedes": "Descubrimiento y exploración del entorno · 3 años",
+        "Julia": "Descubrimiento y exploración del entorno · 4 años",
+        "María": "Coordinación docente · 60 min",
+        "Dori": "Cobertura Comunicación y representación de la realidad · 5 años",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Apoyo · 60 min"
+      }
+    },
+    {
+      "day": "Jueves",
+      "time": "10:00–10:45",
+      "teachers": {
+        "Mercedes": "Comunicación y representación de la realidad · 3 años",
+        "Julia": "Inglés · 5 años",
+        "María": "Apoyo · 45 min",
+        "Dori": "Cobertura Crecimiento en armonía · 4 años",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Apoyo · 45 min"
+      }
+    },
+    {
+      "day": "Jueves",
+      "time": "10:45–11:30",
+      "teachers": {
+        "Mercedes": "Descubrimiento y exploración del entorno · 3 años",
+        "Julia": "Descubrimiento y exploración del entorno · 4 años",
+        "María": "Crecimiento en armonía · 5 años",
+        "Dori": "DC Descubrimiento y exploración del entorno · 4 años",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Apoyo · 45 min"
+      }
+    },
+    {
+      "day": "Jueves",
+      "time": "11:30–12:00",
+      "teachers": {
+        "Mercedes": "RECREO",
+        "Julia": "RECREO",
+        "María": "RECREO",
+        "Dori": "RECREO",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "RECREO"
+      }
+    },
+    {
+      "day": "Jueves",
+      "time": "12:00–13:00",
+      "teachers": {
+        "Mercedes": "Reducción por tutoría · 60 min",
+        "Julia": "Crecimiento en armonía · 4 años",
+        "María": "Descubrimiento y exploración del entorno · 5 años",
+        "Dori": "Cobertura Comunicación y representación de la realidad · 3 años",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Apoyo · 60 min"
+      }
+    },
+    {
+      "day": "Jueves",
+      "time": "13:00–14:00",
+      "teachers": {
+        "Mercedes": "Crecimiento en armonía · 3 años",
+        "Julia": "Comunicación y representación de la realidad · 4 años",
+        "María": "Crecimiento en armonía · 5 años",
+        "Dori": "Gestión de biblioteca · 60 min",
+        "Mónica": "NO DISPONIBLE",
+        "Carmen María": "Apoyo · 60 min"
+      }
+    },
+    {
+      "day": "Viernes",
+      "time": "09:00–10:30",
+      "teachers": {
+        "Mercedes": "Comunicación y representación de la realidad · 3 años",
+        "Julia": "Crecimiento en armonía · 4 años",
+        "María": "Descubrimiento y exploración del entorno · 5 años",
+        "Dori": "DC Comunicación y representación de la realidad · 3 años",
+        "Mónica": "NO DISPONIBLE 09:00–10:00; DC 4 años · 10:00–10:30",
+        "Carmen María": "Religión · grupo mixto 1.º–4.º"
+      }
+    },
+    {
+      "day": "Viernes",
+      "time": "10:30–11:15",
+      "teachers": {
+        "Mercedes": "Religión / Atención Educativa · 3 años",
+        "Julia": "Religión / Atención Educativa · 4 años",
+        "María": "Religión / Atención Educativa · 5 años",
+        "Dori": "Apoyo · 45 min",
+        "Mónica": "Apoyo · 45 min",
+        "Carmen María": "Religión · grupo mixto Infantil"
+      }
+    },
+    {
+      "day": "Viernes",
+      "time": "11:15–11:45",
+      "teachers": {
+        "Mercedes": "RECREO",
+        "Julia": "RECREO",
+        "María": "RECREO",
+        "Dori": "RECREO",
+        "Mónica": "RECREO",
+        "Carmen María": "RECREO"
+      }
+    },
+    {
+      "day": "Viernes",
+      "time": "11:45–12:30",
+      "teachers": {
+        "Mercedes": "Religión / Atención Educativa · 3 años",
+        "Julia": "Religión / Atención Educativa · 4 años",
+        "María": "Atención Educativa 5 años · 11:45–12:00; Reducción por tutoría · 12:00–12:30",
+        "Dori": "Apoyo · 45 min",
+        "Mónica": "Apoyo · 11:45–12:00; Cobertura 5 años · 12:00–12:30",
+        "Carmen María": "Religión · grupo mixto Infantil"
+      }
+    },
+    {
+      "day": "Viernes",
+      "time": "12:30–14:00",
+      "teachers": {
+        "Mercedes": "Descubrimiento y exploración del entorno · 3 años",
+        "Julia": "Comunicación y representación de la realidad · 4 años",
+        "María": "Reducción por tutoría · 12:30–13:00; Comunicación y representación de la realidad · 5 años · 13:00–14:00",
+        "Dori": "DC 3 años · 12:30–13:00; Atención a familias · 13:00–14:00",
+        "Mónica": "Cobertura 5 años · 12:30–13:00; Atención a familias · 13:00–14:00",
+        "Carmen María": "Religión · grupo mixto 5.º–6.º"
+      }
+    }
+  ],
+  "teacherLoads": {
+    "Mercedes": {
+      "direct": 1170,
+      "shared": 0,
+      "recess": 150,
+      "family": 60,
+      "coordination": 60,
+      "tutorial": 60,
+      "computed": 1500,
+      "support": 0,
+      "total": 1500
+    },
+    "Julia": {
+      "direct": 1080,
+      "shared": 0,
+      "recess": 150,
+      "family": 60,
+      "coordination": 60,
+      "tutorial": 60,
+      "computed": 1410,
+      "support": 90,
+      "total": 1500
+    },
+    "María": {
+      "direct": 1080,
+      "shared": 0,
+      "recess": 150,
+      "family": 60,
+      "coordination": 60,
+      "tutorial": 60,
+      "computed": 1410,
+      "support": 90,
+      "total": 1500
+    },
+    "Dori": {
+      "direct": 510,
+      "shared": 510,
+      "recess": 150,
+      "family": 60,
+      "coordination": 180,
+      "tutorial": 0,
+      "computed": 1410,
+      "support": 90,
+      "total": 1500
+    },
+    "Mónica": {
+      "direct": 210,
+      "shared": 300,
+      "recess": 90,
+      "family": 60,
+      "coordination": 0,
+      "tutorial": 0,
+      "computed": 660,
+      "support": 60,
+      "total": 720
+    },
+    "Carmen María": {
+      "direct": 270,
+      "shared": 0,
+      "recess": 150,
+      "family": 60,
+      "coordination": 60,
+      "tutorial": 0,
+      "computed": 540,
+      "support": 960,
+      "total": 1500
+    }
+  },
+  "complementaryEvents": [
+    {
+      "teacher": "Mercedes",
+      "concept": "Coordinación docente",
+      "schedule": "Martes 09:00–10:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    },
+    {
+      "teacher": "Mercedes",
+      "concept": "Atención a familias",
+      "schedule": "Miércoles 13:00–14:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    },
+    {
+      "teacher": "Mercedes",
+      "concept": "Reducción por tutoría",
+      "schedule": "Jueves 12:00–13:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    },
+    {
+      "teacher": "Julia",
+      "concept": "Coordinación docente",
+      "schedule": "Lunes 09:00–10:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    },
+    {
+      "teacher": "Julia",
+      "concept": "Atención a familias",
+      "schedule": "Martes 13:00–14:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    },
+    {
+      "teacher": "Julia",
+      "concept": "Reducción por tutoría",
+      "schedule": "Miércoles 12:00–13:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    },
+    {
+      "teacher": "María",
+      "concept": "Atención a familias",
+      "schedule": "Lunes 13:00–14:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    },
+    {
+      "teacher": "María",
+      "concept": "Coordinación docente",
+      "schedule": "Jueves 09:00–10:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    },
+    {
+      "teacher": "María",
+      "concept": "Reducción por tutoría",
+      "schedule": "Viernes 12:00–13:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    },
+    {
+      "teacher": "Dori",
+      "concept": "Coordinación docente",
+      "schedule": "Miércoles 09:00–10:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    },
+    {
+      "teacher": "Dori",
+      "concept": "Gestión de biblioteca",
+      "schedule": "Lunes 12:00–13:00 (60 min)",
+      "minutes": 60,
+      "notes": "Bloque reservado para la gestión de la biblioteca escolar."
+    },
+    {
+      "teacher": "Dori",
+      "concept": "Gestión de biblioteca",
+      "schedule": "Jueves 13:00–14:00 (60 min)",
+      "minutes": 60,
+      "notes": "Bloque reservado para la gestión de la biblioteca escolar."
+    },
+    {
+      "teacher": "Dori",
+      "concept": "Atención a familias",
+      "schedule": "Viernes 13:00–14:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    },
+    {
+      "teacher": "Mónica",
+      "concept": "Atención a familias",
+      "schedule": "Viernes 13:00–14:00 (60 min)",
+      "minutes": 60,
+      "notes": "Distribución aprobada de Educación Infantil."
+    }
+  ],
+  "coordinations": [],
+  "exceptions": [],
+  "sourceAnomalies": [],
+  "validationBaseline": {
+    "subjectMinutes": {
+      "3 años": {
+        "Crecimiento en armonía": 375,
+        "Descubrimiento y exploración del entorno": 390,
+        "Psicomotricidad": 60,
+        "Comunicación y representación de la realidad": 375,
+        "Inglés": 60,
+        "Religión / Atención Educativa": 90
+      },
+      "4 años": {
+        "Descubrimiento y exploración del entorno": 375,
+        "Inglés": 90,
+        "Crecimiento en armonía": 360,
+        "Comunicación y representación de la realidad": 375,
+        "Psicomotricidad": 60,
+        "Religión / Atención Educativa": 90
+      },
+      "5 años": {
+        "Crecimiento en armonía": 375,
+        "Descubrimiento y exploración del entorno": 360,
+        "Comunicación y representación de la realidad": 375,
+        "Inglés": 90,
+        "Psicomotricidad": 60,
+        "Religión / Atención Educativa": 90
+      }
+    }
+  }
+}
