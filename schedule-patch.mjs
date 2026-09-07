@@ -106,7 +106,6 @@ function patchInfantSchedule(source) {
   data.changeSet = "Ajustes aprobados 2026-09-07 · AE, Psicomotricidad y reequilibrio Dori/Mónica";
   data.subjects.Psicomotricidad = unique([...(data.subjects.Psicomotricidad || []), "Dori"]);
 
-  // Psicomotricidad de 3 años: Mónica sale y Dori asume su papel.
   const psych3 = findLesson(data, "3 años", "Lunes", "12:00–13:00");
   assert(psych3.subject === "Psicomotricidad" && (psych3.shared || []).includes("Mónica"), "Psicomotricidad 3 años lunes 12:00");
   removeShared(psych3, "Mónica");
@@ -114,11 +113,9 @@ function patchInfantSchedule(source) {
   addShared(psych3, "Dori");
   psych3.notes = "Dori asume la Psicomotricidad de 3 años según ajuste aprobado.";
 
-  // La hora liberada de Mónica pasa a apoyo en 5 años.
   const mon5 = findLesson(data, "5 años", "Lunes", "12:00–13:00");
   addShared(mon5, "Mónica");
 
-  // Reequilibrio Dori: se conservan coberturas y se redistribuyen solo apoyos.
   const doriMoves = [
     ["4 años", "Martes", "10:45–11:30", "3 años", "Martes", "10:45–11:30"],
     ["4 años", "Miércoles", "10:45–11:30", "5 años", "Miércoles", "10:45–11:30"],
@@ -132,14 +129,12 @@ function patchInfantSchedule(source) {
     addShared(findLesson(data, toGroup, toDay, toTime), "Dori");
   }
 
-  // Mónica: mueve el apoyo de miércoles 10:45 de 5 a 3 años.
   const monicaWed5 = findLesson(data, "5 años", "Miércoles", "10:45–11:30");
   assert((monicaWed5.shared || []).includes("Mónica"), "Mónica debe figurar en 5 años miércoles 10:45");
   removeShared(monicaWed5, "Mónica");
   stripSharedMetadata(monicaWed5, "Mónica");
   addShared(findLesson(data, "3 años", "Miércoles", "10:45–11:30"), "Mónica");
 
-  // Reducción tutorial de María: martes 12:00, con cobertura completa de Dori.
   const tue5 = findLesson(data, "5 años", "Martes", "12:00–13:00");
   assert(tue5.primary === "María" && (tue5.shared || []).includes("Dori"), "5 años martes 12:00 debe tener María + Dori");
   tue5.primary = "Dori";
@@ -147,7 +142,6 @@ function patchInfantSchedule(source) {
   tue5.notes = "Dori cubre la tutoría durante la reducción tutorial de María.";
   tue5.primaryDisplay = "Dori (cobertura de tutoría)";
 
-  // Viernes 09:00–10:30: biblioteca Dori 09:00–10:00; apoyos parciales 10:00–10:30.
   const fri3early = findLesson(data, "3 años", "Viernes", "09:00–10:30");
   removeShared(fri3early, "Dori");
   stripSharedMetadata(fri3early, "Dori");
@@ -156,7 +150,6 @@ function patchInfantSchedule(source) {
   const fri5early = findLesson(data, "5 años", "Viernes", "09:00–10:30");
   setPartialShared(fri5early, "Dori", 30, "10:00–10:30", "Dori (apoyo 10:00–10:30)");
 
-  // Atención Educativa del viernes: asignaciones expresas de Mónica y apoyos de Dori.
   addShared(findLesson(data, "3 años", "Viernes", "10:30–11:15"), "Dori");
   addShared(findLesson(data, "4 años", "Viernes", "10:30–11:15"), "Mónica");
   addShared(findLesson(data, "3 años", "Viernes", "11:45–12:30"), "Dori");
@@ -170,7 +163,6 @@ function patchInfantSchedule(source) {
   ae5.sharedDisplay = { Mónica: "Mónica (Atención Educativa / apoyo)" };
   ae5.notes = "María imparte íntegramente Atención Educativa 11:45–12:30; Mónica apoya la sesión.";
 
-  // Viernes 12:30: María vuelve a impartir el bloque completo; Mónica queda como apoyo 12:30–13:00.
   const fri5late = findLesson(data, "5 años", "Viernes", "12:30–14:00");
   clearSegments(fri5late);
   fri5late.primary = "María";
@@ -179,11 +171,9 @@ function patchInfantSchedule(source) {
   setPartialShared(fri5late, "Mónica", 30, "12:30–13:00", "Mónica (apoyo 12:30–13:00)");
   fri5late.notes = "María imparte el bloque completo; Mónica apoya de 12:30 a 13:00.";
 
-  // Dori mantiene el apoyo parcial de 3 años 12:30–13:00.
   const fri3late = findLesson(data, "3 años", "Viernes", "12:30–14:00");
   assert((fri3late.shared || []).includes("Dori"), "Dori debe figurar en 3 años viernes 12:30");
 
-  // Matriz docente sincronizada con el nuevo reparto.
   setStatus(data, "Lunes", "10:45–11:30", "Dori", "DC Crecimiento en armonía · 4 años · 45 min");
   setStatus(data, "Lunes", "12:00–13:00", "Dori", "DC Psicomotricidad · 3 años");
   setStatus(data, "Lunes", "12:00–13:00", "Mónica", "DC Descubrimiento y exploración del entorno · 5 años");
@@ -298,7 +288,7 @@ function syncSubstitutions(source, schedule) {
 }
 
 function readJson(id) { return JSON.parse(fs.readFileSync(id, "utf8")); }
-function asModule(value) { return `export default ${JSON.stringify(value)};`; }
+function asJson(value) { return JSON.stringify(value); }
 
 export default function schedulePatchPlugin() {
   return {
@@ -306,17 +296,17 @@ export default function schedulePatchPlugin() {
     enforce: "pre",
     load(id) {
       const clean = id.split("?")[0].replace(/\\/g, "/");
-      if (clean.endsWith("/src/data/schedule-v2.json")) return asModule(patchPrimarySchedule(readJson(id.split("?")[0])));
-      if (clean.endsWith("/src/data/schedule-infantil.json")) return asModule(patchInfantSchedule(readJson(id.split("?")[0])));
+      if (clean.endsWith("/src/data/schedule-v2.json")) return asJson(patchPrimarySchedule(readJson(id.split("?")[0])));
+      if (clean.endsWith("/src/data/schedule-infantil.json")) return asJson(patchInfantSchedule(readJson(id.split("?")[0])));
       if (clean.endsWith("/src/data/substitutions-v2.json")) {
         const source = readJson(id.split("?")[0]);
         const schedule = patchPrimarySchedule(readJson(id.split("?")[0].replace("substitutions-v2.json", "schedule-v2.json")));
-        return asModule(syncSubstitutions(source, schedule));
+        return asJson(syncSubstitutions(source, schedule));
       }
       if (clean.endsWith("/src/data/substitutions-infantil.json")) {
         const source = readJson(id.split("?")[0]);
         const schedule = patchInfantSchedule(readJson(id.split("?")[0].replace("substitutions-infantil.json", "schedule-infantil.json")));
-        return asModule(syncSubstitutions(source, schedule));
+        return asJson(syncSubstitutions(source, schedule));
       }
       return null;
     }
