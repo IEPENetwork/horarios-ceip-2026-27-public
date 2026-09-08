@@ -57,7 +57,7 @@ function stripSharedMetadata(lesson, teacher) {
 
 function patchPrimarySchedule(source) {
   const data = clone(source);
-  data.changeSet = "Ajustes aprobados 2026-09-07 · Fede/Mamen/Ana B";
+  data.changeSet = "Ajustes finales aprobados 2026-09-08 · docencia compartida Fede/Mamen";
 
   const p6bMon = findLesson(data, "6.ºB", "Lunes", "13:00–14:00");
   assert(p6bMon.subject === "Plástica" && p6bMon.primary === "Fede", "6.ºB lunes 13:00 debe ser Plástica de Fede");
@@ -73,11 +73,17 @@ function patchPrimarySchedule(source) {
 
   const p6bWed = findLesson(data, "6.ºB", "Miércoles", "10:45–11:30");
   assert(p6bWed.subject === "Lengua" && p6bWed.primary === "María Muñoz", "6.ºB miércoles 10:45 debe ser Lengua");
+  removeShared(p6bWed, "Mamen");
+  stripSharedMetadata(p6bWed, "Mamen");
   addShared(p6bWed, "Fede");
+  p6bWed.notes = "Fede sustituye a Mamen en la docencia compartida según ajuste aprobado.";
 
   const p6aFri = findLesson(data, "6.ºA", "Viernes", "11:45–12:30");
   assert(p6aFri.subject === "Lengua" && p6aFri.primary === "Ana B", "6.ºA viernes 11:45 debe ser Lengua");
+  removeShared(p6aFri, "Mamen");
+  stripSharedMetadata(p6aFri, "Mamen");
   addShared(p6aFri, "Fede");
+  p6aFri.notes = "Fede sustituye a Mamen en la docencia compartida según ajuste aprobado.";
 
   data.subjects.Plástica = unique([...(data.subjects.Plástica || []).filter((name) => name !== "Fede"), "Mamen"]);
 
@@ -85,17 +91,24 @@ function patchPrimarySchedule(source) {
   setStatus(data, "Lunes", "13:00–14:00", "Fede", "Apoyo · 60 min");
   setStatus(data, "Miércoles", "09:00–10:00", "Ana B", "Atención a familias · 60 min");
   setStatus(data, "Miércoles", "09:00–10:00", "Mamen", "Plástica · 6.ºA");
+  setStatus(data, "Miércoles", "10:45–11:30", "Mamen", "Apoyo · 45 min");
   setStatus(data, "Miércoles", "10:45–11:30", "Fede", "DC Lengua · 6.ºB · 45 min");
   setStatus(data, "Jueves", "13:00–14:00", "Ana B", "Lengua · 6.ºA");
   setStatus(data, "Jueves", "13:00–14:00", "Fede", "DC Lengua · 6.ºA");
+  setStatus(data, "Viernes", "11:45–12:30", "Mamen", "Apoyo · 45 min");
   setStatus(data, "Viernes", "11:45–12:30", "Fede", "DC Lengua · 6.ºA · 45 min");
   setStatus(data, "Viernes", "12:30–14:00", "Mamen", "Coordinación docente · 12:30–13:30\nApoyo · 13:30–14:00");
 
   setEvent(data, "Ana B", "Atención a familias", "Miércoles 09:00–10:00", 60, "Reubicada tras el traslado de Lengua de 6.ºA.");
   setEvent(data, "Mamen", "Coordinación docente", "Viernes 12:30–14:00", 60, "Coordinación 12:30–13:30 dentro de la franja oficial; única franja completa libre sin alterar docencias.");
+  const mariaMunozFridayCoordination = data.complementaryEvents.find((item) => item.teacher === "María Muñoz" && item.concept === "Coordinación docente" && item.minutes === 15);
+  assert(mariaMunozFridayCoordination, "coordinación de 15 minutos de María Muñoz");
+  mariaMunozFridayCoordination.schedule = "Viernes 13:30–13:45 (15 min)";
+  mariaMunozFridayCoordination.notes = "Segmento autorizado después de la reducción tutorial; apoyo disponible de 13:45 a 14:00.";
+  setStatus(data, "Viernes", "12:30–14:00", "María Muñoz", "Reducción por tutoría · 12:30–13:30\nCoordinación docente · 13:30–13:45\nApoyo · 13:45–14:00");
 
   Object.assign(data.teacherLoads["Ana B"], { direct: 840, shared: 240, recess: 150, family: 60, coordination: 60, tutorial: 60, computed: 1410, support: 90, total: 1500 });
-  Object.assign(data.teacherLoads.Mamen, { direct: 660, shared: 510, recess: 150, family: 60, coordination: 60, tutorial: 0, computed: 1440, support: 60, total: 1500 });
+  Object.assign(data.teacherLoads.Mamen, { direct: 660, shared: 420, recess: 150, family: 60, coordination: 60, tutorial: 0, computed: 1350, support: 150, total: 1500 });
   Object.assign(data.teacherLoads.Fede, { direct: 450, shared: 390, recess: 150, family: 60, coordination: 60, tutorial: 0, computed: 1110, support: 390, total: 1500 });
 
   return data;
@@ -103,7 +116,7 @@ function patchPrimarySchedule(source) {
 
 function patchInfantSchedule(source) {
   const data = clone(source);
-  data.changeSet = "Ajustes aprobados 2026-09-07 · AE, Psicomotricidad y reequilibrio Dori/Mónica";
+  data.changeSet = "Ajustes finales aprobados 2026-09-08 · coordinación de ciclo de Mercedes";
   data.subjects.Psicomotricidad = unique([...(data.subjects.Psicomotricidad || []), "Dori"]);
 
   const psych3 = findLesson(data, "3 años", "Lunes", "12:00–13:00");
@@ -147,6 +160,10 @@ function patchInfantSchedule(source) {
   stripSharedMetadata(fri3early, "Dori");
   setPartialShared(fri3early, "Mónica", 30, "10:00–10:30", "Mónica (apoyo 10:00–10:30)");
 
+  const fri4early = findLesson(data, "4 años", "Viernes", "09:00–10:30");
+  removeShared(fri4early, "Mónica");
+  stripSharedMetadata(fri4early, "Mónica");
+
   const fri5early = findLesson(data, "5 años", "Viernes", "09:00–10:30");
   setPartialShared(fri5early, "Dori", 30, "10:00–10:30", "Dori (apoyo 10:00–10:30)");
 
@@ -174,7 +191,28 @@ function patchInfantSchedule(source) {
   const fri3late = findLesson(data, "3 años", "Viernes", "12:30–14:00");
   assert((fri3late.shared || []).includes("Dori"), "Dori debe figurar en 3 años viernes 12:30");
 
+  const mercedesCycleMonday = findLesson(data, "3 años", "Lunes", "10:00–10:45");
+  assert(mercedesCycleMonday.primary === "Mercedes" && (mercedesCycleMonday.shared || []).includes("Dori"), "3 años lunes 10:00 debe tener Mercedes + Dori");
+  mercedesCycleMonday.primary = "Dori";
+  removeShared(mercedesCycleMonday, "Dori");
+  stripSharedMetadata(mercedesCycleMonday, "Dori");
+  mercedesCycleMonday.primaryDisplay = "Dori (cobertura de coordinación de ciclo)";
+  mercedesCycleMonday.notes = "Dori cubre la tutoría durante la coordinación de ciclo de Mercedes.";
+
+  fri3late.primaryDisplay = "Dori (cobertura 12:30–12:45) · Mercedes (12:45–14:00)";
+  fri3late.primaryMinutes = 75;
+  fri3late.primarySegment = "12:45–14:00";
+  fri3late.coverageTeacher = "Dori";
+  fri3late.coverageMinutes = 15;
+  fri3late.coverageSegment = "12:30–12:45";
+  fri3late.sharedMinutes = { ...(fri3late.sharedMinutes || {}), Dori: 15 };
+  fri3late.sharedSegments = { ...(fri3late.sharedSegments || {}), Dori: "12:45–13:00" };
+  fri3late.sharedDisplay = { ...(fri3late.sharedDisplay || {}), Dori: "Dori (refuerzo 12:45–13:00)" };
+  fri3late.notes = "Dori cubre 12:30–12:45 durante la coordinación de ciclo de Mercedes y permanece como refuerzo 12:45–13:00.";
+
   setStatus(data, "Lunes", "10:45–11:30", "Dori", "DC Crecimiento en armonía · 4 años · 45 min");
+  setStatus(data, "Lunes", "10:00–10:45", "Mercedes", "Coordinación de ciclo · 45 min");
+  setStatus(data, "Lunes", "10:00–10:45", "Dori", "Cobertura Descubrimiento y exploración del entorno · 3 años");
   setStatus(data, "Lunes", "12:00–13:00", "Dori", "DC Psicomotricidad · 3 años");
   setStatus(data, "Lunes", "12:00–13:00", "Mónica", "DC Descubrimiento y exploración del entorno · 5 años");
   setStatus(data, "Martes", "10:45–11:30", "Dori", "DC Crecimiento en armonía · 3 años · 45 min");
@@ -193,7 +231,8 @@ function patchInfantSchedule(source) {
   setStatus(data, "Viernes", "11:45–12:30", "Dori", "DC Religión / Atención Educativa · 3 años · 45 min");
   setStatus(data, "Viernes", "11:45–12:30", "Mónica", "DC Religión / Atención Educativa · 5 años · 45 min");
   setStatus(data, "Viernes", "12:30–14:00", "María", "Comunicación y representación de la realidad · 5 años · 90 min");
-  setStatus(data, "Viernes", "12:30–14:00", "Dori", "DC 3 años · 12:30–13:00; Atención a familias · 13:00–14:00");
+  setStatus(data, "Viernes", "12:30–14:00", "Mercedes", "Coordinación de ciclo · 12:30–12:45; Descubrimiento y exploración del entorno · 3 años · 12:45–14:00");
+  setStatus(data, "Viernes", "12:30–14:00", "Dori", "Cobertura 3 años · 12:30–12:45; DC 3 años · 12:45–13:00; Atención a familias · 13:00–14:00");
   setStatus(data, "Viernes", "12:30–14:00", "Mónica", "DC 5 años · 12:30–13:00; Atención a familias · 13:00–14:00");
 
   setEvent(data, "María", "Reducción por tutoría", "Martes 12:00–13:00 (60 min)", 60, "Reubicada para mantener completa la sesión de Atención Educativa del viernes.");
@@ -201,9 +240,15 @@ function patchInfantSchedule(source) {
   assert(library, "bloque de biblioteca de Dori lunes 12:00");
   Object.assign(library, { schedule: "Viernes 09:00–10:00 (60 min)", minutes: 60, notes: "Reubicada para permitir a Dori asumir Psicomotricidad de 3 años." });
 
+  data.complementaryEvents.push(
+    { teacher: "Mercedes", concept: "Coordinación de ciclo", schedule: "Lunes 10:00–10:45 (45 min)", minutes: 45, notes: "Dori cubre la tutoría de 3 años." },
+    { teacher: "Mercedes", concept: "Coordinación de ciclo", schedule: "Viernes 12:30–14:00 (15 min)", minutes: 15, notes: "Coordinación de ciclo de 12:30 a 12:45; Dori cubre la tutoría." },
+  );
+
   Object.assign(data.teacherLoads.María, { direct: 1080, shared: 0, recess: 150, family: 60, coordination: 60, tutorial: 60, computed: 1410, support: 90, total: 1500 });
-  Object.assign(data.teacherLoads.Dori, { direct: 570, shared: 540, recess: 150, family: 60, coordination: 180, tutorial: 0, computed: 1500, support: 0, total: 1500 });
-  Object.assign(data.teacherLoads.Mónica, { direct: 150, shared: 420, recess: 90, family: 60, coordination: 0, tutorial: 0, computed: 720, support: 0, total: 720 });
+  Object.assign(data.teacherLoads.Mercedes, { direct: 1110, shared: 0, recess: 150, family: 60, coordination: 120, tutorial: 60, computed: 1500, support: 0, total: 1500 });
+  Object.assign(data.teacherLoads.Dori, { direct: 630, shared: 480, recess: 150, family: 60, coordination: 180, tutorial: 0, computed: 1500, support: 0, total: 1500 });
+  Object.assign(data.teacherLoads.Mónica, { direct: 150, shared: 390, recess: 90, family: 60, coordination: 0, tutorial: 0, computed: 690, support: 30, total: 720 });
 
   return data;
 }
@@ -239,9 +284,10 @@ function rebuildScenarios(schedule, slots) {
   for (const lesson of schedule.lessons) {
     const slot = slotMap.get(`${lesson.day}|${lesson.time}`);
     if (!slot) continue;
-    const assigned = unique([lesson.primary, ...(lesson.shared || [])]);
+    const assigned = unique([lesson.primary, ...(lesson.shared || []), ...(lesson.coverageTeacher ? [lesson.coverageTeacher] : [])]);
     for (const absent of assigned) {
       const isPrimary = absent === lesson.primary;
+      const isCoverage = absent === lesson.coverageTeacher;
       const p1 = assigned.filter((teacher) => teacher !== absent && fullLessonTeacher(lesson, teacher));
       const excluded = new Set(p1);
       const p2 = candidatesForSlot(slot, absent, excluded, "p2");
@@ -257,8 +303,8 @@ function rebuildScenarios(schedule, slots) {
         "Docente ausente": absent,
         "Actividad": lesson.subject,
         "Grupo": lesson.group,
-        "Rol ausente": isPrimary ? "Docencia principal/directa" : "Docencia compartida",
-        "Cobertura obligatoria": isPrimary ? "Sí" : "No",
+        "Rol ausente": isPrimary ? "Docencia principal/directa" : isCoverage ? "Cobertura parcial" : "Docencia compartida",
+        "Cobertura obligatoria": isPrimary || isCoverage ? "Sí" : "No",
         "P1 Misma docencia compartida": joinCandidates(p1),
         "P2 Apoyo": joinCandidates(p2),
         "P3 DC otro grupo": joinCandidates(p3),
@@ -268,6 +314,8 @@ function rebuildScenarios(schedule, slots) {
         "Primera respuesta según criterio": "Consultar candidatos P1 → P6",
         "Observaciones": isPrimary
           ? "Aplicar el orden P1 → P6; en empate se muestran todas las alternativas."
+          : isCoverage
+            ? `Cobertura obligatoria durante ${lesson.coverageSegment || "el tramo indicado"}; aplicar el orden P1 → P6.`
           : "El grupo conserva docente principal; reposición de docencia compartida opcional."
       });
     }
