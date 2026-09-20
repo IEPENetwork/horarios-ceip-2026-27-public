@@ -111,6 +111,24 @@ function patchPrimarySchedule(source) {
   Object.assign(data.teacherLoads.Mamen, { direct: 660, shared: 420, recess: 150, family: 60, coordination: 60, tutorial: 0, computed: 1350, support: 150, total: 1500 });
   Object.assign(data.teacherLoads.Fede, { direct: 450, shared: 390, recess: 150, family: 60, coordination: 60, tutorial: 0, computed: 1110, support: 390, total: 1500 });
 
+  // Sonia · incorporación aprobada: 7 h lectivas + 1 h complementaria.
+  if (!data.teachers.includes("Sonia")) data.teachers.push("Sonia");
+  data.teacherRoles.Sonia = ["Apoyo disponible"];
+  for (const slot of data.teacherMatrix) slot.teachers.Sonia = "NO DISPONIBLE";
+  findMatrix(data, "Lunes", "12:00–13:00").teachers.Sonia = "Apoyo biblioteca · 60 min";
+  findMatrix(data, "Lunes", "13:00–14:00").teachers.Sonia = "Apoyo Infantil 5 años · 60 min";
+  findMatrix(data, "Jueves", "09:00–10:00").teachers.Sonia = "DC C. Naturales · 1.º · 60 min";
+  findMatrix(data, "Jueves", "10:00–10:45").teachers.Sonia = "Apoyo Infantil 3 años · 45 min";
+  findMatrix(data, "Jueves", "10:45–11:30").teachers.Sonia = "DC Matemáticas · 1.º · 45 min";
+  findMatrix(data, "Jueves", "11:30–12:00").teachers.Sonia = "RECREO";
+  findMatrix(data, "Jueves", "12:00–13:00").teachers.Sonia = "DC Lengua · 1.º · 60 min";
+  findMatrix(data, "Jueves", "13:00–14:00").teachers.Sonia = "Apoyo Infantil 4 años · 60 min";
+  addShared(findLesson(data, "1.º", "Jueves", "09:00–10:00"), "Sonia");
+  addShared(findLesson(data, "1.º", "Jueves", "10:45–11:30"), "Sonia");
+  addShared(findLesson(data, "1.º", "Jueves", "12:00–13:00"), "Sonia");
+  data.complementaryEvents.push({ teacher: "Sonia", concept: "Complementaria", schedule: "Lunes 14:00–15:00", minutes: 60, notes: "Franja complementaria de su jornada parcial." });
+  data.teacherLoads.Sonia = { direct: 0, shared: 165, recess: 30, family: 0, coordination: 60, tutorial: 0, computed: 255, support: 225, total: 480 };
+
   return data;
 }
 
@@ -249,6 +267,36 @@ function patchInfantSchedule(source) {
   Object.assign(data.teacherLoads.Mercedes, { direct: 1110, shared: 0, recess: 150, family: 60, coordination: 120, tutorial: 60, computed: 1500, support: 0, total: 1500 });
   Object.assign(data.teacherLoads.Dori, { direct: 630, shared: 480, recess: 150, family: 60, coordination: 180, tutorial: 0, computed: 1500, support: 0, total: 1500 });
   Object.assign(data.teacherLoads.Mónica, { direct: 150, shared: 390, recess: 90, family: 60, coordination: 0, tutorial: 0, computed: 690, support: 30, total: 720 });
+
+  // Intercambio aprobado de Inglés de 5 años: jueves 10:00 -> lunes 10:00.
+  const monEnglish5 = findLesson(data, "5 años", "Lunes", "10:00–10:45");
+  assert(monEnglish5.primary === "María", "5 años lunes 10:00 debe corresponder a María antes del intercambio");
+  Object.assign(monEnglish5, { subject: "Inglés", primary: "Julia", shared: [], notes: "Inglés trasladado desde el jueves 10:00." });
+  const thuEnglish5 = findLesson(data, "5 años", "Jueves", "10:00–10:45");
+  assert(thuEnglish5.subject === "Inglés" && thuEnglish5.primary === "Julia", "5 años jueves 10:00 debe ser Inglés de Julia");
+  Object.assign(thuEnglish5, { subject: "Descubrimiento y exploración del entorno", primary: "María", shared: [], notes: "Sesión ordinaria de María; Julia queda en apoyo." });
+  findMatrix(data, "Lunes", "10:00–10:45").teachers.Julia = "Inglés · 5 años";
+  findMatrix(data, "Lunes", "10:00–10:45").teachers.María = "Apoyo · 45 min";
+  findMatrix(data, "Jueves", "10:00–10:45").teachers.Julia = "Apoyo · 45 min";
+  findMatrix(data, "Jueves", "10:00–10:45").teachers.María = "Descubrimiento y exploración del entorno · 5 años";
+
+  // Sonia · apoyos interetapa aprobados.
+  if (!data.teachers.includes("Sonia")) data.teachers.push("Sonia");
+  data.teacherRoles.Sonia = ["Apoyo disponible", "Docencia compartida"];
+  for (const slot of data.teacherMatrix) slot.teachers.Sonia = "NO DISPONIBLE";
+  findMatrix(data, "Lunes", "12:00–13:00").teachers.Sonia = "Apoyo biblioteca · 60 min";
+  findMatrix(data, "Lunes", "13:00–14:00").teachers.Sonia = "DC Infantil · 5 años · 60 min";
+  findMatrix(data, "Jueves", "09:00–10:00").teachers.Sonia = "Apoyo C. Naturales · 1.º · 60 min";
+  findMatrix(data, "Jueves", "10:00–10:45").teachers.Sonia = "DC Infantil · 3 años · 45 min";
+  findMatrix(data, "Jueves", "10:45–11:30").teachers.Sonia = "Apoyo Matemáticas · 1.º · 45 min";
+  findMatrix(data, "Jueves", "11:30–12:00").teachers.Sonia = "RECREO";
+  findMatrix(data, "Jueves", "12:00–13:00").teachers.Sonia = "Apoyo Lengua · 1.º · 60 min";
+  findMatrix(data, "Jueves", "13:00–14:00").teachers.Sonia = "DC Infantil · 4 años · 60 min";
+  addShared(findLesson(data, "5 años", "Lunes", "13:00–14:00"), "Sonia");
+  addShared(findLesson(data, "3 años", "Jueves", "10:00–10:45"), "Sonia");
+  addShared(findLesson(data, "4 años", "Jueves", "13:00–14:00"), "Sonia");
+  data.complementaryEvents.push({ teacher: "Sonia", concept: "Complementaria", schedule: "Lunes 14:00–15:00", minutes: 60, notes: "Franja complementaria de su jornada parcial." });
+  data.teacherLoads.Sonia = { direct: 0, shared: 165, recess: 30, family: 0, coordination: 60, tutorial: 0, computed: 255, support: 225, total: 480 };
 
   return data;
 }
