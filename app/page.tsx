@@ -5,13 +5,15 @@ import scheduleSource from "../src/data/schedule-v2.json";
 import substitutionSource from "../src/data/substitutions-v2.json";
 import infantScheduleSource from "../src/data/schedule-infantil.json";
 import infantSubstitutionSource from "../src/data/substitutions-infantil.json";
+import diversityScheduleSource from "../src/data/schedule-diversidad.json";
+import diversitySubstitutionSource from "../src/data/substitutions-diversidad.json";
 
 type Tab = "groups" | "days" | "subjects" | "teachers" | "loads" | "substitutions" | "print";
 type TeacherType = "all" | "tutors" | "specialists" | "shared" | "support";
 type SubjectType = "all" | "tutoring" | "core" | "lang" | "spec";
 type SubstitutionView = "resolver" | "availability" | "support" | "dashboard";
 type AbsenceKind = "day" | "period";
-type Stage = "primaria" | "infantil";
+type Stage = "primaria" | "infantil" | "diversidad";
 type Lesson = { group: string; day: string; time: string; minutes: number; subject: string; primary: string; shared: string[]; notes: string; primaryDisplay?: string; sharedDisplay?: Record<string, string | undefined>; primaryMinutes?: number; primarySegment?: string; sharedMinutes?: Record<string, number | undefined>; sharedSegments?: Record<string, string | undefined>; supportLabel?: string };
 type Load = { direct: number; shared: number; recess: number; family: number; coordination: number; tutorial: number; computed: number; support: number; total: number };
 type TeacherState = { status: string; kind: string };
@@ -22,10 +24,10 @@ type AbsenceRecord = { id: string; teacher: string; kind: AbsenceKind; startDate
 type AbsenceContextValue = { records: AbsenceRecord[]; setRecords: React.Dispatch<React.SetStateAction<AbsenceRecord[]>>; referenceDate: string; setReferenceDate: (date: string) => void };
 
 const requestedStage = new URLSearchParams(window.location.search).get("etapa");
-const ACTIVE_STAGE: Stage = requestedStage === "infantil" ? "infantil" : "primaria";
-const HAS_SELECTED_STAGE = requestedStage === "infantil" || requestedStage === "primaria";
-const schedule = (ACTIVE_STAGE === "infantil" ? infantScheduleSource : scheduleSource) as unknown as Omit<typeof scheduleSource, "lessons" | "teacherLoads" | "teacherRoles"> & { lessons: Lesson[]; teacherLoads: Record<string, Load>; teacherRoles: Record<string, string[]>; subjectFamilies?: Record<string, "core" | "lang" | "spec"> };
-const substitutions = (ACTIVE_STAGE === "infantil" ? infantSubstitutionSource : substitutionSource) as unknown as typeof substitutionSource & { slots: SlotState[]; scenarios: Scenario[] };
+const ACTIVE_STAGE: Stage = requestedStage === "infantil" ? "infantil" : requestedStage === "diversidad" ? "diversidad" : "primaria";
+const HAS_SELECTED_STAGE = requestedStage === "infantil" || requestedStage === "primaria" || requestedStage === "diversidad";
+const schedule = (ACTIVE_STAGE === "infantil" ? infantScheduleSource : ACTIVE_STAGE === "diversidad" ? diversityScheduleSource : scheduleSource) as unknown as Omit<typeof scheduleSource, "lessons" | "teacherLoads" | "teacherRoles"> & { lessons: Lesson[]; teacherLoads: Record<string, Load>; teacherRoles: Record<string, string[]>; subjectFamilies?: Record<string, "core" | "lang" | "spec"> };
+const substitutions = (ACTIVE_STAGE === "infantil" ? infantSubstitutionSource : ACTIVE_STAGE === "diversidad" ? diversitySubstitutionSource : substitutionSource) as unknown as typeof substitutionSource & { slots: SlotState[]; scenarios: Scenario[] };
 const DAYS = schedule.days;
 const GROUPS = schedule.groups;
 const TEACHERS = schedule.teachers;
@@ -38,8 +40,8 @@ const PRIORITIES = [
   ["P4 Atención familias", "P4 · Atención a familias"],
   ["P5 Coordinación/tutoría", "P5 · Coordinación / reducción tutorial"],
 ] as const;
-const ABSENCE_STORAGE_KEY = ACTIVE_STAGE === "infantil" ? "horarios-ceip-infantil-absence-records" : "horarios-ceip-v2-absence-records";
-const REFERENCE_DATE_KEY = ACTIVE_STAGE === "infantil" ? "horarios-ceip-infantil-reference-date" : "horarios-ceip-v2-reference-date";
+const ABSENCE_STORAGE_KEY = ACTIVE_STAGE === "infantil" ? "horarios-ceip-infantil-absence-records" : ACTIVE_STAGE === "diversidad" ? "horarios-ceip-diversidad-absence-records" : "horarios-ceip-v2-absence-records";
+const REFERENCE_DATE_KEY = ACTIVE_STAGE === "infantil" ? "horarios-ceip-infantil-reference-date" : ACTIVE_STAGE === "diversidad" ? "horarios-ceip-diversidad-reference-date" : "horarios-ceip-v2-reference-date";
 const AbsenceContext = createContext<AbsenceContextValue | null>(null);
 
 function family(subject: string) { return schedule.subjectFamilies?.[subject] || (CORE.includes(subject) ? "core" : LANGUAGES.includes(subject) ? "lang" : "spec"); }
@@ -76,16 +78,16 @@ export default function Home() {
   const [tab, setTab] = useState<Tab>("groups");
   const [group, setGroup] = useState(ACTIVE_STAGE === "primaria" ? "4.º" : GROUPS[0]);
   const [day, setDay] = useState("Lunes");
-  const [teacher, setTeacher] = useState(ACTIVE_STAGE === "primaria" ? "María Molina" : "Mercedes");
+  const [teacher, setTeacher] = useState(ACTIVE_STAGE === "primaria" ? "María Molina" : ACTIVE_STAGE === "diversidad" ? "Noemí" : "Mercedes");
   const [teacherType, setTeacherType] = useState<TeacherType>("all");
   const [subjectType, setSubjectType] = useState<SubjectType>("all");
   const [subject, setSubject] = useState("all");
   const [query, setQuery] = useState("");
   const nav = <>{navButton("groups", "Grupos", "▦", tab, setTab)}{navButton("days", "Por días", "◫", tab, setTab)}{navButton("subjects", "Asignaturas", "▤", tab, setTab)}{navButton("teachers", "Docentes", "♙", tab, setTab)}{navButton("loads", "Cargas", "▥", tab, setTab)}{navButton("substitutions", "Sustituciones", "⇄", tab, setTab)}{navButton("print", "Imprimir", "⎙", tab, setTab)}</>;
   return <AbsenceContext.Provider value={absenceStore}><main className={`app theme-compact stage-${ACTIVE_STAGE}`}>
-    <aside className="sidebar" aria-label="Navegación principal"><div className="mark"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><b>Horarios</b><small>Sta. Rosa de Lima</small><em>Curso 26–27</em></div></div><div className="stage-switch" aria-label="Etapa educativa"><button className={ACTIVE_STAGE === "infantil" ? "active" : ""} onClick={() => openStage("infantil")}>Infantil</button><button className={ACTIVE_STAGE === "primaria" ? "active" : ""} onClick={() => openStage("primaria")}>Primaria</button></div><nav>{nav}</nav></aside>
-    <section className="shell"><header className="topbar"><div className="topbar-brand"><img className="mobile-school-logo" src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><h1>Horarios CEIP <span>· {ACTIVE_STAGE === "infantil" ? "Infantil · " : ""}Curso 2026–27</span></h1></div></div><button className="mobile-stage-button" onClick={() => openStage(ACTIVE_STAGE === "infantil" ? "primaria" : "infantil")}>Cambiar a {ACTIVE_STAGE === "infantil" ? "Primaria" : "Infantil"}</button></header><div className="mobile-nav">{nav}</div>
-      {tab === "groups" && <><Toolbar query={query} setQuery={setQuery}><label>Grupo<select value={group} onChange={(event) => setGroup(event.target.value)}>{GROUPS.map((name) => <option key={name}>{name}</option>)}</select></label><PrintOptions buttonLabel="Imprimir horario"/></Toolbar><section className="panel schedule-panel"><PanelTitle eyebrow="Vista semanal" title={ACTIVE_STAGE === "infantil" ? `${group} · Infantil` : `${group} Primaria`}/><WeekGrid group={group} query={query}/></section></>}
+    <aside className="sidebar" aria-label="Navegación principal"><div className="mark"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><b>Horarios</b><small>Sta. Rosa de Lima</small><em>Curso 26–27</em></div></div><div className="stage-switch" aria-label="Etapa educativa"><button className={ACTIVE_STAGE === "infantil" ? "active" : ""} onClick={() => openStage("infantil")}>Infantil</button><button className={ACTIVE_STAGE === "primaria" ? "active" : ""} onClick={() => openStage("primaria")}>Primaria</button><button className={ACTIVE_STAGE === "diversidad" ? "active" : ""} onClick={() => openStage("diversidad")}>At. diversidad</button></div><nav>{nav}</nav></aside>
+    <section className="shell"><header className="topbar"><div className="topbar-brand"><img className="mobile-school-logo" src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><h1>Horarios CEIP <span>· {ACTIVE_STAGE === "infantil" ? "Infantil · " : ACTIVE_STAGE === "diversidad" ? "Atención a la Diversidad · " : ""}Curso 2026–27</span></h1></div></div></header><div className="mobile-nav">{nav}</div>
+      {tab === "groups" && <><Toolbar query={query} setQuery={setQuery}><label>Grupo<select value={group} onChange={(event) => setGroup(event.target.value)}>{GROUPS.map((name) => <option key={name}>{name}</option>)}</select></label><PrintOptions buttonLabel="Imprimir horario"/></Toolbar><section className="panel schedule-panel"><PanelTitle eyebrow="Vista semanal" title={ACTIVE_STAGE === "infantil" ? `${group} · Infantil` : ACTIVE_STAGE === "diversidad" ? `${group} · Atención a la Diversidad` : `${group} Primaria`}/><WeekGrid group={group} query={query}/></section></>}
       {tab === "days" && <DayView day={day} setDay={setDay} query={query} setQuery={setQuery}/>}
       {tab === "subjects" && <SubjectsView subjectType={subjectType} setSubjectType={setSubjectType} subject={subject} setSubject={setSubject} query={query} setQuery={setQuery}/>}
       {tab === "teachers" && <TeacherView teacher={teacher} setTeacher={setTeacher} teacherType={teacherType} setTeacherType={setTeacherType} query={query} setQuery={setQuery}/>}
@@ -95,7 +97,7 @@ export default function Home() {
 }
 
 function StageLanding() {
-  return <main className="stage-landing"><section className="stage-landing-card"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><p className="eyebrow">Colegio Público Santa Rosa de Lima</p><h1>Horarios CEIP</h1><p>Selecciona la etapa educativa que quieres consultar.</p><div className="stage-options"><button onClick={() => openStage("infantil")}><span>Infantil</span><small>3, 4 y 5 años</small></button><button onClick={() => openStage("primaria")}><span>Primaria</span><small>1.º a 6.º</small></button></div><small className="stage-course">Curso 2026–27</small></section></main>;
+  return <main className="stage-landing"><section className="stage-landing-card"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><p className="eyebrow">Colegio Público Santa Rosa de Lima</p><h1>Horarios CEIP</h1><p>Selecciona la etapa educativa que quieres consultar.</p><div className="stage-options"><button onClick={() => openStage("infantil")}><span>Infantil</span><small>3, 4 y 5 años</small></button><button onClick={() => openStage("primaria")}><span>Primaria</span><small>1.º a 6.º</small></button><button onClick={() => openStage("diversidad")}><span>Atención a la Diversidad</span><small>PT · AL · Infantil y Primaria</small></button></div><small className="stage-course">Curso 2026–27</small></section></main>;
 }
 
 function navButton(id: Tab, label: string, icon: string, tab: Tab, setTab: (tab: Tab) => void) { return <button key={id} className={tab === id ? "active" : ""} onClick={() => setTab(id)}><span>{icon}</span>{label}</button>; }
@@ -120,7 +122,7 @@ function PrintOptions({ buttonLabel, fitScale = .98, disabled = false }: { butto
   if (!expanded) return <button className="primary" disabled={disabled} onClick={() => setExpanded(true)}>{buttonLabel}</button>;
   return <><label>Papel<select value={paper} onChange={(event) => setPaper(event.target.value as "A4" | "A3")}><option>A4</option><option>A3</option></select></label><label>Orientación<select value={orientation} onChange={(event) => setOrientation(event.target.value as "portrait" | "landscape")}><option value="portrait">Vertical</option><option value="landscape">Horizontal</option></select></label><label>Ajuste<select value={fitMode} onChange={(event) => setFitMode(event.target.value as "fit" | "manual")}><option value="fit">Ajustar a página</option><option value="manual">Escala manual</option></select></label><label>Escala<select value={scale} disabled={fitMode === "fit"} onChange={(event) => setScale(event.target.value)}>{[60, 70, 80, 90, 100].map((value) => <option value={value} key={value}>{value}%</option>)}</select></label><button className="primary" disabled={disabled} onClick={() => window.print()}>Imprimir ahora</button><button className="secondary" onClick={() => setExpanded(false)}>Cerrar</button></>;
 }
-function Legend() { return <div className="legend"><span className="legend-item core"><i/>{ACTIVE_STAGE === "infantil" ? "Áreas" : "Troncales"}</span><span className="legend-item lang"><i/>Idiomas</span><span className="legend-item spec"><i/>Especialidades</span></div>; }
+function Legend() { return <div className="legend">{ACTIVE_STAGE === "diversidad" ? <><span className="legend-item core"><i/>PT</span><span className="legend-item lang"><i/>AL</span></> : <><span className="legend-item core"><i/>{ACTIVE_STAGE === "infantil" ? "Áreas" : "Troncales"}</span><span className="legend-item lang"><i/>Idiomas</span><span className="legend-item spec"><i/>Especialidades</span></>}</div>; }
 function PanelTitle({ eyebrow, title, aside = <Legend/> }: { eyebrow: string; title: string; aside?: React.ReactNode }) { return <div className="panel-title"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2></div>{aside}</div>; }
 
 function LessonCard({ lesson, query, compact = false, date }: { lesson: Lesson; query: string; compact?: boolean; date?: string }) {
@@ -164,7 +166,7 @@ function TeacherDay({ teacher, day, query }: { teacher: string; day: string; que
 function statusClass(status: string) { if (status.startsWith("DC ")) return "state-shared"; if (status.startsWith("Apoyo")) return "state-support"; if (status === "RECREO") return "state-recess"; if (status.includes("Atención a familias") || status.includes("Coordinación") || status.includes("Reducción") || status.includes("Gestión de biblioteca")) return "state-complementary"; if (status.startsWith("NO DISPONIBLE")) return "state-unavailable"; return "state-direct"; }
 
 function LoadsView() { return <><div className="toolbar standalone-print"><PrintOptions buttonLabel="Imprimir cargas" fitScale={.92}/></div><LoadsTable/></>; }
-function LoadsTable() { const { records, referenceDate } = useAbsenceContext(); const absent = activeTeacherNames(records, referenceDate); return <section className="panel loads"><PanelTitle eyebrow={ACTIVE_STAGE === "infantil" ? "Cómputo docente · Infantil" : "Cómputo docente V2"} title="Cargas semanales" aside={<span className="validation">{ACTIVE_STAGE === "infantil" ? "Fuente: horario consolidado" : "Fuente: V1 final validada"}</span>}/><div className="load-table"><div className="load-row head"><span>Docente</span><span>Docencia</span><span>Docencia compartida</span><span>Recreo</span><span>At. familias</span><span>{ACTIVE_STAGE === "infantil" ? "Coordinación / biblioteca" : "Coordinación"}</span><span>Reducción tutorial</span><span>Horas computadas</span><span>Apoyo</span><span>Total semanal</span></div>{TEACHERS.map((teacher) => { const load = schedule.teacherLoads[teacher]; return <div className={`load-row ${absent.includes(teacher) ? "has-absence" : ""}`} key={teacher}><strong>{teacher}{absent.includes(teacher) && <small className="absence-badge">Ausente</small>}</strong><span>{formatMinutes(load.direct)}</span><span>{formatMinutes(load.shared)}</span><span>{formatMinutes(load.recess)}</span><span>{formatMinutes(load.family)}</span><span>{formatMinutes(load.coordination)}</span><span>{formatMinutes(load.tutorial)}</span><strong>{formatMinutes(load.computed)}</strong><span>{formatMinutes(load.support)}</span><strong className="load-total">{formatMinutes(load.total)}</strong></div>; })}</div><p className="table-note">“Apoyo” identifica únicamente los huecos residuales disponibles. La segunda persona dentro del aula se computa como docencia compartida.{ACTIVE_STAGE === "infantil" ? " En Dori, la columna de coordinación incluye las dos horas de gestión de biblioteca." : ""}</p></section>; }
+function LoadsTable() { const { records, referenceDate } = useAbsenceContext(); const absent = activeTeacherNames(records, referenceDate); return <section className="panel loads"><PanelTitle eyebrow={ACTIVE_STAGE === "infantil" ? "Cómputo docente · Infantil" : ACTIVE_STAGE === "diversidad" ? "Cómputo docente · Atención a la Diversidad" : "Cómputo docente V2"} title="Cargas semanales" aside={<span className="validation">{ACTIVE_STAGE === "infantil" ? "Fuente: horario consolidado" : "Fuente: V1 final validada"}</span>}/><div className="load-table"><div className="load-row head"><span>Docente</span><span>Docencia</span><span>Docencia compartida</span><span>Recreo</span><span>At. familias</span><span>{ACTIVE_STAGE === "infantil" ? "Coordinación / biblioteca" : "Coordinación"}</span><span>Reducción tutorial</span><span>Horas computadas</span><span>Apoyo</span><span>Total semanal</span></div>{TEACHERS.map((teacher) => { const load = schedule.teacherLoads[teacher]; return <div className={`load-row ${absent.includes(teacher) ? "has-absence" : ""}`} key={teacher}><strong>{teacher}{absent.includes(teacher) && <small className="absence-badge">Ausente</small>}</strong><span>{formatMinutes(load.direct)}</span><span>{formatMinutes(load.shared)}</span><span>{formatMinutes(load.recess)}</span><span>{formatMinutes(load.family)}</span><span>{formatMinutes(load.coordination)}</span><span>{formatMinutes(load.tutorial)}</span><strong>{formatMinutes(load.computed)}</strong><span>{formatMinutes(load.support)}</span><strong className="load-total">{formatMinutes(load.total)}</strong></div>; })}</div><p className="table-note">“Apoyo” identifica únicamente los huecos residuales disponibles. La segunda persona dentro del aula se computa como docencia compartida.{ACTIVE_STAGE === "infantil" ? " En Dori, la columna de coordinación incluye las dos horas de gestión de biblioteca." : ""}</p></section>; }
 
 function SubstitutionsView() {
   const { records, setRecords, referenceDate, setReferenceDate } = useAbsenceContext();
@@ -326,7 +328,7 @@ function PrintCenter() {
       {sections.days && selectedDays.map((day) => <PrintDayReport day={day} key={`day-${day}`}/>)}
       {sections.subjects && selectedSubjects.filter((name) => filteredSubjects.includes(name)).map((subject) => <PrintSubjectReport subject={subject} subjectType={subjectType} key={`subject-${subject}`}/>)}
       {sections.teachers && selectedTeachers.filter((name) => filteredTeachers.includes(name)).map((teacher) => <PrintTeacherReport teacher={teacher} key={`teacher-${teacher}`}/>)}
-      {sections.loads && <section className="print-sheet"><PrintSheetHeader eyebrow={ACTIVE_STAGE === "infantil" ? "Cómputo docente · Infantil" : "Cómputo docente V2"} title="Cargas semanales"/><LoadsTable/></section>}
+      {sections.loads && <section className="print-sheet"><PrintSheetHeader eyebrow={ACTIVE_STAGE === "infantil" ? "Cómputo docente · Infantil" : ACTIVE_STAGE === "diversidad" ? "Cómputo docente · Atención a la Diversidad" : "Cómputo docente V2"} title="Cargas semanales"/><LoadsTable/></section>}
       {sections.substitutions && <PrintPlanningReport scope={substitutionScope} dates={dates} sessions={planningSessions}/>}
     </section>
   </div>;
@@ -338,9 +340,9 @@ function PrintOptionList({ title, options, selected, setSelected, embedded = fal
   return embedded ? <div className="print-option-embedded">{content}</div> : <div className="panel print-option-card">{content}</div>;
 }
 
-function PrintSheetHeader({ eyebrow, title }: { eyebrow: string; title: string }) { return <header className="print-sheet-head"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><span>{eyebrow}</span><h2>{title}</h2><small>CEIP Santa Rosa de Lima · {ACTIVE_STAGE === "infantil" ? "Infantil · " : ""}Curso 2026–27</small></div></header>; }
+function PrintSheetHeader({ eyebrow, title }: { eyebrow: string; title: string }) { return <header className="print-sheet-head"><img src="./logo-srl-v4.webp" alt="Colegio Público Santa Rosa de Lima"/><div><span>{eyebrow}</span><h2>{title}</h2><small>CEIP Santa Rosa de Lima · {ACTIVE_STAGE === "infantil" ? "Infantil · " : ACTIVE_STAGE === "diversidad" ? "Atención a la Diversidad · " : ""}Curso 2026–27</small></div></header>; }
 
-function PrintGroupReport({ group }: { group: string }) { return <section className="print-sheet print-sheet-group"><PrintSheetHeader eyebrow="Horario de grupo" title={ACTIVE_STAGE === "infantil" ? `${group} · Infantil` : `${group} Primaria`}/><WeekGrid group={group} query=""/></section>; }
+function PrintGroupReport({ group }: { group: string }) { return <section className="print-sheet print-sheet-group"><PrintSheetHeader eyebrow="Horario de grupo" title={ACTIVE_STAGE === "infantil" ? `${group} · Infantil` : ACTIVE_STAGE === "diversidad" ? `${group} · Atención a la Diversidad` : `${group} Primaria`}/><WeekGrid group={group} query=""/></section>; }
 
 function PrintDayReport({ day }: { day: string }) {
   const { referenceDate } = useAbsenceContext(); const slots = schedule.slots[day as keyof typeof schedule.slots];
