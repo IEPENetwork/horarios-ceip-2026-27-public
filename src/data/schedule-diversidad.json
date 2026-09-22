@@ -1,8 +1,8 @@
 {
-  "version": "Atención a la Diversidad · horario consolidado",
+  "version": "Atención a la Diversidad · grupos interactivos y tertulias",
   "stage": "diversidad",
-  "sourceWorkbook": "Propuesta validada en conversación · 2026-09-20",
-  "changeSet": "Incorporación de PT y AL como intervención paralela sin modificar los horarios base de Primaria e Infantil.",
+  "sourceWorkbook": "Propuesta validada en conversación · 2026-09-22",
+  "changeSet": "Sesiones mínimas de 45 min, cobertura de grupos interactivos y exclusión de tertulias dialógicas.",
   "days": [
     "Lunes",
     "Martes",
@@ -94,39 +94,56 @@
   ],
   "teacherRoles": {
     "Noemí": [
-      "Especialista",
+      "Especialista PT",
       "Docencia compartida",
       "Apoyo disponible"
     ],
     "Charo": [
-      "Especialista",
+      "Especialista PT",
       "Docencia compartida",
       "Apoyo disponible"
     ],
     "Lola": [
-      "Especialista",
+      "Especialista AL",
       "Docencia compartida",
       "Apoyo disponible"
     ],
     "Belén AL": [
-      "Especialista",
+      "Especialista AL",
       "Docencia compartida",
       "Apoyo disponible"
     ]
   },
   "subjectFamilies": {
+    "PT · Grupo interactivo 2.ºA + 2.ºB": "core",
     "PT · Infantil": "core",
+    "PT · Grupo interactivo · Lengua": "core",
     "PT · Lengua": "core",
     "PT · C. Naturales": "core",
+    "PT · Educación Física": "core",
     "PT · Matemáticas": "core",
+    "PT · Música": "core",
+    "PT · Grupo interactivo": "core",
     "PT · C. Sociales": "core",
-    "AL · Lengua": "lang",
+    "PT · Grupo interactivo · Matemáticas": "core",
+    "AL · Grupo interactivo 2.ºA + 2.ºB": "lang",
     "AL · Infantil": "lang",
+    "AL · Lengua": "lang",
     "AL · C. Naturales": "lang",
-    "AL · C. Sociales": "lang"
+    "AL · Matemáticas": "lang",
+    "AL · Grupo interactivo · Lengua": "lang",
+    "AL · C. Sociales": "lang",
+    "AL · Atención Educativa": "lang"
   },
   "subjects": {
+    "PT · Grupo interactivo 2.ºA + 2.ºB": [
+      "Noemí"
+    ],
     "PT · Infantil": [
+      "Noemí",
+      "Charo"
+    ],
+    "PT · Grupo interactivo · Lengua": [
       "Noemí",
       "Charo"
     ],
@@ -138,19 +155,33 @@
       "Noemí",
       "Charo"
     ],
+    "PT · Educación Física": [
+      "Noemí"
+    ],
     "PT · Matemáticas": [
       "Noemí",
       "Charo"
     ],
+    "PT · Música": [
+      "Noemí"
+    ],
+    "PT · Grupo interactivo": [
+      "Noemí"
+    ],
     "PT · C. Sociales": [
-      "Noemí",
+      "Noemí"
+    ],
+    "PT · Grupo interactivo · Matemáticas": [
       "Charo"
     ],
-    "AL · Lengua": [
+    "AL · Grupo interactivo 2.ºA + 2.ºB": [
+      "Lola"
+    ],
+    "AL · Infantil": [
       "Lola",
       "Belén AL"
     ],
-    "AL · Infantil": [
+    "AL · Lengua": [
       "Lola",
       "Belén AL"
     ],
@@ -158,12 +189,33 @@
       "Lola",
       "Belén AL"
     ],
+    "AL · Matemáticas": [
+      "Lola"
+    ],
+    "AL · Grupo interactivo · Lengua": [
+      "Lola",
+      "Belén AL"
+    ],
     "AL · C. Sociales": [
+      "Lola"
+    ],
+    "AL · Atención Educativa": [
       "Lola"
     ]
   },
   "lessons": [
     {
+      "group": "2.ºA",
+      "day": "Lunes",
+      "time": "09:00–10:00",
+      "minutes": 60,
+      "subject": "PT · Grupo interactivo 2.ºA + 2.ºB",
+      "primary": "Noemí",
+      "shared": [],
+      "notes": "Intervención PT en el grupo interactivo conjunto de 2.ºA y 2.ºB; ambos grupos comparten espacio.",
+      "supportLabel": "PT"
+    },
+    {
       "group": "3 años",
       "day": "Lunes",
       "time": "10:00–10:45",
@@ -175,18 +227,18 @@
       "supportLabel": "PT"
     },
     {
-      "group": "5 años",
+      "group": "1.º",
       "day": "Lunes",
       "time": "10:45–11:30",
       "minutes": 45,
-      "subject": "PT · Infantil",
+      "subject": "PT · Grupo interactivo · Lengua",
       "primary": "Noemí",
       "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
+      "notes": "Coincide con el grupo interactivo de 1.º.",
       "supportLabel": "PT"
     },
     {
-      "group": "4.º",
+      "group": "5.ºA",
       "day": "Lunes",
       "time": "12:00–12:45",
       "minutes": 45,
@@ -199,72 +251,6 @@
     {
       "group": "5.ºB",
       "day": "Lunes",
-      "time": "13:00–13:30",
-      "minutes": 30,
-      "subject": "PT · C. Naturales",
-      "primary": "Noemí",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
-      "group": "3.º",
-      "day": "Lunes",
-      "time": "13:30–14:00",
-      "minutes": 30,
-      "subject": "PT · C. Naturales",
-      "primary": "Noemí",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
-      "group": "4.º",
-      "day": "Martes",
-      "time": "09:00–09:45",
-      "minutes": 45,
-      "subject": "PT · Matemáticas",
-      "primary": "Noemí",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
-      "group": "3 años",
-      "day": "Martes",
-      "time": "10:00–10:45",
-      "minutes": 45,
-      "subject": "PT · Infantil",
-      "primary": "Noemí",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
-      "group": "3.º",
-      "day": "Martes",
-      "time": "10:45–11:30",
-      "minutes": 45,
-      "subject": "PT · Lengua",
-      "primary": "Noemí",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
-      "group": "1.º",
-      "day": "Martes",
-      "time": "12:00–12:45",
-      "minutes": 45,
-      "subject": "PT · Lengua",
-      "primary": "Noemí",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
-      "group": "2.ºB",
-      "day": "Martes",
       "time": "13:00–13:45",
       "minutes": 45,
       "subject": "PT · C. Naturales",
@@ -275,8 +261,8 @@
     },
     {
       "group": "4 años",
-      "day": "Miércoles",
-      "time": "09:00–09:45",
+      "day": "Martes",
+      "time": "10:00–10:45",
       "minutes": 45,
       "subject": "PT · Infantil",
       "primary": "Noemí",
@@ -285,9 +271,9 @@
       "supportLabel": "PT"
     },
     {
-      "group": "2.ºA",
-      "day": "Miércoles",
-      "time": "10:00–10:45",
+      "group": "3.º",
+      "day": "Martes",
+      "time": "10:45–11:30",
       "minutes": 45,
       "subject": "PT · Lengua",
       "primary": "Noemí",
@@ -296,9 +282,20 @@
       "supportLabel": "PT"
     },
     {
-      "group": "5.ºA",
-      "day": "Miércoles",
-      "time": "10:45–11:30",
+      "group": "1.º",
+      "day": "Martes",
+      "time": "12:00–12:45",
+      "minutes": 45,
+      "subject": "PT · Lengua",
+      "primary": "Noemí",
+      "shared": [],
+      "notes": "Intervención de PT dentro del aula ordinaria.",
+      "supportLabel": "PT"
+    },
+    {
+      "group": "4.º",
+      "day": "Martes",
+      "time": "13:00–13:45",
       "minutes": 45,
       "subject": "PT · C. Naturales",
       "primary": "Noemí",
@@ -307,30 +304,8 @@
       "supportLabel": "PT"
     },
     {
-      "group": "6.ºB",
-      "day": "Miércoles",
-      "time": "12:00–12:30",
-      "minutes": 30,
-      "subject": "PT · Matemáticas",
-      "primary": "Noemí",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
-      "group": "1.º",
-      "day": "Miércoles",
-      "time": "12:30–13:00",
-      "minutes": 30,
-      "subject": "PT · Matemáticas",
-      "primary": "Noemí",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
       "group": "5 años",
-      "day": "Jueves",
+      "day": "Miércoles",
       "time": "09:00–09:45",
       "minutes": 45,
       "subject": "PT · Infantil",
@@ -341,7 +316,7 @@
     },
     {
       "group": "4 años",
-      "day": "Jueves",
+      "day": "Miércoles",
       "time": "10:00–10:45",
       "minutes": 45,
       "subject": "PT · Infantil",
@@ -351,9 +326,31 @@
       "supportLabel": "PT"
     },
     {
-      "group": "6.ºB",
-      "day": "Jueves",
+      "group": "3 años",
+      "day": "Miércoles",
       "time": "10:45–11:30",
+      "minutes": 45,
+      "subject": "PT · Infantil",
+      "primary": "Noemí",
+      "shared": [],
+      "notes": "Intervención de PT dentro del aula ordinaria.",
+      "supportLabel": "PT"
+    },
+    {
+      "group": "6.ºA",
+      "day": "Miércoles",
+      "time": "12:00–12:45",
+      "minutes": 45,
+      "subject": "PT · Educación Física",
+      "primary": "Noemí",
+      "shared": [],
+      "notes": "Intervención de PT dentro del aula ordinaria.",
+      "supportLabel": "PT"
+    },
+    {
+      "group": "2.ºA",
+      "day": "Jueves",
+      "time": "09:00–09:45",
       "minutes": 45,
       "subject": "PT · Lengua",
       "primary": "Noemí",
@@ -362,9 +359,9 @@
       "supportLabel": "PT"
     },
     {
-      "group": "6.ºA",
+      "group": "2.ºB",
       "day": "Jueves",
-      "time": "12:00–12:45",
+      "time": "10:00–10:45",
       "minutes": 45,
       "subject": "PT · Matemáticas",
       "primary": "Noemí",
@@ -373,42 +370,53 @@
       "supportLabel": "PT"
     },
     {
-      "group": "5.ºB",
-      "day": "Viernes",
-      "time": "09:00–09:45",
+      "group": "5.ºA",
+      "day": "Jueves",
+      "time": "10:45–11:30",
       "minutes": 45,
-      "subject": "PT · C. Sociales",
+      "subject": "PT · Matemáticas",
       "primary": "Noemí",
       "shared": [],
       "notes": "Intervención de PT dentro del aula ordinaria.",
       "supportLabel": "PT"
     },
     {
-      "group": "5.ºA",
+      "group": "6.ºB",
+      "day": "Jueves",
+      "time": "12:00–12:45",
+      "minutes": 45,
+      "subject": "PT · Música",
+      "primary": "Noemí",
+      "shared": [],
+      "notes": "Intervención de PT dentro del aula ordinaria.",
+      "supportLabel": "PT"
+    },
+    {
+      "group": "4.º",
+      "day": "Viernes",
+      "time": "09:00–09:45",
+      "minutes": 45,
+      "subject": "PT · Grupo interactivo",
+      "primary": "Noemí",
+      "shared": [],
+      "notes": "Coincide con el grupo interactivo de 4.º.",
+      "supportLabel": "PT"
+    },
+    {
+      "group": "5 años",
       "day": "Viernes",
       "time": "09:45–10:30",
       "minutes": 45,
-      "subject": "PT · C. Sociales",
+      "subject": "PT · Infantil",
       "primary": "Noemí",
       "shared": [],
       "notes": "Intervención de PT dentro del aula ordinaria.",
       "supportLabel": "PT"
     },
     {
-      "group": "6.ºA",
+      "group": "3.º",
       "day": "Viernes",
       "time": "10:30–11:15",
-      "minutes": 45,
-      "subject": "PT · Lengua",
-      "primary": "Noemí",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
-      "group": "2.ºB",
-      "day": "Viernes",
-      "time": "11:45–12:30",
       "minutes": 45,
       "subject": "PT · Matemáticas",
       "primary": "Noemí",
@@ -417,10 +425,10 @@
       "supportLabel": "PT"
     },
     {
-      "group": "2.ºA",
+      "group": "6.ºB",
       "day": "Viernes",
-      "time": "12:30–13:00",
-      "minutes": 30,
+      "time": "11:45–12:30",
+      "minutes": 45,
       "subject": "PT · C. Sociales",
       "primary": "Noemí",
       "shared": [],
@@ -428,22 +436,11 @@
       "supportLabel": "PT"
     },
     {
-      "group": "2.ºB",
+      "group": "3 años",
       "day": "Lunes",
-      "time": "10:00–10:45",
+      "time": "09:00–09:45",
       "minutes": 45,
-      "subject": "PT · Lengua",
-      "primary": "Charo",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
-      "group": "2.ºA",
-      "day": "Lunes",
-      "time": "10:45–11:30",
-      "minutes": 45,
-      "subject": "PT · Lengua",
+      "subject": "PT · Infantil",
       "primary": "Charo",
       "shared": [],
       "notes": "Intervención de PT dentro del aula ordinaria.",
@@ -452,8 +449,19 @@
     {
       "group": "5.ºA",
       "day": "Lunes",
-      "time": "12:00–12:30",
-      "minutes": 30,
+      "time": "10:00–10:45",
+      "minutes": 45,
+      "subject": "PT · C. Naturales",
+      "primary": "Charo",
+      "shared": [],
+      "notes": "Intervención de PT dentro del aula ordinaria.",
+      "supportLabel": "PT"
+    },
+    {
+      "group": "2.ºB",
+      "day": "Lunes",
+      "time": "10:45–11:30",
+      "minutes": 45,
       "subject": "PT · Lengua",
       "primary": "Charo",
       "shared": [],
@@ -463,8 +471,8 @@
     {
       "group": "1.º",
       "day": "Lunes",
-      "time": "12:30–13:00",
-      "minutes": 30,
+      "time": "12:00–12:45",
+      "minutes": 45,
       "subject": "PT · Matemáticas",
       "primary": "Charo",
       "shared": [],
@@ -472,25 +480,25 @@
       "supportLabel": "PT"
     },
     {
-      "group": "5 años",
-      "day": "Martes",
-      "time": "09:00–09:45",
+      "group": "4.º",
+      "day": "Lunes",
+      "time": "13:00–13:45",
       "minutes": 45,
-      "subject": "PT · Infantil",
+      "subject": "PT · C. Naturales",
       "primary": "Charo",
       "shared": [],
       "notes": "Intervención de PT dentro del aula ordinaria.",
       "supportLabel": "PT"
     },
     {
-      "group": "4 años",
+      "group": "3.º",
       "day": "Martes",
       "time": "10:00–10:45",
       "minutes": 45,
-      "subject": "PT · Infantil",
+      "subject": "PT · Grupo interactivo · Lengua",
       "primary": "Charo",
       "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
+      "notes": "Coincide con el grupo interactivo de 3.º.",
       "supportLabel": "PT"
     },
     {
@@ -507,8 +515,8 @@
     {
       "group": "6.ºA",
       "day": "Martes",
-      "time": "12:00–12:30",
-      "minutes": 30,
+      "time": "12:00–12:45",
+      "minutes": 45,
       "subject": "PT · Matemáticas",
       "primary": "Charo",
       "shared": [],
@@ -516,18 +524,7 @@
       "supportLabel": "PT"
     },
     {
-      "group": "5.ºB",
-      "day": "Martes",
-      "time": "12:30–13:00",
-      "minutes": 30,
-      "subject": "PT · Lengua",
-      "primary": "Charo",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
-      "group": "4.º",
+      "group": "2.ºB",
       "day": "Martes",
       "time": "13:00–13:45",
       "minutes": 45,
@@ -538,14 +535,14 @@
       "supportLabel": "PT"
     },
     {
-      "group": "3 años",
+      "group": "5.ºB",
       "day": "Miércoles",
       "time": "09:00–09:45",
       "minutes": 45,
-      "subject": "PT · Infantil",
+      "subject": "PT · Grupo interactivo · Lengua",
       "primary": "Charo",
       "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
+      "notes": "Coincide con el grupo interactivo de 5.ºB.",
       "supportLabel": "PT"
     },
     {
@@ -560,11 +557,11 @@
       "supportLabel": "PT"
     },
     {
-      "group": "6.ºB",
+      "group": "4 años",
       "day": "Miércoles",
       "time": "10:45–11:30",
       "minutes": 45,
-      "subject": "PT · Lengua",
+      "subject": "PT · Infantil",
       "primary": "Charo",
       "shared": [],
       "notes": "Intervención de PT dentro del aula ordinaria.",
@@ -582,22 +579,22 @@
       "supportLabel": "PT"
     },
     {
-      "group": "4 años",
+      "group": "6.ºB",
       "day": "Jueves",
       "time": "09:00–09:45",
       "minutes": 45,
-      "subject": "PT · Infantil",
+      "subject": "PT · Grupo interactivo · Matemáticas",
       "primary": "Charo",
       "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
+      "notes": "Coincide con el grupo interactivo de 6.ºB.",
       "supportLabel": "PT"
     },
     {
-      "group": "2.ºB",
+      "group": "5 años",
       "day": "Jueves",
       "time": "10:00–10:45",
       "minutes": 45,
-      "subject": "PT · Matemáticas",
+      "subject": "PT · Infantil",
       "primary": "Charo",
       "shared": [],
       "notes": "Intervención de PT dentro del aula ordinaria.",
@@ -615,11 +612,11 @@
       "supportLabel": "PT"
     },
     {
-      "group": "3.º",
+      "group": "6.ºA",
       "day": "Jueves",
       "time": "12:00–12:45",
       "minutes": 45,
-      "subject": "PT · Lengua",
+      "subject": "PT · Matemáticas",
       "primary": "Charo",
       "shared": [],
       "notes": "Intervención de PT dentro del aula ordinaria.",
@@ -637,11 +634,11 @@
       "supportLabel": "PT"
     },
     {
-      "group": "6.ºA",
+      "group": "4 años",
       "day": "Viernes",
       "time": "09:00–09:45",
       "minutes": 45,
-      "subject": "PT · C. Sociales",
+      "subject": "PT · Infantil",
       "primary": "Charo",
       "shared": [],
       "notes": "Intervención de PT dentro del aula ordinaria.",
@@ -659,7 +656,7 @@
       "supportLabel": "PT"
     },
     {
-      "group": "3.º",
+      "group": "1.º",
       "day": "Viernes",
       "time": "10:30–11:15",
       "minutes": 45,
@@ -681,25 +678,14 @@
       "supportLabel": "PT"
     },
     {
-      "group": "1.º",
-      "day": "Viernes",
-      "time": "12:30–13:00",
-      "minutes": 30,
-      "subject": "PT · C. Sociales",
-      "primary": "Charo",
-      "shared": [],
-      "notes": "Intervención de PT dentro del aula ordinaria.",
-      "supportLabel": "PT"
-    },
-    {
-      "group": "2.ºA",
+      "group": "2.ºB",
       "day": "Lunes",
       "time": "10:00–10:45",
       "minutes": 45,
-      "subject": "AL · Lengua",
+      "subject": "AL · Grupo interactivo 2.ºA + 2.ºB",
       "primary": "Lola",
       "shared": [],
-      "notes": "Intervención de AL dentro del aula ordinaria.",
+      "notes": "Intervención AL en el grupo interactivo conjunto de 2.ºA y 2.ºB; ambos grupos comparten espacio.",
       "supportLabel": "AL"
     },
     {
@@ -727,19 +713,8 @@
     {
       "group": "3.º",
       "day": "Lunes",
-      "time": "13:00–13:30",
-      "minutes": 30,
-      "subject": "AL · C. Naturales",
-      "primary": "Lola",
-      "shared": [],
-      "notes": "Intervención de AL dentro del aula ordinaria.",
-      "supportLabel": "AL"
-    },
-    {
-      "group": "5.ºB",
-      "day": "Lunes",
-      "time": "13:30–14:00",
-      "minutes": 30,
+      "time": "13:00–13:45",
+      "minutes": 45,
       "subject": "AL · C. Naturales",
       "primary": "Lola",
       "shared": [],
@@ -780,22 +755,22 @@
       "supportLabel": "AL"
     },
     {
-      "group": "6.ºA",
+      "group": "4 años",
       "day": "Jueves",
       "time": "10:00–10:45",
       "minutes": 45,
-      "subject": "AL · C. Naturales",
+      "subject": "AL · Infantil",
       "primary": "Lola",
       "shared": [],
       "notes": "Intervención de AL dentro del aula ordinaria.",
       "supportLabel": "AL"
     },
     {
-      "group": "3 años",
+      "group": "1.º",
       "day": "Jueves",
       "time": "10:45–11:30",
       "minutes": 45,
-      "subject": "AL · Infantil",
+      "subject": "AL · Matemáticas",
       "primary": "Lola",
       "shared": [],
       "notes": "Intervención de AL dentro del aula ordinaria.",
@@ -824,22 +799,22 @@
       "supportLabel": "AL"
     },
     {
-      "group": "5.ºB",
+      "group": "6.ºA",
       "day": "Viernes",
-      "time": "10:00–10:30",
-      "minutes": 30,
-      "subject": "AL · C. Sociales",
+      "time": "10:30–11:15",
+      "minutes": 45,
+      "subject": "AL · Grupo interactivo · Lengua",
       "primary": "Lola",
       "shared": [],
-      "notes": "Intervención de AL dentro del aula ordinaria.",
+      "notes": "Coincide con el grupo interactivo de 6.ºA.",
       "supportLabel": "AL"
     },
     {
       "group": "2.ºB",
       "day": "Viernes",
-      "time": "10:30–11:15",
+      "time": "11:45–12:30",
       "minutes": 45,
-      "subject": "AL · Lengua",
+      "subject": "AL · Matemáticas",
       "primary": "Lola",
       "shared": [],
       "notes": "Intervención de AL dentro del aula ordinaria.",
@@ -847,17 +822,6 @@
     },
     {
       "group": "1.º",
-      "day": "Viernes",
-      "time": "11:45–12:30",
-      "minutes": 45,
-      "subject": "AL · Lengua",
-      "primary": "Lola",
-      "shared": [],
-      "notes": "Intervención de AL dentro del aula ordinaria.",
-      "supportLabel": "AL"
-    },
-    {
-      "group": "2.ºB",
       "day": "Viernes",
       "time": "12:30–13:15",
       "minutes": 45,
@@ -868,23 +832,12 @@
       "supportLabel": "AL"
     },
     {
-      "group": "1.º",
+      "group": "5.ºB",
       "day": "Viernes",
       "time": "13:15–14:00",
       "minutes": 45,
-      "subject": "AL · C. Sociales",
+      "subject": "AL · Atención Educativa",
       "primary": "Lola",
-      "shared": [],
-      "notes": "Intervención de AL dentro del aula ordinaria.",
-      "supportLabel": "AL"
-    },
-    {
-      "group": "4 años",
-      "day": "Martes",
-      "time": "09:00–09:30",
-      "minutes": 30,
-      "subject": "AL · Infantil",
-      "primary": "Belén AL",
       "shared": [],
       "notes": "Intervención de AL dentro del aula ordinaria.",
       "supportLabel": "AL"
@@ -892,12 +845,12 @@
     {
       "group": "5.ºA",
       "day": "Martes",
-      "time": "09:30–10:00",
-      "minutes": 30,
-      "subject": "AL · Lengua",
+      "time": "09:00–09:45",
+      "minutes": 45,
+      "subject": "AL · Grupo interactivo · Lengua",
       "primary": "Belén AL",
       "shared": [],
-      "notes": "Intervención de AL dentro del aula ordinaria.",
+      "notes": "Coincide con el grupo interactivo de 5.ºA.",
       "supportLabel": "AL"
     },
     {
@@ -945,11 +898,11 @@
       "supportLabel": "AL"
     },
     {
-      "group": "3.º",
+      "group": "3 años",
       "day": "Miércoles",
       "time": "12:00–12:45",
       "minutes": 45,
-      "subject": "AL · Lengua",
+      "subject": "AL · Infantil",
       "primary": "Belén AL",
       "shared": [],
       "notes": "Intervención de AL dentro del aula ordinaria.",
@@ -961,8 +914,8 @@
       "day": "Lunes",
       "time": "09:00–10:00",
       "teachers": {
-        "Noemí": "Atención a familias · 09:00–10:00",
-        "Charo": "Atención a familias · 09:00–10:00",
+        "Noemí": "PT · Grupo interactivo 2.ºA + 2.ºB · 2.ºA · 09:00–10:00",
+        "Charo": "PT · Infantil · 3 años · 09:00–09:45",
         "Lola": "NO DISPONIBLE",
         "Belén AL": "NO DISPONIBLE"
       }
@@ -972,8 +925,8 @@
       "time": "10:00–10:45",
       "teachers": {
         "Noemí": "PT · Infantil · 3 años · 10:00–10:45",
-        "Charo": "PT · Lengua · 2.ºB · 10:00–10:45",
-        "Lola": "AL · Lengua · 2.ºA · 10:00–10:45",
+        "Charo": "PT · C. Naturales · 5.ºA · 10:00–10:45",
+        "Lola": "AL · Grupo interactivo 2.ºA + 2.ºB · 2.ºB · 10:00–10:45",
         "Belén AL": "NO DISPONIBLE"
       }
     },
@@ -981,8 +934,8 @@
       "day": "Lunes",
       "time": "10:45–11:30",
       "teachers": {
-        "Noemí": "PT · Infantil · 5 años · 10:45–11:30",
-        "Charo": "PT · Lengua · 2.ºA · 10:45–11:30",
+        "Noemí": "PT · Grupo interactivo · Lengua · 1.º · 10:45–11:30",
+        "Charo": "PT · Lengua · 2.ºB · 10:45–11:30",
         "Lola": "AL · Infantil · 4 años · 10:45–11:30",
         "Belén AL": "NO DISPONIBLE"
       }
@@ -1001,8 +954,8 @@
       "day": "Lunes",
       "time": "12:00–13:00",
       "teachers": {
-        "Noemí": "PT · Lengua · 4.º · 12:00–12:45",
-        "Charo": "PT · Lengua · 5.ºA · 12:00–12:30; PT · Matemáticas · 1.º · 12:30–13:00",
+        "Noemí": "PT · Lengua · 5.ºA · 12:00–12:45",
+        "Charo": "PT · Matemáticas · 1.º · 12:00–12:45",
         "Lola": "AL · Lengua · 6.ºB · 12:00–12:45",
         "Belén AL": "NO DISPONIBLE"
       }
@@ -1011,9 +964,9 @@
       "day": "Lunes",
       "time": "13:00–14:00",
       "teachers": {
-        "Noemí": "PT · C. Naturales · 5.ºB · 13:00–13:30; PT · C. Naturales · 3.º · 13:30–14:00",
-        "Charo": "Apoyo disponible",
-        "Lola": "AL · C. Naturales · 3.º · 13:00–13:30; AL · C. Naturales · 5.ºB · 13:30–14:00",
+        "Noemí": "PT · C. Naturales · 5.ºB · 13:00–13:45",
+        "Charo": "PT · C. Naturales · 4.º · 13:00–13:45",
+        "Lola": "AL · C. Naturales · 3.º · 13:00–13:45",
         "Belén AL": "NO DISPONIBLE"
       }
     },
@@ -1021,18 +974,18 @@
       "day": "Martes",
       "time": "09:00–10:00",
       "teachers": {
-        "Noemí": "PT · Matemáticas · 4.º · 09:00–09:45",
-        "Charo": "PT · Infantil · 5 años · 09:00–09:45",
+        "Noemí": "Atención a familias · 09:00–10:00",
+        "Charo": "Atención a familias · 09:00–10:00",
         "Lola": "NO DISPONIBLE",
-        "Belén AL": "AL · Infantil · 4 años · 09:00–09:30; AL · Lengua · 5.ºA · 09:30–10:00"
+        "Belén AL": "AL · Grupo interactivo · Lengua · 5.ºA · 09:00–09:45"
       }
     },
     {
       "day": "Martes",
       "time": "10:00–10:45",
       "teachers": {
-        "Noemí": "PT · Infantil · 3 años · 10:00–10:45",
-        "Charo": "PT · Infantil · 4 años · 10:00–10:45",
+        "Noemí": "PT · Infantil · 4 años · 10:00–10:45",
+        "Charo": "PT · Grupo interactivo · Lengua · 3.º · 10:00–10:45",
         "Lola": "NO DISPONIBLE",
         "Belén AL": "AL · Lengua · 6.ºB · 10:00–10:45"
       }
@@ -1062,7 +1015,7 @@
       "time": "12:00–13:00",
       "teachers": {
         "Noemí": "PT · Lengua · 1.º · 12:00–12:45",
-        "Charo": "PT · Matemáticas · 6.ºA · 12:00–12:30; PT · Lengua · 5.ºB · 12:30–13:00",
+        "Charo": "PT · Matemáticas · 6.ºA · 12:00–12:45",
         "Lola": "NO DISPONIBLE",
         "Belén AL": "AL · Lengua · 4.º · 12:00–12:45"
       }
@@ -1071,8 +1024,8 @@
       "day": "Martes",
       "time": "13:00–14:00",
       "teachers": {
-        "Noemí": "PT · C. Naturales · 2.ºB · 13:00–13:45",
-        "Charo": "PT · C. Naturales · 4.º · 13:00–13:45",
+        "Noemí": "PT · C. Naturales · 4.º · 13:00–13:45",
+        "Charo": "PT · C. Naturales · 2.ºB · 13:00–13:45",
         "Lola": "NO DISPONIBLE",
         "Belén AL": "AL · C. Naturales · 2.ºA · 13:00–13:45"
       }
@@ -1081,8 +1034,8 @@
       "day": "Miércoles",
       "time": "09:00–10:00",
       "teachers": {
-        "Noemí": "PT · Infantil · 4 años · 09:00–09:45",
-        "Charo": "PT · Infantil · 3 años · 09:00–09:45",
+        "Noemí": "PT · Infantil · 5 años · 09:00–09:45",
+        "Charo": "PT · Grupo interactivo · Lengua · 5.ºB · 09:00–09:45",
         "Lola": "NO DISPONIBLE",
         "Belén AL": "NO DISPONIBLE"
       }
@@ -1091,7 +1044,7 @@
       "day": "Miércoles",
       "time": "10:00–10:45",
       "teachers": {
-        "Noemí": "PT · Lengua · 2.ºA · 10:00–10:45",
+        "Noemí": "PT · Infantil · 4 años · 10:00–10:45",
         "Charo": "PT · Infantil · 5 años · 10:00–10:45",
         "Lola": "AL · Infantil · 3 años · 10:00–10:45",
         "Belén AL": "NO DISPONIBLE"
@@ -1101,8 +1054,8 @@
       "day": "Miércoles",
       "time": "10:45–11:30",
       "teachers": {
-        "Noemí": "PT · C. Naturales · 5.ºA · 10:45–11:30",
-        "Charo": "PT · Lengua · 6.ºB · 10:45–11:30",
+        "Noemí": "PT · Infantil · 3 años · 10:45–11:30",
+        "Charo": "PT · Infantil · 4 años · 10:45–11:30",
         "Lola": "AL · Infantil · 5 años · 10:45–11:30",
         "Belén AL": "NO DISPONIBLE"
       }
@@ -1121,10 +1074,10 @@
       "day": "Miércoles",
       "time": "12:00–13:00",
       "teachers": {
-        "Noemí": "PT · Matemáticas · 6.ºB · 12:00–12:30; PT · Matemáticas · 1.º · 12:30–13:00",
+        "Noemí": "PT · Educación Física · 6.ºA · 12:00–12:45",
         "Charo": "PT · Matemáticas · 5.ºA · 12:00–12:45",
         "Lola": "AL · Lengua · 4.º · 12:00–12:45",
-        "Belén AL": "AL · Lengua · 3.º · 12:00–12:45"
+        "Belén AL": "AL · Infantil · 3 años · 12:00–12:45"
       }
     },
     {
@@ -1141,8 +1094,8 @@
       "day": "Jueves",
       "time": "09:00–10:00",
       "teachers": {
-        "Noemí": "PT · Infantil · 5 años · 09:00–09:45",
-        "Charo": "PT · Infantil · 4 años · 09:00–09:45",
+        "Noemí": "PT · Lengua · 2.ºA · 09:00–09:45",
+        "Charo": "PT · Grupo interactivo · Matemáticas · 6.ºB · 09:00–09:45",
         "Lola": "NO DISPONIBLE",
         "Belén AL": "NO DISPONIBLE"
       }
@@ -1151,9 +1104,9 @@
       "day": "Jueves",
       "time": "10:00–10:45",
       "teachers": {
-        "Noemí": "PT · Infantil · 4 años · 10:00–10:45",
-        "Charo": "PT · Matemáticas · 2.ºB · 10:00–10:45",
-        "Lola": "AL · C. Naturales · 6.ºA · 10:00–10:45",
+        "Noemí": "PT · Matemáticas · 2.ºB · 10:00–10:45",
+        "Charo": "PT · Infantil · 5 años · 10:00–10:45",
+        "Lola": "AL · Infantil · 4 años · 10:00–10:45",
         "Belén AL": "NO DISPONIBLE"
       }
     },
@@ -1161,9 +1114,9 @@
       "day": "Jueves",
       "time": "10:45–11:30",
       "teachers": {
-        "Noemí": "PT · Lengua · 6.ºB · 10:45–11:30",
+        "Noemí": "PT · Matemáticas · 5.ºA · 10:45–11:30",
         "Charo": "PT · Matemáticas · 5.ºB · 10:45–11:30",
-        "Lola": "AL · Infantil · 3 años · 10:45–11:30",
+        "Lola": "AL · Matemáticas · 1.º · 10:45–11:30",
         "Belén AL": "NO DISPONIBLE"
       }
     },
@@ -1181,8 +1134,8 @@
       "day": "Jueves",
       "time": "12:00–13:00",
       "teachers": {
-        "Noemí": "PT · Matemáticas · 6.ºA · 12:00–12:45",
-        "Charo": "PT · Lengua · 3.º · 12:00–12:45",
+        "Noemí": "PT · Música · 6.ºB · 12:00–12:45",
+        "Charo": "PT · Matemáticas · 6.ºA · 12:00–12:45",
         "Lola": "AL · Lengua · 5.ºA · 12:00–12:45",
         "Belén AL": "NO DISPONIBLE"
       }
@@ -1201,9 +1154,9 @@
       "day": "Viernes",
       "time": "09:00–10:30",
       "teachers": {
-        "Noemí": "PT · C. Sociales · 5.ºB · 09:00–09:45; PT · C. Sociales · 5.ºA · 09:45–10:30",
-        "Charo": "PT · C. Sociales · 6.ºA · 09:00–09:45; PT · C. Naturales · 6.ºB · 09:45–10:30",
-        "Lola": "NO DISPONIBLE 09:00–10:00; AL · C. Sociales · 5.ºB · 10:00–10:30",
+        "Noemí": "PT · Grupo interactivo · 4.º · 09:00–09:45; PT · Infantil · 5 años · 09:45–10:30",
+        "Charo": "PT · Infantil · 4 años · 09:00–09:45; PT · C. Naturales · 6.ºB · 09:45–10:30",
+        "Lola": "NO DISPONIBLE",
         "Belén AL": "NO DISPONIBLE"
       }
     },
@@ -1211,9 +1164,9 @@
       "day": "Viernes",
       "time": "10:30–11:15",
       "teachers": {
-        "Noemí": "PT · Lengua · 6.ºA · 10:30–11:15",
-        "Charo": "PT · Matemáticas · 3.º · 10:30–11:15",
-        "Lola": "AL · Lengua · 2.ºB · 10:30–11:15",
+        "Noemí": "PT · Matemáticas · 3.º · 10:30–11:15",
+        "Charo": "PT · Matemáticas · 1.º · 10:30–11:15",
+        "Lola": "AL · Grupo interactivo · Lengua · 6.ºA · 10:30–11:15",
         "Belén AL": "NO DISPONIBLE"
       }
     },
@@ -1231,9 +1184,9 @@
       "day": "Viernes",
       "time": "11:45–12:30",
       "teachers": {
-        "Noemí": "PT · Matemáticas · 2.ºB · 11:45–12:30",
+        "Noemí": "PT · C. Sociales · 6.ºB · 11:45–12:30",
         "Charo": "PT · Matemáticas · 2.ºA · 11:45–12:30",
-        "Lola": "AL · Lengua · 1.º · 11:45–12:30",
+        "Lola": "AL · Matemáticas · 2.ºB · 11:45–12:30",
         "Belén AL": "NO DISPONIBLE"
       }
     },
@@ -1241,9 +1194,9 @@
       "day": "Viernes",
       "time": "12:30–14:00",
       "teachers": {
-        "Noemí": "Banco de libros · 13:00–14:00; PT · C. Sociales · 2.ºA · 12:30–13:00",
-        "Charo": "Coordinación equipo Atención a la Diversidad · 13:00–14:00; PT · C. Sociales · 1.º · 12:30–13:00",
-        "Lola": "AL · C. Sociales · 2.ºB · 12:30–13:15; AL · C. Sociales · 1.º · 13:15–14:00",
+        "Noemí": "Banco de libros · 13:00–14:00",
+        "Charo": "Coordinación equipo Atención a la Diversidad · 13:00–14:00",
+        "Lola": "AL · C. Sociales · 1.º · 12:30–13:15; AL · Atención Educativa · 5.ºB · 13:15–14:00",
         "Belén AL": "NO DISPONIBLE"
       }
     }
@@ -1251,46 +1204,46 @@
   "teacherLoads": {
     "Noemí": {
       "direct": 0,
-      "shared": 1005,
+      "shared": 960,
       "recess": 150,
       "family": 60,
       "coordination": 180,
       "tutorial": 0,
-      "computed": 1395,
-      "support": 105,
+      "computed": 1350,
+      "support": 150,
       "total": 1500
     },
     "Charo": {
       "direct": 0,
-      "shared": 1005,
+      "shared": 990,
       "recess": 150,
       "family": 60,
       "coordination": 120,
       "tutorial": 0,
-      "computed": 1335,
-      "support": 165,
+      "computed": 1320,
+      "support": 180,
       "total": 1500
     },
     "Lola": {
       "direct": 0,
-      "shared": 720,
+      "shared": 675,
       "recess": 120,
       "family": 0,
       "coordination": 60,
       "tutorial": 0,
-      "computed": 900,
-      "support": 60,
+      "computed": 855,
+      "support": 105,
       "total": 960
     },
     "Belén AL": {
       "direct": 0,
-      "shared": 285,
+      "shared": 270,
       "recess": 30,
       "family": 0,
       "coordination": 60,
       "tutorial": 0,
-      "computed": 375,
-      "support": 45,
+      "computed": 360,
+      "support": 60,
       "total": 420
     }
   },
@@ -1298,9 +1251,9 @@
     {
       "teacher": "Noemí",
       "concept": "Atención a familias",
-      "schedule": "Lunes 09:00–10:00",
+      "schedule": "Martes 09:00–10:00",
       "minutes": 60,
-      "notes": "Franja común con Charo."
+      "notes": "Franja común con Charo; trasladada para cubrir el grupo interactivo conjunto de 2.º el lunes."
     },
     {
       "teacher": "Noemí",
@@ -1326,7 +1279,7 @@
     {
       "teacher": "Charo",
       "concept": "Atención a familias",
-      "schedule": "Lunes 09:00–10:00",
+      "schedule": "Martes 09:00–10:00",
       "minutes": 60,
       "notes": "Franja común con Noemí."
     },
