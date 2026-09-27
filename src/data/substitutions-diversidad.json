@@ -1,5 +1,5 @@
 {
-  "source_workbook": "Atención a la Diversidad · 2026-09-22",
+  "source_workbook": "Ajustes validados en conversación · 2026-09-27",
   "slots": [
     {
       "day": "Lunes",
@@ -120,7 +120,7 @@
           "kind": "docencia"
         },
         "Charo": {
-          "status": "PT · C. Naturales · 4.º · 13:00–13:45",
+          "status": "PT · Infantil · 4 años · 13:00–13:45",
           "kind": "docencia"
         },
         "Lola": {
@@ -138,12 +138,12 @@
       "slot": "09:00–10:00",
       "teachers": {
         "Noemí": {
-          "status": "Atención a familias · 09:00–10:00",
-          "kind": "p4"
+          "status": "PT · Infantil · 5 años · 09:00–10:00",
+          "kind": "docencia"
         },
         "Charo": {
-          "status": "Atención a familias · 09:00–10:00",
-          "kind": "p4"
+          "status": "PT · Matemáticas · 4.º · 09:00–10:00",
+          "kind": "docencia"
         },
         "Lola": {
           "status": "NO DISPONIBLE",
@@ -160,7 +160,7 @@
       "slot": "10:00–10:45",
       "teachers": {
         "Noemí": {
-          "status": "PT · Infantil · 4 años · 10:00–10:45",
+          "status": "PT · Matemáticas · 5.ºA · 10:00–10:45",
           "kind": "docencia"
         },
         "Charo": {
@@ -238,7 +238,7 @@
           "kind": "no_disponible"
         },
         "Belén AL": {
-          "status": "AL · Lengua · 4.º · 12:00–12:45",
+          "status": "AL · Lengua · 4.º · 12:00–13:00",
           "kind": "docencia"
         }
       }
@@ -248,19 +248,19 @@
       "slot": "13:00–14:00",
       "teachers": {
         "Noemí": {
-          "status": "PT · C. Naturales · 4.º · 13:00–13:45",
-          "kind": "docencia"
+          "status": "Atención a familias · 13:00–14:00",
+          "kind": "p4"
         },
         "Charo": {
-          "status": "PT · C. Naturales · 2.ºB · 13:00–13:45",
-          "kind": "docencia"
+          "status": "Atención a familias · 13:00–14:00",
+          "kind": "p4"
         },
         "Lola": {
           "status": "NO DISPONIBLE",
           "kind": "no_disponible"
         },
         "Belén AL": {
-          "status": "AL · C. Naturales · 2.ºA · 13:00–13:45",
+          "status": "AL · C. Naturales · 2.ºA · 13:00–14:00",
           "kind": "docencia"
         }
       }
@@ -270,7 +270,7 @@
       "slot": "09:00–10:00",
       "teachers": {
         "Noemí": {
-          "status": "PT · Infantil · 5 años · 09:00–09:45",
+          "status": "PT · Matemáticas · 4.º · 09:00–10:00",
           "kind": "docencia"
         },
         "Charo": {
@@ -318,7 +318,7 @@
           "kind": "docencia"
         },
         "Charo": {
-          "status": "PT · Infantil · 4 años · 10:45–11:30",
+          "status": "PT · Lengua · 2.ºB · 10:45–11:30",
           "kind": "docencia"
         },
         "Lola": {
@@ -358,7 +358,7 @@
       "slot": "12:00–13:00",
       "teachers": {
         "Noemí": {
-          "status": "PT · Educación Física · 6.ºA · 12:00–12:45",
+          "status": "PT · Lengua · 3.º · 12:00–13:00",
           "kind": "docencia"
         },
         "Charo": {
@@ -370,7 +370,7 @@
           "kind": "docencia"
         },
         "Belén AL": {
-          "status": "AL · Infantil · 3 años · 12:00–12:45",
+          "status": "AL · Infantil · 3 años · 12:00–13:00",
           "kind": "docencia"
         }
       }
@@ -392,8 +392,8 @@
           "kind": "p5"
         },
         "Belén AL": {
-          "status": "CETU · 13:00–14:00",
-          "kind": "p5"
+          "status": "AL · Infantil · 3 años · 13:00–14:00",
+          "kind": "docencia"
         }
       }
     },
@@ -424,7 +424,7 @@
       "slot": "10:00–10:45",
       "teachers": {
         "Noemí": {
-          "status": "PT · Matemáticas · 2.ºB · 10:00–10:45",
+          "status": "PT · Lengua · 5.ºB · 10:00–10:45",
           "kind": "docencia"
         },
         "Charo": {
@@ -446,8 +446,8 @@
       "slot": "10:45–11:30",
       "teachers": {
         "Noemí": {
-          "status": "PT · Matemáticas · 5.ºA · 10:45–11:30",
-          "kind": "docencia"
+          "status": "Apoyo disponible",
+          "kind": "p2"
         },
         "Charo": {
           "status": "PT · Matemáticas · 5.ºB · 10:45–11:30",
@@ -490,7 +490,7 @@
       "slot": "12:00–13:00",
       "teachers": {
         "Noemí": {
-          "status": "PT · Música · 6.ºB · 12:00–12:45",
+          "status": "PT · Infantil · 4 años · 12:00–13:00",
           "kind": "docencia"
         },
         "Charo": {
@@ -542,8 +542,8 @@
           "kind": "docencia"
         },
         "Lola": {
-          "status": "NO DISPONIBLE",
-          "kind": "no_disponible"
+          "status": "AL · C. Sociales · 5.ºA · 09:00–09:45; AL · C. Sociales · 5.ºB · 09:45–10:30",
+          "kind": "docencia"
         },
         "Belén AL": {
           "status": "NO DISPONIBLE",
@@ -600,7 +600,7 @@
       "slot": "11:45–12:30",
       "teachers": {
         "Noemí": {
-          "status": "PT · C. Sociales · 6.ºB · 11:45–12:30",
+          "status": "PT · Lengua · 6.ºA · 11:45–12:30",
           "kind": "docencia"
         },
         "Charo": {
@@ -622,7 +622,7 @@
       "slot": "12:30–14:00",
       "teachers": {
         "Noemí": {
-          "status": "Banco de libros · 13:00–14:00",
+          "status": "Banco de libros · 13:00–14:00; PT · C. Sociales · 3.º · 12:30–13:00",
           "kind": "p5"
         },
         "Charo": {
@@ -728,23 +728,6 @@
     },
     {
       "Día": "Martes",
-      "Franja": "10:00–10:45",
-      "Docente ausente": "Noemí",
-      "Actividad": "PT · Infantil",
-      "Grupo": "4 años",
-      "Rol ausente": "Intervención especializada",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "—",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
-      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
-    },
-    {
-      "Día": "Martes",
       "Franja": "10:45–11:30",
       "Docente ausente": "Noemí",
       "Actividad": "PT · Lengua",
@@ -766,40 +749,6 @@
       "Docente ausente": "Noemí",
       "Actividad": "PT · Lengua",
       "Grupo": "1.º",
-      "Rol ausente": "Intervención especializada",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "—",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
-      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
-    },
-    {
-      "Día": "Martes",
-      "Franja": "13:00–13:45",
-      "Docente ausente": "Noemí",
-      "Actividad": "PT · C. Naturales",
-      "Grupo": "4.º",
-      "Rol ausente": "Intervención especializada",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "—",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
-      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
-    },
-    {
-      "Día": "Miércoles",
-      "Franja": "09:00–09:45",
-      "Docente ausente": "Noemí",
-      "Actividad": "PT · Infantil",
-      "Grupo": "5 años",
       "Rol ausente": "Intervención especializada",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "—",
@@ -846,79 +795,11 @@
       "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
     },
     {
-      "Día": "Miércoles",
-      "Franja": "12:00–12:45",
-      "Docente ausente": "Noemí",
-      "Actividad": "PT · Educación Física",
-      "Grupo": "6.ºA",
-      "Rol ausente": "Intervención especializada",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "—",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
-      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
-    },
-    {
       "Día": "Jueves",
       "Franja": "09:00–09:45",
       "Docente ausente": "Noemí",
       "Actividad": "PT · Lengua",
       "Grupo": "2.ºA",
-      "Rol ausente": "Intervención especializada",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "—",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
-      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
-    },
-    {
-      "Día": "Jueves",
-      "Franja": "10:00–10:45",
-      "Docente ausente": "Noemí",
-      "Actividad": "PT · Matemáticas",
-      "Grupo": "2.ºB",
-      "Rol ausente": "Intervención especializada",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "—",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
-      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
-    },
-    {
-      "Día": "Jueves",
-      "Franja": "10:45–11:30",
-      "Docente ausente": "Noemí",
-      "Actividad": "PT · Matemáticas",
-      "Grupo": "5.ºA",
-      "Rol ausente": "Intervención especializada",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "—",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
-      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
-    },
-    {
-      "Día": "Jueves",
-      "Franja": "12:00–12:45",
-      "Docente ausente": "Noemí",
-      "Actividad": "PT · Música",
-      "Grupo": "6.ºB",
       "Rol ausente": "Intervención especializada",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "—",
@@ -982,23 +863,6 @@
       "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
     },
     {
-      "Día": "Viernes",
-      "Franja": "11:45–12:30",
-      "Docente ausente": "Noemí",
-      "Actividad": "PT · C. Sociales",
-      "Grupo": "6.ºB",
-      "Rol ausente": "Intervención especializada",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "—",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
-      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
-    },
-    {
       "Día": "Lunes",
       "Franja": "09:00–09:45",
       "Docente ausente": "Charo",
@@ -1067,23 +931,6 @@
       "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
     },
     {
-      "Día": "Lunes",
-      "Franja": "13:00–13:45",
-      "Docente ausente": "Charo",
-      "Actividad": "PT · C. Naturales",
-      "Grupo": "4.º",
-      "Rol ausente": "Intervención especializada",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "—",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
-      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
-    },
-    {
       "Día": "Martes",
       "Franja": "10:00–10:45",
       "Docente ausente": "Charo",
@@ -1135,23 +982,6 @@
       "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
     },
     {
-      "Día": "Martes",
-      "Franja": "13:00–13:45",
-      "Docente ausente": "Charo",
-      "Actividad": "PT · C. Naturales",
-      "Grupo": "2.ºB",
-      "Rol ausente": "Intervención especializada",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "—",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
-      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
-    },
-    {
       "Día": "Miércoles",
       "Franja": "09:00–09:45",
       "Docente ausente": "Charo",
@@ -1174,23 +1004,6 @@
       "Docente ausente": "Charo",
       "Actividad": "PT · Infantil",
       "Grupo": "5 años",
-      "Rol ausente": "Intervención especializada",
-      "Cobertura obligatoria": "No",
-      "P1 Misma docencia compartida": "—",
-      "P2 Apoyo": "—",
-      "P3 DC otro grupo": "—",
-      "P4 Atención familias": "—",
-      "P5 Coordinación/tutoría": "—",
-      "P6 Equipo directivo": "Selección manual",
-      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
-      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
-    },
-    {
-      "Día": "Miércoles",
-      "Franja": "10:45–11:30",
-      "Docente ausente": "Charo",
-      "Actividad": "PT · Infantil",
-      "Grupo": "4 años",
       "Rol ausente": "Intervención especializada",
       "Cobertura obligatoria": "No",
       "P1 Misma docencia compartida": "—",
@@ -1679,8 +1492,229 @@
       "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
     },
     {
+      "Día": "Viernes",
+      "Franja": "09:00–09:45",
+      "Docente ausente": "Lola",
+      "Actividad": "AL · C. Sociales",
+      "Grupo": "5.ºA",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "09:45–10:30",
+      "Docente ausente": "Lola",
+      "Actividad": "AL · C. Sociales",
+      "Grupo": "5.ºB",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Lunes",
+      "Franja": "13:00–13:45",
+      "Docente ausente": "Charo",
+      "Actividad": "PT · Infantil",
+      "Grupo": "4 años",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "10:45–11:30",
+      "Docente ausente": "Charo",
+      "Actividad": "PT · Lengua",
+      "Grupo": "2.ºB",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
       "Día": "Martes",
-      "Franja": "12:00–12:45",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Charo",
+      "Actividad": "PT · Matemáticas",
+      "Grupo": "4.º",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Noemí",
+      "Actividad": "PT · Matemáticas",
+      "Grupo": "5.ºA",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Noemí",
+      "Actividad": "PT · Infantil",
+      "Grupo": "5 años",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "09:00–10:00",
+      "Docente ausente": "Noemí",
+      "Actividad": "PT · Matemáticas",
+      "Grupo": "4.º",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Noemí",
+      "Actividad": "PT · Lengua",
+      "Grupo": "3.º",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "10:00–10:45",
+      "Docente ausente": "Noemí",
+      "Actividad": "PT · Lengua",
+      "Grupo": "5.ºB",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Jueves",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Noemí",
+      "Actividad": "PT · Infantil",
+      "Grupo": "4 años",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "11:45–12:30",
+      "Docente ausente": "Noemí",
+      "Actividad": "PT · Lengua",
+      "Grupo": "6.ºA",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Viernes",
+      "Franja": "12:30–13:00",
+      "Docente ausente": "Noemí",
+      "Actividad": "PT · C. Sociales",
+      "Grupo": "3.º",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Martes",
+      "Franja": "12:00–13:00",
       "Docente ausente": "Belén AL",
       "Actividad": "AL · Lengua",
       "Grupo": "4.º",
@@ -1697,7 +1731,7 @@
     },
     {
       "Día": "Martes",
-      "Franja": "13:00–13:45",
+      "Franja": "13:00–14:00",
       "Docente ausente": "Belén AL",
       "Actividad": "AL · C. Naturales",
       "Grupo": "2.ºA",
@@ -1714,7 +1748,24 @@
     },
     {
       "Día": "Miércoles",
-      "Franja": "12:00–12:45",
+      "Franja": "12:00–13:00",
+      "Docente ausente": "Belén AL",
+      "Actividad": "AL · Infantil",
+      "Grupo": "3 años",
+      "Rol ausente": "Intervención especializada",
+      "Cobertura obligatoria": "No",
+      "P1 Misma docencia compartida": "—",
+      "P2 Apoyo": "—",
+      "P3 DC otro grupo": "—",
+      "P4 Atención familias": "—",
+      "P5 Coordinación/tutoría": "—",
+      "P6 Equipo directivo": "Selección manual",
+      "Primera respuesta según criterio": "Coordinación manual del equipo AD",
+      "Observaciones": "La ausencia de PT/AL no altera la docencia ordinaria del grupo; cualquier reposición especializada se decide manualmente."
+    },
+    {
+      "Día": "Miércoles",
+      "Franja": "13:00–14:00",
       "Docente ausente": "Belén AL",
       "Actividad": "AL · Infantil",
       "Grupo": "3 años",
